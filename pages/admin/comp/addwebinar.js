@@ -14,7 +14,7 @@ export default function Addwebinar() {
     const webinaradd = async event => {
         event.preventDefault()
         const res = await fetch(
-          'http://127.0.0.1:5000/webinars/',
+          'http://15.206.99.13:5000/webinars/',
           {
             body: JSON.stringify({
                 webinar_title: webinar_title,
@@ -58,11 +58,11 @@ export default function Addwebinar() {
   </div>
   <div className="form-group">
     <label >Webinar Start Date</label>
-    <input type="text" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date"/>
+    <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date"/>
   </div>
   <div className="form-group">
     <label >Webinar End Date</label>
-    <input type="text" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date"/>
+    <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date"/>
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>

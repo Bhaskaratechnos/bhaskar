@@ -9,7 +9,7 @@ export default function SidebarAdmin() {
       <div className="sidebar__title">
         <div className="sidebar__img">
           <img src="/assets/logo.png" alt="logo" />
-          <h1>Atechnos</h1>
+          <h1>ATechnos</h1>
         </div>
         <i
           onClick={()=>{closeSidebar()}}

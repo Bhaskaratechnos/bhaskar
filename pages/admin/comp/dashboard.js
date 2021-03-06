@@ -11,7 +11,7 @@ export default function Dashboard() {
   <div className="main__title">
     <img src="/assets/hello.svg" alt="" />
     <div className="main__greeting">
-      <h1>Hello Atechnos</h1>
+      <h1>Hello ATechnos</h1>
       <p>Welcome to your admin dashboard</p>
     </div>
   </div>

@@ -15,10 +15,10 @@ export default function Editwebinar(props) {
     const [webinar_stage, setwebinar_stage] = useState(props.data[0].webinar_stage);
 
     const webinarupdate = async event => {
-        console.log(webinar_title);
+        
         event.preventDefault()
         const res = await fetch(
-          'http://127.0.0.1:5000/webinars/'+router.query.id,
+          'http://15.206.99.13:5000/webinars/'+router.query.id,
           {
             body: JSON.stringify({
                 webinar_title: webinar_title,
@@ -39,7 +39,7 @@ export default function Editwebinar(props) {
         )
     
         const result = await res.json();
-        // console.log(result)
+        console.log(result)
         if(result.affectedRows){
             router.push('/admin/comp/managewebinars')
         }
@@ -63,11 +63,11 @@ export default function Editwebinar(props) {
   </div>
   <div className="form-group">
     <label >Webinar Start Date</label>
-    <input type="text" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate}/>
+    <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate}/>
   </div>
   <div className="form-group">
     <label >Webinar End Date</label>
-    <input type="text" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} defaultValue={webinar_enddate}/>
+    <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} defaultValue={webinar_enddate}/>
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>
@@ -97,7 +97,7 @@ export default function Editwebinar(props) {
 
 export async function getServerSideProps({query}) {
     
-    const res = await fetch('http://127.0.0.1:5000/webinars/'+query.id)
+    const res = await fetch('http://15.206.99.13:5000/webinars/'+query.id)
     
     const data = await res.json()
   
