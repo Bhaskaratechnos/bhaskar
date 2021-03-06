@@ -1,7 +1,17 @@
-
+import { useRouter } from 'next/router'
+import cookie from 'js-cookie'
 import Link from 'next/link'
-export default function User({ data }) {
+export default function User({ data ,islogin}) {
+  const router = useRouter();
+  const Login = async event => {
+    router.push('/user/loginregister');
+  }
+  const Logout = async event => {
+    cookie.remove('token')
+    router.push('/user/');
+  }
   return (
+    
     <div>
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <a href="#" className="navbar-brand">
@@ -31,11 +41,16 @@ export default function User({ data }) {
               Reports
             </a>
           </div>
+          
+    
           <div className="navbar-nav ml-auto">
-            <a href="#" className="nav-item nav-link">
-              Login
+
+            <a onClick={islogin ? Logout : Login} className="nav-item nav-link">
+            {islogin ? 'Logout' : 'Login'}
+              
             </a>
           </div>
+
         </div>
       </nav>
       <div className="container">
@@ -72,7 +87,7 @@ export default function User({ data }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({req}) {
   const res = await fetch("http://15.206.99.13:5000/webinars/");
 
   const data = await res.json();
@@ -85,6 +100,6 @@ export async function getServerSideProps(context) {
   console.log(data);
 
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data,islogin:req.cookies.token||'' }, // will be passed to the page component as props
   };
 }

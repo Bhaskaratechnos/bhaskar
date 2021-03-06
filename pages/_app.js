@@ -2,20 +2,21 @@
 
 import LayoutAdmin from "./admin/layout"
 import { useRouter } from "next/router";
-
+import Cookies from 'js-cookie'
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
     if (router.pathname.startsWith("/user") ) {
-        console.log("if");
-        return(            
+        
+        return(   
+
                     <Component {...pageProps} />         
                     
                 
         )  
       }
       else{
-          console.log("else");
+          
     return(
 
 <LayoutAdmin>

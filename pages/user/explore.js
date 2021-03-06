@@ -39,7 +39,7 @@ export default function Explore({ data }) {
 }
 
 export async function getServerSideProps({query}) {
-  const res = await fetch("http://127.0.0.1:5000/webinars/"+query.id);
+  const res = await fetch("http://15.206.99.13:5000/webinars/"+query.id);
 
   const data = await res.json();
 
@@ -48,7 +48,7 @@ export async function getServerSideProps({query}) {
       notFound: true,
     };
   }
-  console.log(data);
+  // console.log(data);
 
   return {
     props: { data }, // will be passed to the page component as props

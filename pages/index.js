@@ -25,10 +25,10 @@ export default function Home() {
 <>
 <Head>
 
-<meta charset="utf-8" />
+<meta charSet="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="Content-Language" content="en" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charSet=utf-8" />
     
         <meta
           name="viewport"
