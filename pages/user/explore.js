@@ -1,6 +1,17 @@
-
+import cookie from 'js-cookie'
+import { useRouter } from 'next/router'
+import React, {useState,useEffect } from 'react'
 import Link from 'next/link'
-export default function Explore({ data }) {
+
+
+export default function Explore({ data ,islogin}) {
+  const router = useRouter();
+  useEffect(() => {
+    
+    if(!islogin){
+      router.push('/user/loginregister')
+    }
+  });
   return (
     <div>
 
@@ -24,9 +35,9 @@ export default function Explore({ data }) {
                     {d.webinar_enddate}
                     {d.webinar_description}
                   </p>
-                  <Link href={"/admin/comp/editwebinar?id=" + d.webinar_id}>
+                  
                     <a className="btn btn-primary">Explore</a>
-                  </Link>
+                  
                 </div>
               </div>
             </div>
@@ -38,7 +49,7 @@ export default function Explore({ data }) {
   );
 }
 
-export async function getServerSideProps({query}) {
+export async function getServerSideProps({req,query}) {
   const res = await fetch("http://15.206.99.13:5000/webinars/"+query.id);
 
   const data = await res.json();
@@ -51,6 +62,6 @@ export async function getServerSideProps({query}) {
   // console.log(data);
 
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data,islogin:req.cookies.token||'' }, // will be passed to the page component as props
   };
 }

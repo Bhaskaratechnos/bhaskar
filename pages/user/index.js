@@ -10,6 +10,16 @@ export default function User({ data ,islogin}) {
     cookie.remove('token')
     router.push('/user/');
   }
+  const explore = async id => {
+if(islogin){
+  router.push("/user/explore?id=" +id);
+}
+else{
+  router.push('/user/loginregister');
+}
+    
+    
+  }
   return (
     
     <div>
@@ -73,9 +83,9 @@ export default function User({ data ,islogin}) {
                     {d.webinar_enddate}
                     {d.webinar_description}
                   </p>
-                  <Link href={"/user/explore?id=" + d.webinar_id}>
-                    <a className="btn btn-primary">Explore</a>
-                  </Link>
+                  {/* <Link href={"/user/explore?id=" + d.webinar_id}> */}
+                    <a onClick={()=>explore(d.webinar_id)} className="btn btn-primary">Explore</a>
+                  {/* </Link> */}
                 </div>
               </div>
             </div>
