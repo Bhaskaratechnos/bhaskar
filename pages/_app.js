@@ -1,30 +1,33 @@
 // import App from 'next/app'
 
-import LayoutAdmin from "./admin/layout"
+import LayoutAdmin from "../admin/layout"
 import { useRouter } from "next/router";
 import Cookies from 'js-cookie'
-
+import "../public/styles.css"
+import 'bootstrap/dist/css/bootstrap.css'
 function MyApp({ Component, pageProps }) {
-    const router = useRouter();
-    if (router.pathname.startsWith("/user") ) {
-        
-        return(   
+  const router = useRouter();
+  if (router.pathname.startsWith("/admin")) {
 
-                    <Component {...pageProps} />         
-                    
-                
-        )  
-      }
-      else{
-          
-    return(
+    return (
 
-<LayoutAdmin>
+      <LayoutAdmin>
         <Component {...pageProps} />
 
-        </LayoutAdmin>)
-    
+      </LayoutAdmin>
+
+
+    )
+  }
+  else {
+
+    return (
+
+      <Component {...pageProps} />
+
+    )
+
   }
 }
-  
-  export default MyApp
+
+export default MyApp

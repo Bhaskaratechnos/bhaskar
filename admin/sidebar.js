@@ -20,45 +20,53 @@ export default function SidebarAdmin() {
       </div>
 
       <div className="sidebar__menu">
-        <div className={router.pathname == "/" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-home"></i>
-          <Link href="/" >
+          <Link href="/admin" >
           <a >Dashboard</a>
           </Link>
         </div>
         <h2>Webinars</h2>
-        <div className={router.pathname == "/admin/comp/livewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin/livewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-user-secret" aria-hidden="true"></i>
-          <Link href="/admin/comp/livewebinars" >
+          <Link href="/admin/livewebinars" >
           <a >Live Webinars</a>
           </Link>
         </div>
-        <div className={router.pathname == "/admin/comp/allwebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin/allwebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-building-o"></i>
-          <Link href="/admin/comp/allwebinars" >
+          <Link href="/admin/allwebinars" >
           <a >All Webinars</a>
           </Link>
         </div>
-        <div className={router.pathname == "/admin/comp/managewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin/managewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-wrench"></i>
-          <Link href="/admin/comp/managewebinars" >
+          <Link href="/admin/managewebinars" >
           <a >Manage Webinars</a>
           </Link>
         </div>
-        <div className={router.pathname == "/admin/comp/innext" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin/innext" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-archive"></i>
-          <Link href="/admin/comp/innext">
+          <Link href="/admin/innext">
           <a >Webinars in Next 2 days</a>
           </Link>
         </div>
 
         <h2>Creatives</h2>
-        <div className={router.pathname == "/admin/comp/allcreatives" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+
+        <div className={router.pathname == "/admin/allspeakers" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-question"></i>
-          <Link href="/admin/comp/allcreatives" >
+          <Link href="/admin/allspeakers" >
+          <a >Manage Speakers</a>
+          </Link>
+        </div>
+        <div className={router.pathname == "/admin/allcreatives" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+          <i className="fa fa-question"></i>
+          <Link href="/admin/allcreatives" >
           <a >Manage Creatives</a>
           </Link>
         </div>
+
 
 
         <div className="sidebar__logout">

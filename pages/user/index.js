@@ -22,76 +22,102 @@ else{
   }
   return (
     
-    <div>
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a href="#" className="navbar-brand">
-          Brand
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+<>
 
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav">
-            <a href="#" className="nav-item nav-link active">
-              Home
-            </a>
-            <a href="#" className="nav-item nav-link">
-              Profile
-            </a>
-            <a href="#" className="nav-item nav-link">
-              Messages
-            </a>
-            <a href="#" className="nav-item nav-link disabled" tabIndex="-1">
-              Reports
-            </a>
-          </div>
-          
-    
-          <div className="navbar-nav ml-auto">
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#"><img className='logoimage' src="/logo.png" /></a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div className="navbar-nav ms-auto lnav">
+        <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
+        <a className="nav-link" href="#">STARTUPS</a>
+        <a className="nav-link" href="#">MARKIETING</a>
+        <a className="nav-link" href="#">TECHNOLOGY</a>
+        <a className="nav-link" href="#">HEALTH</a>
+        <a className="nav-link" href="#">ENTERTAINMENT</a>
+        <a className="nav-link" href="#">EDUCATION</a>
+        <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
+        
+      </div>
+      <div>
+      <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png'/></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
 
-            <a onClick={islogin ? Logout : Login} className="nav-item nav-link">
-            {islogin ? 'Logout' : 'Login'}
-              
-            </a>
-          </div>
-
-        </div>
-      </nav>
-      <div className="container">
+<div className="container">
         <div className="row">
+
           {data.map((d, index) => (
             <div key={d.webinar_id} className="col-4">
+
               <div
-                className="card"
+                className="card border-0"
                 style={{ width: "18rem", marginTop: "10px" }}
               >
-                <img
-                  src={d.webinar_stage}
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{d.webinar_title}</h5>
-                  <p className="card-text">Start Date-{d.webinar_startdate} End Date-{d.webinar_enddate} Description-{d.webinar_description}
-                  </p>
+                <Link href={islogin ? "/user/webinar?id=" + d.webinar_id : "/user/explore?id=" + d.webinar_id}>
+                <a>
+                <img src={d.webinar_stage} className="card-img-top cardimage" alt="..." />
+                </a>
+                </Link>
 
-                  <Link href={islogin ? "/user/webinar?id=" + d.webinar_id : "/user/explore?id=" + d.webinar_id}>
-                    <a  className="btn btn-primary">Explore</a>
-                  </Link>
-                </div>
               </div>
             </div>
           ))}
 
         </div>
       </div>
-    </div>
+
+      <div className="container-fluid mt-5">
+
+</div>
+<style jsx>{`
+        .logoimage {
+          height: 50px;
+          width:60px;
+        }
+        .logorimage{
+            height: 50px;
+            width:80px;  
+        }
+        .lnav a{
+            color:blue;
+            font-size:14px;
+        }
+        .cardimage{
+            border-radius: 3%;
+            background: #73AD21;
+            box-shadow: 2px 2px 4px #000000;
+        }
+        
+
+      `}</style>
+</>
   );
 }
 

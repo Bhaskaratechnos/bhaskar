@@ -13,9 +13,9 @@ export default function Webinar({ data ,islogin}) {
     }
   });
   return (
-    <div>
+    <div >
 
-      <div className="container">
+      <div className="container" >
         <div className="row">
           {data.map((d, index) => (
             <div key={d.webinar_id} className="col-4">
