@@ -72,20 +72,18 @@ else{
                 style={{ width: "18rem", marginTop: "10px" }}
               >
                 <img
-                  src="/assets/hello.svg"
+                  src={d.webinar_stage}
                   className="card-img-top"
                   alt="..."
                 />
                 <div className="card-body">
                   <h5 className="card-title">{d.webinar_title}</h5>
-                  <p className="card-text">
-                    {d.webinar_startdate}
-                    {d.webinar_enddate}
-                    {d.webinar_description}
+                  <p className="card-text">Start Date-{d.webinar_startdate} End Date-{d.webinar_enddate} Description-{d.webinar_description}
                   </p>
-                  {/* <Link href={"/user/explore?id=" + d.webinar_id}> */}
-                    <a onClick={()=>explore(d.webinar_id)} className="btn btn-primary">Explore</a>
-                  {/* </Link> */}
+
+                  <Link href={islogin ? "/user/webinar?id=" + d.webinar_id : "/user/explore?id=" + d.webinar_id}>
+                    <a  className="btn btn-primary">Explore</a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -107,7 +105,7 @@ export async function getServerSideProps({req}) {
       notFound: true,
     };
   }
-  console.log(data);
+  // console.log(data);
 
   return {
     props: { data,islogin:req.cookies.token||'' }, // will be passed to the page component as props

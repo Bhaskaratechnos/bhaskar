@@ -8,7 +8,7 @@ export default function Managewebinars({data}) {
         
     
         const res = await fetch(
-          'http://15.206.99.13:5000/webinars/'+id,
+          'http://127.0.0.1:5000/webinars/'+id,
           {
             
             headers: {
@@ -18,7 +18,7 @@ export default function Managewebinars({data}) {
           }
         )
         var result = await res;
-        console.log(result)
+        // console.log(result)
         router.push('/admin/comp/managewebinars');
     
 
@@ -54,7 +54,7 @@ export default function Managewebinars({data}) {
         <tr key={d.webinar_id }>
         <th scope="row">{index}</th>
         <td>{d.webinar_title }</td>
-        <td>{d.webinar_startdate }</td>
+        <td>{d.webinar_startdate }{console.log(d.webinar_startdate)}</td>
         <td>{d.webinar_enddate }</td>
         <td>{d.webinar_description }</td>
   

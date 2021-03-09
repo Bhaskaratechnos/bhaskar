@@ -1,46 +1,41 @@
 import React, {useState} from 'react'
 import { useRouter } from 'next/router'
 
-
+import axios from 'axios';
 export default function Editwebinar(props) {
     const router = useRouter();
 
     const [webinar_title, setwebinar_title] = useState(props.data[0].webinar_title);
     const [webinar_description, setwebinar_description] = useState(props.data[0].webinar_description);
     const [webinar_startdate, setwebinar_startdate] = useState(props.data[0].webinar_startdate);
+    const [webinar_starttime, setwebinar_starttime] = useState(props.data[0].webinar_startdate);
     const [webinar_enddate, setwebinar_enddate] = useState(props.data[0].webinar_enddate);
+    const [webinar_endtime, setwebinar_endtime] = useState(props.data[0].webinar_enddate);
     const [webinar_mainbanner, setwebinar_mainbanner] = useState(props.data[0].webinar_mainbanner);
     const [webinar_speaker, setwebinar_speaker] = useState(props.data[0].webinar_speaker);
     const [webinar_meetinglink, setwebinar_meetinglink] = useState(props.data[0].webinar_meetinglink);
     const [webinar_stage, setwebinar_stage] = useState(props.data[0].webinar_stage);
 
     const webinarupdate = async event => {
-        
+        console.log(new Date(webinar_startdate+' '+webinar_starttime))
         event.preventDefault()
-        const res = await fetch(
-          'http://15.206.99.13:5000/webinars/'+router.query.id,
-          {
-            body: JSON.stringify({
-                webinar_title: webinar_title,
-                webinar_description: webinar_description,
-                webinar_startdate: webinar_startdate,
-                webinar_enddate: webinar_enddate,
-                webinar_mainbanner: webinar_mainbanner,
-                webinar_speaker: webinar_speaker,
-                webinar_meetinglink: webinar_meetinglink,
-                webinar_stage: webinar_stage
-
-            }),
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            method: 'PUT'
-          }
-        )
-    
-        const result = await res.json();
-        console.log(result)
-        if(result.affectedRows){
+        console.log(webinar_stage);
+        var formData = new FormData();
+        formData.append('webinar_title', webinar_title);
+        formData.append('webinar_description', webinar_description);
+        formData.append('webinar_startdate', webinar_startdate+' '+webinar_starttime);
+        formData.append('webinar_enddate', webinar_enddate+' '+webinar_endtime);
+        formData.append('webinar_mainbanner', webinar_mainbanner);
+        formData.append('webinar_speaker', webinar_speaker);
+        formData.append('webinar_meetinglink', webinar_meetinglink);
+        formData.append('webinar_stage', webinar_stage);
+        for (var key of formData.entries()) {
+          console.log(key[0]+','+key[1] );
+      }
+      const ress=await axios.put("http://127.0.0.1:5000/webinars/"+router.query.id, formData);
+      const result = await ress;
+      console.log(result)
+        if(result.data.affectedRows){
             router.push('/admin/comp/managewebinars')
         }
         else{
@@ -59,15 +54,22 @@ export default function Editwebinar(props) {
   </div>
   <div className="form-group">
     <label >Webinar Description</label>
-    <input type="text" className="form-control" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} defaultValue={webinar_description}/>
+    <input type="text" className="form-control " name="webinar_description" onChange={e => setwebinar_description(e.target.value)} defaultValue={webinar_description}/>
   </div>
   <div className="form-group">
     <label >Webinar Start Date</label>
-    <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate}/>
-  </div>
+    
+    <input type="date" className="form-control col-6" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate}/>
+    <input type="time" className="form-control col-6" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} defaultValue={webinar_startdate}/>
+
+    </div>
+
   <div className="form-group">
     <label >Webinar End Date</label>
-    <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} defaultValue={webinar_enddate}/>
+    
+    <input type="date" className="form-control col-6" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} defaultValue={webinar_enddate}/>
+    <input type="time" className="form-control col-6" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} defaultValue={webinar_enddate}/>
+    
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>
@@ -79,7 +81,7 @@ export default function Editwebinar(props) {
   </div>
   <div className="form-group">
     <label >Webinar stage </label>
-    <input type="text" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.value)} defaultValue={webinar_stage}/>
+    <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} defaultValue={webinar_stage}/>
   </div>
   <div className="form-group">
     <label >Webinar Meeting Link</label>
