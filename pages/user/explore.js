@@ -100,10 +100,10 @@ export default function Explore({ data ,islogin}) {
 
 
       <div className="container" style={{width:"40%",marginTop:'10%'}}>
-    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-      <li class="nav-item" role="presentation">
+    <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+      <li className="nav-item" role="presentation">
         <a
-          class="nav-link active"
+          className="nav-link active"
           id="tab-login"
           data-mdb-toggle="pill"
           href="#pills-login"
@@ -113,9 +113,9 @@ export default function Explore({ data ,islogin}) {
           >Login</a
         >
       </li>
-      <li class="nav-item" role="presentation">
+      <li className="nav-item" role="presentation">
         <a
-          class="nav-link"
+          className="nav-link"
           id="tab-register"
           data-mdb-toggle="pill"
           href="#pills-register"
@@ -129,33 +129,33 @@ export default function Explore({ data ,islogin}) {
     </ul>  
     
    
-    <div class="tab-content">
+    <div className="tab-content">
       <div
-        class="tab-pane fade show active"
+        className="tab-pane fade show active"
         id="pills-login"
         role="tabpanel"
         aria-labelledby="tab-login"
       >
         <form>          
-          <div class="form-outline mb-4">
-            <input type="email" name="user_email" onChange={e => setuser_email(e.target.value)}  id="loginName" class="form-control" />
-            <label class="form-label" for="loginName">Email </label>
+          <div className="form-outline mb-4">
+            <input type="email" name="user_email" onChange={e => setuser_email(e.target.value)}  id="loginName" className="form-control" />
+            <label className="form-label" htmlFor="loginName">Email </label>
           </div>  
-          <button type="submit" onClick={login} class="btn btn-primary btn-block mb-4">Sign in</button>
+          <button type="submit" onClick={login} className="btn btn-primary btn-block mb-4">Sign in</button>
         </form>
       </div>
       <div
-        class="tab-pane fade"
+        className="tab-pane fade"
         id="pills-register"
         role="tabpanel"
         aria-labelledby="tab-register"
       >
         <form>
-          <div class="form-outline mb-4">
-            <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" class="form-control" />
-            <label class="form-label" for="registerEmail">Email</label>
+          <div className="form-outline mb-4">
+            <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" />
+            <label className="form-label" htmlFor="registerEmail">Email</label>
           </div>
-          <button type="submit" onClick={register} class="btn btn-primary btn-block mb-3">Register</button>
+          <button type="submit" onClick={register} className="btn btn-primary btn-block mb-3">Register</button>
         </form>
       </div>
     </div>

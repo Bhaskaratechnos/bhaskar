@@ -32,7 +32,7 @@ export default function Editwebinar(props) {
         for (var key of formData.entries()) {
           console.log(key[0]+','+key[1] );
       }
-      const ress=await axios.put("http://127.0.0.1:5000/webinars/"+router.query.id, formData);
+      const ress=await axios.put("http://15.206.99.13:5000/webinars/"+router.query.id, formData);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
