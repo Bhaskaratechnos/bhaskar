@@ -81,7 +81,7 @@ export default function Editwebinar(props) {
           </div>
           <div className="form-group">
             <label >Webinar stage </label>
-            <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} defaultValue={webinar_stage} />
+            <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])}  />
           </div>
           <div className="form-group">
             <label >Webinar Meeting Link</label>
@@ -108,7 +108,7 @@ export async function getServerSideProps({ query }) {
       notFound: true,
     }
   }
-  console.log(data);
+  // console.log(data);
 
   return {
     props: { data }, // will be passed to the page component as props
