@@ -2,7 +2,7 @@ import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-
+import Head from 'next/head'
 
 export default function Webinar({ data, islogin }) {
   const router = useRouter();
@@ -10,6 +10,11 @@ export default function Webinar({ data, islogin }) {
 
   return (
     <>
+    <Head>
+
+    <script src="http://15.206.99.13:3000/js.js"></script>
+
+    </Head>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <Link href="/user">
@@ -50,14 +55,9 @@ export default function Webinar({ data, islogin }) {
       {/* </a> */}
 
 
-<script src="/js.js"></script>
+
 
     </div>
-    <style jsx>{`
-
-        
-
-      `}</style>
     </>
   );
 }
