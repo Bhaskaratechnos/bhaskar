@@ -56,7 +56,12 @@ export default function Explore({ data, islogin }) {
 
 
       </div>
+      <div className="container" style={{textAlign: "center"}}>
+      <h1>{data[0].webinar_title}</h1> 
+      <h5>Date {data[0].webinar_startdate.split(" ")[0]}</h5>       
+<p>{data[0].webinar_description}</p>
 
+</div>
       <style jsx>{`
 
         

@@ -107,7 +107,7 @@ export default function LoginRegister({ data }) {
         <a className="nav-link" href="#">EDUCATION</a>
         <a className="nav-link" href="#">YOUTH</a>
         <a className="nav-link" href="#">POLICY</a>
-        <a className="nav-link" href="#">ENTREPRENEUR</a>
+        <a className="nav-link" href="#">BIOTECH</a>
         {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
          */}
       </div>
