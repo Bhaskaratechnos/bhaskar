@@ -41,8 +41,11 @@ export default function Explore({ data, islogin }) {
         </div>
       </nav>
       <div className="containerq" >
-        <img src='/crousel.jpg' />
-        <Link href={`/user/loginregister?id=${id}&&v=1`}><a>
+        <img src={data[0].webinar_stage} />
+
+
+
+        <Link href={`/user/login?id=${id}&&v=0`}><a>
           <button className="btnq btn btn-primary" >Login</button>
         </a>
         </Link>
@@ -50,31 +53,12 @@ export default function Explore({ data, islogin }) {
           <button className="btnq2 btn btn-primary" >Register</button>
         </a>
         </Link>
+
+
       </div>
 
       <style jsx>{`
-        .logoimage {
-          height: 50px;
-          width:60px;
-        }
-        .logorimage{
-            height: 50px;
-            width:80px;  
-        }
-        .lnav a{
-            color:blue;
-            font-size:14px;
-        }
-        .cardimage{
-            border-radius: 3%;
-            // background: #73AD21;
-            // box-shadow: 2px 2px 4px #000000;
-        }
-        .cardimage1{
-          border-radius: 3%;
-          // background: #73AD21;
-          box-shadow: 2px 2px 4px #000000;
-      }
+
         
 
       `}</style>

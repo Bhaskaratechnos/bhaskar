@@ -54,13 +54,13 @@ else{
 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+      <img src="/crousel.png" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel2.png" className="d-block w-100" alt="..."/>
+      <img src="/crousel11.png" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel3.jpg" className="d-block w-100" alt="..."/>
+      <img src="/crousel12.png" className="d-block w-100" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
@@ -73,15 +73,15 @@ else{
   </button>
 </div>
 
-<div className="container">
-        <div className="row">
+<div className="container ">
+        <div className="row ">
 
           {data.map((d, index) => (
-            <div key={d.webinar_id} className="col-4">
+            <div key={d.webinar_id} className="col-4 d-flex justify-content-center">
 
               <div
-                className="card cardimage1"
-                style={{ width: "18rem", marginTop: "10px" }}
+                className="card cardimage1 "
+                style={{ width: "20rem", marginTop: "20px" }}
               >
                 <Link href={"/user/explore?id=" + d.webinar_id}>
                 <a>
@@ -106,28 +106,7 @@ else{
 
 </div>
 <style jsx>{`
-        .logoimage {
-          height: 50px;
-          width:60px;
-        }
-        .logorimage{
-            height: 50px;
-            width:80px;  
-        }
-        .lnav a{
-            color:blue;
-            font-size:14px;
-        }
-        .cardimage{
-            border-radius: 3%;
-            // background: #73AD21;
-            // box-shadow: 2px 2px 4px #000000;
-        }
-        .cardimage1{
-          border-radius: 3%;
-          // background: #73AD21;
-          box-shadow: 2px 2px 4px #000000;
-      }
+
         
 
       `}</style>

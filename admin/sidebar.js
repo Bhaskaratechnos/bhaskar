@@ -45,12 +45,13 @@ export default function SidebarAdmin() {
           <a >Manage Webinars</a>
           </Link>
         </div>
-        <div className={router.pathname == "/admin/innext" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        <div className={router.pathname == "/admin/registration" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-archive"></i>
-          <Link href="/admin/innext">
-          <a >Webinars in Next 2 days</a>
+          <Link href="/admin/registration">
+          <a >Registration Data</a>
           </Link>
         </div>
+
 
         <h2>Creatives</h2>
 

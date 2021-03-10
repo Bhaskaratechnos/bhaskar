@@ -558,7 +558,7 @@ main {
 
 .containerq .btnq {
   position: absolute;
-  top: 92%;
+  top: 80%;
   left: 20%;
   
   color: white;
@@ -571,7 +571,7 @@ main {
 }
 .containerq .btnq2 {
   position: absolute;
-  top: 92%;
+  top: 80%;
   left: 60%;
   
   color: white;
@@ -593,4 +593,24 @@ main {
 
   cursor: pointer;
 
+}
+.logoimage {
+  margin-left: 1px;
+  height: 50px;
+  width:60px;
+}
+.logorimage{
+    height: 20px;
+    width:80px;  
+}
+.lnav a{
+    color:blue;
+    font-size:14px;
+}
+.cardimage{
+    border-radius: 3%;
+}
+.cardimage1{
+  border-radius: 3%;
+  box-shadow: 2px 2px 4px #000000;
 }

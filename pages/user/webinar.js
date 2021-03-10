@@ -42,7 +42,7 @@ export default function Webinar({ data, islogin }) {
 
       {/* <a href={data[0].webinar_player}> */}
         
-        <iframe className="webplayer" src="https://www.youtube.com/embed/K_nge7wYbZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe className="webplayer" src="https://www.youtube.com/embed/K_nge7wYbZI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        
       {/* </a> */}
 
@@ -51,28 +51,7 @@ export default function Webinar({ data, islogin }) {
 
     </div>
     <style jsx>{`
-        .logoimage {
-          height: 50px;
-          width:60px;
-        }
-        .logorimage{
-            height: 50px;
-            width:80px;  
-        }
-        .lnav a{
-            color:blue;
-            font-size:14px;
-        }
-        .cardimage{
-            border-radius: 3%;
-            // background: #73AD21;
-            // box-shadow: 2px 2px 4px #000000;
-        }
-        .cardimage1{
-          border-radius: 3%;
-          // background: #73AD21;
-          box-shadow: 2px 2px 4px #000000;
-      }
+
         
 
       `}</style>

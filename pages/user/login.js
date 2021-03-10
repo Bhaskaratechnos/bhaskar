@@ -2,7 +2,7 @@ import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-export default function LoginRegister({ data }) {
+export default function Login({ data }) {
 
   const router = useRouter();
   const [user_email, setuser_email] = useState('');
@@ -32,8 +32,7 @@ export default function LoginRegister({ data }) {
     if (result.login == "pass") {
       cookie.set("token", "token1", { expires: 1 / 24 })
       if(router.query.id){
-        alert("Registerd Successfully Check Your Email")
-        router.push('/user')
+        router.push('/user/webinar?id=' + router.query.id)
       }
       else{
         router.push('/user')
@@ -48,8 +47,7 @@ export default function LoginRegister({ data }) {
     event.preventDefault()
     console.log(user_email);
     if(user_emailr){
-      alert("Registerd Successfully Check Your Email")
-      router.push('/user')
+      router.push('/user/webinar?id=' + router.query.id)
     }
     else{
       router.push('/user/explore?id=' + router.query.id)
@@ -118,33 +116,19 @@ export default function LoginRegister({ data }) {
          <div className="row " style={{marginLeft:"50px",marginRight:"50px"}}>
           
 
-          <div className="display-5">Register</div>
+          <div className="display-5">Login</div>
             <form >
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Full Name</label>
-                <input type="email" name="user_name" onChange={e => setuser_name(e.target.value)} id="registerEmail" className="form-control" required/>
-              </div>
+
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>
                 <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
               </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Mobile No.</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Company</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Designation</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
-              </div>
+
 
               <div className="form-check">
 
               </div>
-              <button type="submit" onClick={register} className="btn btn-primary">Register</button>
+              <button type="submit" onClick={register} className="btn btn-primary">Login</button>
             </form>
           </div>
         
