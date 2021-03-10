@@ -24,7 +24,7 @@ else{
     
 <>
 
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
+<nav className="navbar navbar-expand-lg navbar-light bg-light ">
   <div className="container-fluid">
     <Link href="/user">
     <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
@@ -42,6 +42,9 @@ else{
         <a className="nav-link" href="#">HEALTH</a>
         <a className="nav-link" href="#">ENTERTAINMENT</a>
         <a className="nav-link" href="#">EDUCATION</a>
+        <a className="nav-link" href="#">YOUTH</a>
+        <a className="nav-link" href="#">POLICY</a>
+        <a className="nav-link" href="#">ENTREPRENEUR</a>
         {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
          */}
       </div>
@@ -54,13 +57,13 @@ else{
 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="/crousel.png" className="d-block w-100" alt="..."/>
+      <img src="/a.jpg" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel11.png" className="d-block w-100" alt="..."/>
+      <img src="/b.jpg" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel12.png" className="d-block w-100" alt="..."/>
+      <img src="/c.png" className="d-block w-100" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
