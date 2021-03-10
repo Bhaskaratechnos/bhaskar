@@ -49,7 +49,7 @@ export default function Addspeaker({data}) {
   </div>
   <div className="form-group">
     <label >Photo</label>
-    <input type="file" className="form-control" name="speaker_photo" onChange={e => setspeaker_photo(e.target.files[0])} defaultValue={speaker_photo} required/>
+    <input type="file" className="form-control" name="speaker_photo" onChange={e => setspeaker_photo(e.target.files[0])}  required/>
   </div>
 
 
