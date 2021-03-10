@@ -26,10 +26,13 @@ else{
 
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#"><img className='logoimage' src="/logo.png" /></a>
+    <Link href="/user">
+    <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
+    </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
+    
     <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div className="navbar-nav ms-auto lnav">
         <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
@@ -39,8 +42,8 @@ else{
         <a className="nav-link" href="#">HEALTH</a>
         <a className="nav-link" href="#">ENTERTAINMENT</a>
         <a className="nav-link" href="#">EDUCATION</a>
-        <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
-        
+        {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
+         */}
       </div>
       <div>
       <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png'/></a>
@@ -54,10 +57,10 @@ else{
       <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+      <img src="/crousel2.png" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="/crousel.jpg" className="d-block w-100" alt="..."/>
+      <img src="/crousel3.jpg" className="d-block w-100" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
@@ -77,16 +80,22 @@ else{
             <div key={d.webinar_id} className="col-4">
 
               <div
-                className="card border-0"
+                className="card cardimage1"
                 style={{ width: "18rem", marginTop: "10px" }}
               >
-                <Link href={islogin ? "/user/webinar?id=" + d.webinar_id : "/user/explore?id=" + d.webinar_id}>
+                <Link href={"/user/explore?id=" + d.webinar_id}>
                 <a>
                 <img src={d.webinar_stage} className="card-img-top cardimage" alt="..." />
                 </a>
                 </Link>
-
+                <div className="card-body">
+    <h5 className="card-title">{d.webinar_title}</h5>
+    <p className="card-text"><span >Date {d.webinar_startdate.split(" ")[0]}  </span></p>
+   
+    <p className="card-text">Description {d.webinar_description}</p>
+  </div>
               </div>
+
             </div>
           ))}
 
@@ -111,9 +120,14 @@ else{
         }
         .cardimage{
             border-radius: 3%;
-            background: #73AD21;
-            box-shadow: 2px 2px 4px #000000;
+            // background: #73AD21;
+            // box-shadow: 2px 2px 4px #000000;
         }
+        .cardimage1{
+          border-radius: 3%;
+          // background: #73AD21;
+          box-shadow: 2px 2px 4px #000000;
+      }
         
 
       `}</style>

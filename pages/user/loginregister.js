@@ -1,145 +1,176 @@
 import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
-import React, {useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-export default function LoginRegister({data}) {
+export default function LoginRegister({ data }) {
 
-    const router = useRouter();
-    const [user_email, setuser_email] = useState('');
-    const [user_emailr, setuser_emailr] = useState('');
-    console.log(data);
+  const router = useRouter();
+  const [user_email, setuser_email] = useState('');
+  const [user_emailr, setuser_emailr] = useState('');
+  const [user_name, setuser_name] = useState('');
+  console.log(data);
 
-    useEffect(() => {
-      
-      if(data){
+  const login = async event => {
+    event.preventDefault()
+    console.log(user_email);
+    const res = await fetch(
+      'http://15.206.99.13:5000/userlogin/',
+      {
+        body: JSON.stringify({
+          user_email: user_email,
+          user_name: user_name,
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      }
+    )
+
+    const result = await res.json();
+    // console.log(result)
+    if (result.login == "pass") {
+      cookie.set("token", "token1", { expires: 1 / 24 })
+      if(router.query.id){
+        router.push('/user/webinar?id=' + router.query.id)
+      }
+      else{
         router.push('/user')
       }
-    });
-    const login = async event => {
-      event.preventDefault()
-      console.log(user_email);
-      const res = await fetch(
-        'http://15.206.99.13:5000/userlogin/',
-        {
-          body: JSON.stringify({
-              user_email: user_email,
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          method: 'POST'
-        }
-      )     
-  
-      const result = await res.json();
-      // console.log(result)
-      if(result.login=="pass"){
-        cookie.set("token","token1",{expires: 1/24})
-          router.push('/user')
-      }
-      else{
-          alert("Some Error Occured");
-          router.push('/user/loginregister')
-      }
     }
-    const register = async event => {
-      event.preventDefault()
-      console.log(user_email);
-      const res = await fetch(
-        'http://15.206.99.13:5000/userregister/',
-        {
-          body: JSON.stringify({
-              user_email: user_emailr,
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          method: 'POST'
-        }
-      )     
-  
-      const result = await res.json();
-      // console.log(result)
-      if(result.login=="pass"){
-        cookie.set("token","token1",{expires: 1/24})
-          router.push('/user')
-      }
-      else{
-          alert("Some Error Occured");
-          router.push('/user/loginregister')
-      }
+    else {
+      alert("Some Error Occured");
+      router.push('/user/loginregister')
     }
-  return (
-    <div className="container" style={{width:"40%",marginTop:'10%'}}>
-    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link active"
-          id="tab-login"
-          data-mdb-toggle="pill"
-          href="#pills-login"
-          role="tab"
-          aria-controls="pills-login"
-          aria-selected="true"
-          >Login</a
-        >
-      </li>
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="tab-register"
-          data-mdb-toggle="pill"
-          href="#pills-register"
-          role="tab"
-          aria-controls="pills-register"
-          aria-selected="false"
-          >
-            Register
-          </a>
-      </li>
-    </ul>  
+  }
+  const register = async event => {
+    event.preventDefault()
+    console.log(user_email);
+    if(user_emailr){
+      router.push('/user/webinar?id=' + router.query.id)
+    }
+    else{
+      router.push('/user/explore?id=' + router.query.id)
+    }
     
-   
-    <div class="tab-content">
-      <div
-        class="tab-pane fade show active"
-        id="pills-login"
-        role="tabpanel"
-        aria-labelledby="tab-login"
-      >
-        <form>          
-          <div class="form-outline mb-4">
-            <input type="email" name="user_email" onChange={e => setuser_email(e.target.value)}  id="loginName" class="form-control" />
-            <label class="form-label" for="loginName">Email </label>
-          </div>  
-          <button type="submit" onClick={login} class="btn btn-primary btn-block mb-4">Sign in</button>
-        </form>
+    // const res = await fetch(
+    //   'http://15.206.99.13:5000/userregister/',
+    //   {
+    //     body: JSON.stringify({
+    //       user_email: user_emailr,
+    //     }),
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     method: 'POST'
+    //   }
+    // )
+
+    // const result = await res.json();
+    // // console.log(result)
+    // if (result.login == "pass") {
+    //   cookie.set("token", "token1", { expires: 1 / 24 })
+    //   if(router.query.id){
+    //     router.push('/user/webinar?id=' + router.query.id)
+    //   }
+    //   else{
+    //     router.push('/user')
+    //   }
+      
+    // }
+    // else {
+    //   alert("Some Error Occured");
+    //   router.push('/user/loginregister')
+    // }
+  }
+  return (
+    <>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <Link href="/user">
+    <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
+    </Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    
+    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div className="navbar-nav ms-auto lnav">
+        <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
+        <a className="nav-link" href="#">STARTUPS</a>
+        <a className="nav-link" href="#">MARKIETING</a>
+        <a className="nav-link" href="#">TECHNOLOGY</a>
+        <a className="nav-link" href="#">HEALTH</a>
+        <a className="nav-link" href="#">ENTERTAINMENT</a>
+        <a className="nav-link" href="#">EDUCATION</a>
+        {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
+         */}
       </div>
-      <div
-        class="tab-pane fade"
-        id="pills-register"
-        role="tabpanel"
-        aria-labelledby="tab-register"
-      >
-        <form>
-          <div class="form-outline mb-4">
-            <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" class="form-control" />
-            <label class="form-label" for="registerEmail">Email</label>
+      <div>
+      <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png'/></a>
+      </div>
+    </div>
+  </div>
+</nav>
+      <div className="container">
+         <div className="row">
+          
+
+          <div className="display-5">Register</div>
+            <form>
+            <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+                <input type="email" name="user_name" onChange={e => setuser_name(e.target.value)} id="registerEmail" className="form-control" required/>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
+              </div>
+
+              <div className="form-check">
+
+              </div>
+              <button type="submit" onClick={register} className="btn btn-primary">Register</button>
+            </form>
           </div>
-          <button type="submit" onClick={register} class="btn btn-primary btn-block mb-3">Register</button>
-        </form>
+        
       </div>
-    </div>
-    </div>
+      <style jsx>{`
+        .logoimage {
+          height: 50px;
+          width:60px;
+        }
+        .logorimage{
+            height: 50px;
+            width:80px;  
+        }
+        .lnav a{
+            color:blue;
+            font-size:14px;
+        }
+        .cardimage{
+            border-radius: 3%;
+            // background: #73AD21;
+            // box-shadow: 2px 2px 4px #000000;
+        }
+        .cardimage1{
+          border-radius: 3%;
+          // background: #73AD21;
+          box-shadow: 2px 2px 4px #000000;
+      }
+        
+
+      `}</style>
+    </>
   );
-  
+
 }
 
-export async function getServerSideProps({req,res}) {
+export async function getServerSideProps({ req, res }) {
 
 
   return {
-    props: { data:req.cookies.token||'' }, // will be passed to the page component as props
+    props: { data: req.cookies.token || '' }, // will be passed to the page component as props
   };
 }
 

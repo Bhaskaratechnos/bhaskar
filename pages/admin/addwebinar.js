@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React, {useState} from 'react'
 import axios from 'axios';
+import MultiSelect from "react-multi-select-component";
 export default function Addwebinar({data}) {
     const router = useRouter();
     const [webinar_title, setwebinar_title] = useState('');
@@ -14,7 +15,21 @@ export default function Addwebinar({data}) {
     const [webinar_meetinglink, setwebinar_meetinglink] = useState('');
     const [webinar_stage, setwebinar_stage] = useState('');
     const [webinar_player, setwebinar_player] = useState('');
-
+    const [selected, setSelected] = useState([]);
+    const options = [
+      { label: "Grapes 🍇", value: "grapes" },
+      { label: "Mango 🥭", value: "mango" },
+      { label: "Strawberry 🍓", value: "strawberry", disabled: true },
+      { label: "Watermelon 🍉", value: "watermelon" },
+      { label: "Pear 🍐", value: "pear" },
+      { label: "Apple 🍎", value: "apple" },
+      { label: "Tangerine 🍊", value: "tangerine" },
+      { label: "Pineapple 🍍", value: "pineapple" },
+      { label: "Peach 🍑", value: "peach" },
+    ];
+    const d=data.map((d,index)=>(
+      {label:d.speaker_name,value:d.speaker_id}
+    ))
     const webinaradd = async event => {
         event.preventDefault()
         console.log(webinar_stage);
@@ -43,6 +58,7 @@ export default function Addwebinar({data}) {
       }
     return (
 <main>
+
 <div className="main__container">
 <form onSubmit={webinaradd}>
   <div className="form-group">
@@ -66,17 +82,18 @@ export default function Addwebinar({data}) {
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>
-    <input type="text" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.value)}  placeholder="Enter Webinar Main Banner"required/>
+    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.value)}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Speaker</label>
+    {/* <pre>{JSON.stringify(selected)}</pre> */}
+      <MultiSelect
+        options={d}
+        value={selected}
+        onChange={setSelected}
+        labelledBy={"Select"}
+      />
 
-  <select name="webinar_speaker" onChange={e => setwebinar_speaker(e.target.value)} class="form-select" aria-label="Default select example" required>
-  <option selected>Select Speaker</option>
-  {data.map((d,index)=>(
-    <option key={index} value={d.speaker_id}>{d.speaker_name}</option>
-  ))}
-</select>
 </div>
   <div className="form-group">
     <label >Webinar stage </label>
@@ -88,7 +105,7 @@ export default function Addwebinar({data}) {
   </div>
   <div className="form-group">
     <label >Player Link</label>
-    <input type="text" className="form-control" name="webinar_player"  onChange={e => setwebinar_player(e.target.value)} placeholder="Enter Meeting Link" required/>
+    <input type="text" className="form-control" name="webinar_player"  onChange={e => setwebinar_player(e.target.value)} placeholder="Player Link" required/>
   </div>
 
   <button type="submit" className="btn btn-primary">Submit</button>

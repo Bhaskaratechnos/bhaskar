@@ -553,7 +553,7 @@ main {
 
 .containerq img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .containerq .btnq {
@@ -581,4 +581,16 @@ main {
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+}
+
+.containerq .webplayer{
+  position: absolute;
+  top: 27%;
+  left: 31%;
+  height: 40%;
+  width: 38%;
+  /* background-color: #000000; */
+
+  cursor: pointer;
+
 }
