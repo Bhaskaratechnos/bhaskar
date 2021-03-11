@@ -8,7 +8,7 @@ export default function Managewebinars({data}) {
         
     
         const res = await fetch(
-          'http://127.0.0.1:5000/webinarform/'+id,
+          'http://15.206.99.13:5000/webinarform/'+id,
           {
             
             headers: {

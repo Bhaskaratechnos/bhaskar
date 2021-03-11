@@ -8,7 +8,7 @@ export default function Allspeakers({data}) {
         
     
         const res = await fetch(
-          process.env.serverUrl+'speakers/'+id,
+          'http://15.206.99.13:5000/speakers/'+id,
           {
             
             headers: {

@@ -20,7 +20,7 @@ export default function Addspeaker() {
         for (var key of formData.entries()) {
           console.log(key[0] );
       }
-      const ress=await axios.post(process.env.serverUrl+"/speakers", formData);
+      const ress=await axios.post("http://15.206.99.13:5000//speakers", formData);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){

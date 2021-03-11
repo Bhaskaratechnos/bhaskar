@@ -42,7 +42,7 @@ export default function Addwebinar({data}) {
         for (var key of formData.entries()) {
           console.log(key[0] );
       }
-      const ress=await axios.post("http://127.0.0.1:5000/webinarform", formData);
+      const ress=await axios.post("http://15.206.99.13:5000/webinarform", formData);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
