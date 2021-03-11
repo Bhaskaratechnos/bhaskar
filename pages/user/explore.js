@@ -41,7 +41,7 @@ export default function Explore({ data, islogin }) {
         </div>
       </nav>
       <div className="containerq" >
-        <img src={data[0].webinar_stage} />
+        <img src={data[0].webinar_mainbanner} />
 
 
 
@@ -72,7 +72,7 @@ export default function Explore({ data, islogin }) {
 }
 
 export async function getServerSideProps({ req, query }) {
-  const res = await fetch("http://15.206.99.13:5000/webinars/" + query.id);
+  const res = await fetch(process.env.serverUrl+"webinars/" + query.id);
 
   const data = await res.json();
 

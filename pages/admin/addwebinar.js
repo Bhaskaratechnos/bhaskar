@@ -11,22 +11,15 @@ export default function Addwebinar({data}) {
     const [webinar_enddate, setwebinar_enddate] = useState('');
     const [webinar_endtime, setwebinar_endtime] = useState('');
     const [webinar_mainbanner, setwebinar_mainbanner] = useState('');
+    const [webinar_platinium1, setwebinar_platinium1] = useState('');
+    const [webinar_platinium2, setwebinar_platinium2] = useState('');
+    const [webinar_sponser, setwebinar_sponser] = useState('');
     const [webinar_speaker, setwebinar_speaker] = useState('');
     const [webinar_meetinglink, setwebinar_meetinglink] = useState('');
     const [webinar_stage, setwebinar_stage] = useState('');
     const [webinar_player, setwebinar_player] = useState('');
     const [selected, setSelected] = useState([]);
-    const options = [
-      { label: "Grapes 🍇", value: "grapes" },
-      { label: "Mango 🥭", value: "mango" },
-      { label: "Strawberry 🍓", value: "strawberry", disabled: true },
-      { label: "Watermelon 🍉", value: "watermelon" },
-      { label: "Pear 🍐", value: "pear" },
-      { label: "Apple 🍎", value: "apple" },
-      { label: "Tangerine 🍊", value: "tangerine" },
-      { label: "Pineapple 🍍", value: "pineapple" },
-      { label: "Peach 🍑", value: "peach" },
-    ];
+
     const d=data.map((d,index)=>(
       {label:d.speaker_name,value:d.speaker_id}
     ))
@@ -39,14 +32,17 @@ export default function Addwebinar({data}) {
         formData.append('webinar_startdate', webinar_startdate+' '+webinar_starttime);
         formData.append('webinar_enddate', webinar_enddate+' '+webinar_endtime);
         formData.append('webinar_mainbanner', webinar_mainbanner);
-        formData.append('webinar_speaker', webinar_speaker);
+        formData.append('webinar_platinium1', webinar_platinium1);
+        formData.append('webinar_platinium2', webinar_platinium2);
+        formData.append('webinar_sponser', webinar_sponser);
+        formData.append('webinar_speaker', JSON.stringify(selected));
         formData.append('webinar_meetinglink', webinar_meetinglink);
         formData.append('webinar_stage', webinar_stage);
         formData.append('webinar_player', webinar_player);
         for (var key of formData.entries()) {
           console.log(key[0] );
       }
-      const ress=await axios.post("http://15.206.99.13:5000/webinars", formData);
+      const ress=await axios.post("http://127.0.0.1:5000/webinarform", formData);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
@@ -82,11 +78,23 @@ export default function Addwebinar({data}) {
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>
-    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.value)}  required/>
+    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
+  </div>
+  <div className="form-group">
+    <label >Webinar Platinium Banner1</label>
+    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
+  </div>
+  <div className="form-group">
+    <label >Webinar Platinium Banner2</label>
+    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
+  </div>
+  <div className="form-group">
+    <label >Webinar Sponser Banner</label>
+    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Speaker</label>
-    {/* <pre>{JSON.stringify(selected)}</pre> */}
+    <pre>{JSON.stringify(selected)}</pre>
       <MultiSelect
         options={d}
         value={selected}
@@ -118,7 +126,7 @@ export default function Addwebinar({data}) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch('http://15.206.99.13:5000/speakers/')
+  const res = await fetch(process.env.serverUrl+'speakers/')
   
   const data = await res.json()
 

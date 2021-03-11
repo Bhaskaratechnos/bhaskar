@@ -3,10 +3,17 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-
+import ReactDOM from 'react-dom'
+import renderHTML from 'react-render-html';
 export default function Webinar({ data, islogin }) {
   const router = useRouter();
-  console.log(data[0]);
+  const [frame, setFrame] = useState('');
+  useEffect(() => {
+    var parser = new DOMParser();
+    var htmlDoc = parser.parseFromString(data[0].webinar_player, 'text/html');
+    setFrame(htmlDoc.body.firstChild.src);
+    console.log(frame);
+  }, [])
 
   return (
     <>
@@ -46,15 +53,19 @@ export default function Webinar({ data, islogin }) {
   </div>
 </nav>
     <div className="containerq" >
-      <img src='/stage.jpg' />
+      <img src={data[0].webinar_stage} />
 
-      {/* <a href={data[0].webinar_player}> */}
-        
-        <iframe className="webplayer" src="https://www.youtube.com/embed/K_nge7wYbZI?autoplay=1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+        <iframe className="webplayer" src={frame} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
        
-      {/* </a> */}
+<img src={data[0].webinar_platinium1} className="platinium1"/>
 
 
+
+<img src={data[0].webinar_platinium2} className="platinium2"/>
+
+
+<img src={data[0].webinar_sponser} className="sponser"/>
 
 
     </div>
@@ -63,7 +74,7 @@ export default function Webinar({ data, islogin }) {
 }
 
 export async function getServerSideProps({ req, query }) {
-  const res = await fetch("http://15.206.99.13:5000/webinars/" + query.id);
+  const res = await fetch(process.env.serverUrl+"webinars/" + query.id);
 
   const data = await res.json();
 

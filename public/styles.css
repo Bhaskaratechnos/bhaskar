@@ -615,3 +615,25 @@ main {
   border-radius: 3%;
   box-shadow: 2px 2px 4px #000000;
 }
+
+.containerq .platinium1{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  height: 29%;
+  width: 20%;
+}
+.containerq .platinium2{
+  position: absolute;
+  top: 27%;
+  left: 72%;
+  height: 29%;
+  width: 20%;
+}
+.containerq .sponser{
+  position: absolute;
+  top: 5%;
+  left: 31%;
+  height: 15%;
+  width: 40%;
+}

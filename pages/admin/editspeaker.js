@@ -20,7 +20,7 @@ export default function Addspeaker({data}) {
         for (var key of formData.entries()) {
           console.log(key[0] );
       }
-      const ress=await axios.put("http://15.206.99.13:5000/speakers/"+router.query.id, formData);
+      const ress=await axios.put(process.env.serverUrl+"speakers/"+router.query.id, formData);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
@@ -64,7 +64,7 @@ export default function Addspeaker({data}) {
 
 export async function getServerSideProps({ query }) {
 
-    const res = await fetch('http://15.206.99.13:5000/speakers/'+query.id)
+    const res = await fetch(process.env.serverUrl+'speakers/'+query.id)
   
     const data = await res.json()
   

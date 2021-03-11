@@ -8,7 +8,7 @@ export default function Allspeakers({data}) {
         
     
         const res = await fetch(
-          'http://127.0.0.1:5000/speakers/'+id,
+          process.env.serverUrl+'speakers/'+id,
           {
             
             headers: {
@@ -84,7 +84,7 @@ export default function Allspeakers({data}) {
 
 
 export async function getServerSideProps(context) {
-    const res = await fetch('http://15.206.99.13:5000/speakers/')
+    const res = await fetch(process.env.serverUrl+'speakers/')
     
     const data = await res.json()
   

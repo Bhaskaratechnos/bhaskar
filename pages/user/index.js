@@ -88,7 +88,7 @@ else{
               >
                 <Link href={"/user/explore?id=" + d.webinar_id}>
                 <a>
-                <img src={d.webinar_stage} className="card-img-top cardimage" alt="..." />
+                <img src={d.webinar_mainbanner} className="card-img-top cardimage" alt="..." />
                 </a>
                 </Link>
                 <div className="card-body">
@@ -116,7 +116,7 @@ else{
 }
 
 export async function getServerSideProps({req}) {
-  const res = await fetch("http://15.206.99.13:5000/webinars/");
+  const res = await fetch(process.env.serverUrl+"webinars/");
 
   const data = await res.json();
 

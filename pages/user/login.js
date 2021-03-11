@@ -14,7 +14,7 @@ export default function Login({ data }) {
     event.preventDefault()
     console.log(user_email);
     const res = await fetch(
-      'http://15.206.99.13:5000/userlogin/',
+      process.env.serverUrl+'/userlogin/',
       {
         body: JSON.stringify({
           user_email: user_email,
