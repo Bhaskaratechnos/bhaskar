@@ -81,7 +81,7 @@ export default function LoginRegister({ data }) {
             <form >
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Full Name</label>
-                <input type="email" name="user_name" onChange={e => setuser_name(e.target.value)} id="registerEmail" className="form-control" required/>
+                <input type="text" name="user_name" onChange={e => setuser_name(e.target.value)} id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>
@@ -89,15 +89,15 @@ export default function LoginRegister({ data }) {
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Mobile No.</label>
-                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
+                <input type="tel" name="number"  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Company</label>
-                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
+                <input type="text" name="company"  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Designation</label>
-                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
+                <input type="text" name="designation"  id="registerEmail" className="form-control" required/>
               </div>
 
               <div className="form-check">
