@@ -2,86 +2,39 @@ import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import axios from 'axios';
 export default function Login({ data }) {
 
   const router = useRouter();
-  const [user_email, setuser_email] = useState('');
   const [user_emailr, setuser_emailr] = useState('');
-  const [user_name, setuser_name] = useState('');
   console.log(data);
 
-  const login = async event => {
-    event.preventDefault()
-    console.log(user_email);
-    const res = await fetch(
-      process.env.serverUrl+'/userlogin/',
-      {
-        body: JSON.stringify({
-          user_email: user_email,
-          user_name: user_name,
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'POST'
-      }
-    )
 
-    const result = await res.json();
-    // console.log(result)
-    if (result.login == "pass") {
-      cookie.set("token", "token1", { expires: 1 / 24 })
-      if(router.query.id){
+  const register = async event => {
+    event.preventDefault()
+    console.log(user_emailr);
+    if(user_emailr){
+      var result=await axios({
+        method: 'post',
+        url: 'http://15.206.99.13:5000/webinarlog',
+        data: {
+          user_email: user_emailr
+        }
+      });
+      var data=await result.data;
+      if(data.auth==true){
         router.push('/user/webinar?id=' + router.query.id)
       }
       else{
-        router.push('/user')
+        alert("Email Not Registerd")
+        router.push('/user/loginregister?id=' + router.query.id)
       }
-    }
-    else {
-      alert("Some Error Occured");
-      router.push('/user/loginregister')
-    }
-  }
-  const register = async event => {
-    event.preventDefault()
-    console.log(user_email);
-    if(user_emailr){
-      router.push('/user/webinar?id=' + router.query.id)
+      
     }
     else{
       router.push('/user/explore?id=' + router.query.id)
     }
-    
-    // const res = await fetch(
-    //   'http://15.206.99.13:5000/userregister/',
-    //   {
-    //     body: JSON.stringify({
-    //       user_email: user_emailr,
-    //     }),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     method: 'POST'
-    //   }
-    // )
-
-    // const result = await res.json();
-    // // console.log(result)
-    // if (result.login == "pass") {
-    //   cookie.set("token", "token1", { expires: 1 / 24 })
-    //   if(router.query.id){
-    //     router.push('/user/webinar?id=' + router.query.id)
-    //   }
-    //   else{
-    //     router.push('/user')
-    //   }
-      
-    // }
-    // else {
-    //   alert("Some Error Occured");
-    //   router.push('/user/loginregister')
-    // }
+ 
   }
   return (
     <>
@@ -136,11 +89,7 @@ export default function Login({ data }) {
           </div>
         
       </div>
-      <style jsx>{`
 
-        
-
-      `}</style>
     </>
   );
 

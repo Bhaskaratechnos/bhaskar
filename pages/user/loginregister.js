@@ -2,88 +2,44 @@ import cookie from 'js-cookie'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import axios from 'axios';
+
+
 export default function LoginRegister({ data }) {
 
   const router = useRouter();
   const [user_email, setuser_email] = useState('');
-  const [user_emailr, setuser_emailr] = useState('');
   const [user_name, setuser_name] = useState('');
   console.log(data);
 
-  const login = async event => {
-    event.preventDefault()
-    console.log(user_email);
-    const res = await fetch(
-      'http://15.206.99.13:5000/userlogin/',
-      {
-        body: JSON.stringify({
-          user_email: user_email,
-          user_name: user_name,
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'POST'
-      }
-    )
 
-    const result = await res.json();
-    // console.log(result)
-    if (result.login == "pass") {
-      cookie.set("token", "token1", { expires: 1 / 24 })
-      if(router.query.id){
-        alert("Registerd Successfully Check Your Email")
-        router.push('/user')
-      }
-      else{
-        router.push('/user')
-      }
-    }
-    else {
-      alert("Some Error Occured");
-      router.push('/user/loginregister')
-    }
-  }
   const register = async event => {
     event.preventDefault()
     console.log(user_email);
-    if(user_emailr){
-      alert("Registerd Successfully Check Your Email")
-      router.push('/user')
+    if(user_email){
+      var result=await axios({
+        method: 'post',
+        url: 'http://15.206.99.13:5000/webinarreg',
+        data: {
+          user_name: user_name,
+          user_email: user_email,
+          webinar_id:router.query.id
+        }
+      });
+      var data=await result.data;
+      if(data.auth==true){
+        alert("Registerd Successfully Check Your Email")
+        router.push('/user/webinar?id=' + router.query.id)
+      }
+      else{
+        alert("Email already Registerd")
+        router.push('/user/login?id=' + router.query.id)
+      }
     }
     else{
       router.push('/user/explore?id=' + router.query.id)
-    }
-    
-    // const res = await fetch(
-    //   'http://15.206.99.13:5000/userregister/',
-    //   {
-    //     body: JSON.stringify({
-    //       user_email: user_emailr,
-    //     }),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     method: 'POST'
-    //   }
-    // )
+    }    
 
-    // const result = await res.json();
-    // // console.log(result)
-    // if (result.login == "pass") {
-    //   cookie.set("token", "token1", { expires: 1 / 24 })
-    //   if(router.query.id){
-    //     router.push('/user/webinar?id=' + router.query.id)
-    //   }
-    //   else{
-    //     router.push('/user')
-    //   }
-      
-    // }
-    // else {
-    //   alert("Some Error Occured");
-    //   router.push('/user/loginregister')
-    // }
   }
   return (
     <>
@@ -129,19 +85,19 @@ export default function LoginRegister({ data }) {
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
+                <input type="email" name="user_emailr" onChange={e => setuser_email(e.target.value)} id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Mobile No.</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
+                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Company</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
+                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Designation</label>
-                <input type="email" name="user_emailr" onChange={e => setuser_emailr(e.target.value)} id="registerEmail" className="form-control" required/>
+                <input type="email" name="user_emailr"  id="registerEmail" className="form-control" required/>
               </div>
 
               <div className="form-check">

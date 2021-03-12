@@ -1,35 +1,52 @@
-export default function Registration() {
-    return (
-<main>
-<div className="main__container">
+import axios from 'axios';
+import FileSaver from 'file-saver';
+import { Parser } from 'json2csv';
+export default function Registration({ data }) {
+  const csvdata = async (id) => {
+    var result = await axios.get('http://127.0.0.1:5000/userwebinardetail/' + id);
+    var data = await result.data;
+    const json2csvParser = new Parser();
+    const csv = json2csvParser.parse(data);
+    console.log(csv);
+    console.log(data);
+    const csvData = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    FileSaver.saveAs(csvData, "test.csv")
+  }
 
-<div class="card">
-  <div class="card-header">
-      <p>Webinar 1  </p>
-      <p>Total Registrations-135</p>
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <a href="/webinar-data.csv" className="btn btn-primary">Click here to Download Webinar Data</a>
-    </blockquote>
-  </div>
-</div>
+  return (
+    <main>
+      <div className="main__container">
+        {data.map((d, index) => (
+          <div key={index} className="card">
+            <div className="card-header">
+              <p>{d.webinar_title}  </p>
+              <p>{d.register}</p>
+            </div>
+            <div className="card-body">
+              <blockquote className="blockquote mb-0">
+                <a onClick={() => csvdata(d.webinar_id)} href="#" className="btn btn-primary">Click here to Download Webinar Data</a>
+              </blockquote>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}
 
+export async function getServerSideProps(context) {
+  const res = await fetch(process.env.serverUrl + 'allregistration/')
 
-<div class="card">
-  <div class="card-header">
-  <p>Webinar 2  </p>
-      <p>Total Registrations-256</p>
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <a href="/webinar-data.csv" className="btn btn-primary">Click here to Download Webinar Data</a>
-    </blockquote>
-  </div>
-</div>
+  const data = await res.json()
 
-</div>
-</main>
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  // console.log(data);
 
-);
+  return {
+    props: { data }, // will be passed to the page component as props
+  }
 }
