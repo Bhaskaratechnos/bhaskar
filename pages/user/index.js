@@ -95,7 +95,7 @@ else{
     <h5 className="card-title">{d.webinar_title}</h5>
     <p className="card-text"><span >Date {d.webinar_startdate.split(" ")[0]}  </span></p>
    
-    <p className="card-text">Description {d.webinar_description}</p>
+    <p className="card-text ellipsis">Description {d.webinar_description}</p>
   </div>
               </div>
 
