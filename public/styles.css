@@ -646,3 +646,24 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
   
 }
+
+
+.custom-file-upload {
+  position: relative;
+  cursor: pointer;
+  width: 40%;
+  height: 50%;
+}
+
+.custom-file-upload .im{
+  position: absolute;
+  /* background-color: #cc3d38; */
+  top: 4%;
+  left: 5%;
+  height: 91%;
+  width: 99%;
+  
+}
+.im input{
+  display: none;
+}

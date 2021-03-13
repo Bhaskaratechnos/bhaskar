@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+
 import { useRouter } from 'next/router'
 import MultiSelect from "react-multi-select-component";
 import axios from 'axios';
+import React, {useState, useEffect} from 'react'
 export default function Editwebinar(props) {
   const router = useRouter();
   const d=props.data2.map((d,index)=>(
     {label:d.speaker_name,value:d.speaker_id}
   ))
+
   
   const [webinar_title, setwebinar_title] = useState(props.data[0].webinar_title);
   const [webinar_description, setwebinar_description] = useState(props.data[0].webinar_description);
@@ -15,14 +17,49 @@ export default function Editwebinar(props) {
   const [webinar_enddate, setwebinar_enddate] = useState(props.data[0].webinar_enddate);
   const [webinar_endtime, setwebinar_endtime] = useState(props.data[0].webinar_enddate);
   const [webinar_mainbanner, setwebinar_mainbanner] = useState(props.data[0].webinar_mainbanner);
-  const [webinar_platinium1, setwebinar_platinium1] = useState('');
-  const [webinar_platinium2, setwebinar_platinium2] = useState('');
-  const [webinar_sponser, setwebinar_sponser] = useState('');
+  const [webinar_platinium1, setwebinar_platinium1] = useState(props.data[0].webinar_platinium1);
+  const [webinar_platinium2, setwebinar_platinium2] = useState(props.data[0].webinar_platinium2);
+  const [webinar_sponser, setwebinar_sponser] = useState(props.data[0].webinar_sponser);
   const [webinar_speaker, setwebinar_speaker] = useState(props.data[0].webinar_speaker);
   const [webinar_meetinglink, setwebinar_meetinglink] = useState(props.data[0].webinar_meetinglink);
   const [webinar_stage, setwebinar_stage] = useState(props.data[0].webinar_stage);
   const [webinar_player, setwebinar_player] = useState(props.data[0].webinar_player);
   const [selected, setSelected] = useState([]);
+
+  const dataurl= async (dataimage)=>{
+    let blob = await fetch(dataimage).then(r => r.blob());
+    // console.log(blob)
+    var reader = new FileReader();
+    return new Promise((resolve,reject)=>{
+      reader.onerror = (error) => {
+        reader.abort();
+        reject (error);
+      };
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob)
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+
+
+  useEffect(async () => {
+    var data=await dataurl(webinar_mainbanner);
+    setwebinar_mainbanner(data);
+    // var data1=await dataurl(webinar_platinium1);
+    // setwebinar_platinium1(data1);    
+    // var data2=await dataurl(webinar_platinium2);
+    // setwebinar_platinium2(data2);
+    // var data3=await dataurl(webinar_sponser);
+    // setwebinar_sponser(data3);
+    var data4=await dataurl(webinar_stage);
+    setwebinar_stage(data4);
+      // console.log(webinar_mainbanner);
+
+  }, []);
+
 
   const webinarupdate = async event => {
     
@@ -60,42 +97,120 @@ export default function Editwebinar(props) {
 
         <form onSubmit={webinarupdate}>
           <div className="form-group">
-            <label >Webinar Title</label>
+            <label >Webinar Title:</label>
             <input type="text" className="form-control" name="webinar_title" onChange={e => setwebinar_title(e.target.value)} defaultValue={webinar_title} required />
 
           </div>
           <div className="form-group">
-            <label >Webinar Description</label>
+            <label >Webinar Description:</label>
             <input type="text" className="form-control" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} defaultValue={webinar_description} required />
           </div>
           <div className="form-group">
-            <label >Webinar Start Date</label>
+            <label >Webinar Start Date:</label>
             <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date" required />
             <input type="time" className="form-control" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} placeholder="Enter Webinar Start Date" required />
           </div>
           <div className="form-group">
-            <label >Webinar End Date</label>
+            <label >Webinar End Date:</label>
             <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date" required />
             <input type="time" className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required />
           </div>
           <div className="form-group">
-            <label >Webinar Main Banner</label>
-            <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required />
+            <label >Webinar Main Banner:</label>
+            {/* <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required /> */}
+            <div className="custom-file-upload">    
+    <img  src={webinar_mainbanner} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="webinar_mainbanner" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setwebinar_mainbanner(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+    </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner1</label>
-            <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])} required />
+            <label >Webinar Platinium Banner1:</label>
+            {/* <input type="file" className="form-control" name="webinar_platinium1" onChange={e => setwebinar_platinium1(e.target.files[0])} required /> */}
+    <div className="custom-file-upload">
+    
+    <img  src={webinar_platinium1} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="webinar_platinium1" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setwebinar_platinium1(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+    </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner2</label>
-            <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])} required />
+            <label >Webinar Platinium Banner2:</label>
+            {/* <input type="file" className="form-control" name="webinar_platinium2" onChange={e => setwebinar_platinium2(e.target.files[0])} required /> */}
+    <div className="custom-file-upload">
+    
+    <img  src={webinar_platinium2} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="webinar_platinium2" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setwebinar_platinium2(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+    </div >
           </div>
           <div className="form-group">
-            <label >Webinar Sponser Banner</label>
-            <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])} required />
+            <label >Webinar Sponser Banner:</label>
+            {/* <input type="file" className="form-control" name="webinar_sponser" onChange={e => setwebinar_sponser(e.target.files[0])} required /> */}
+    <div className="custom-file-upload">    
+    <img  src={webinar_sponser} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="webinar_sponser" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setwebinar_sponser(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+    </div >
           </div>
           <div className="form-group">
-            <label >Webinar Speaker</label>
+            <label >Webinar Speaker:</label>
             <pre>{JSON.stringify(selected)}</pre>
             <MultiSelect
               options={d}
@@ -106,15 +221,34 @@ export default function Editwebinar(props) {
 
           </div>
           <div className="form-group">
-            <label >Webinar stage </label>
-            <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])}  required />
+            <label >Webinar stage: </label>
+            {/* <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])}  required /> */}
+            <div className="custom-file-upload">    
+    <img  src={webinar_stage} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="webinar_stage" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setwebinar_stage(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+    </div >
           </div>
           <div className="form-group">
-            <label >Webinar Meeting Link</label>
+            <label >Webinar Meeting Link:</label>
             <input type="text" className="form-control" name="webinar_meetinglink" onChange={e => setwebinar_meetinglink(e.target.value)} defaultValue={webinar_meetinglink} required />
           </div>
           <div className="form-group">
-            <label >Player Link</label>
+            <label >Player Link:</label>
             <input type="text" className="form-control" name="webinar_player" onChange={e => setwebinar_player(e.target.value)} defaultValue={webinar_player} required />
           </div>
 
@@ -122,6 +256,12 @@ export default function Editwebinar(props) {
         </form>
 
       </div>
+      <style jsx>{`
+        .image {
+          width:100%;
+          margin:10px
+        }
+      `}</style>
     </main>
 
   );

@@ -11,7 +11,7 @@ export default function Addspeaker({data}) {
     // console.log(speaker_photo);
 
     useEffect(async () => {
-      console.log(speaker_photo)
+      // console.log(speaker_photo)
       let blob = await fetch(speaker_photo).then(r => r.blob());
       var reader = new FileReader();
       reader.readAsDataURL(blob)
@@ -34,7 +34,7 @@ export default function Addspeaker({data}) {
       let config = {
         onUploadProgress: Notiflix.Loading.Circle()
       }
-      const ress=await axios.put("http://127.0.0.1:5000/speakers/"+router.query.id, formData,config );
+      const ress=await axios.put("http://15.206.99.13:5000/speakers/"+router.query.id, formData,config );
       const result = await ress;
       // console.log(result)
         if(result.data.affectedRows){
@@ -50,42 +50,57 @@ export default function Addspeaker({data}) {
 <div className="main__container">
 <form onSubmit={speakeradd}>
   <div className="form-group">
-    <label > Name</label>
+
+    <label  > Name:</label>
+
     <input type="text" className="form-control" name="speaker_name" onChange={e => setspeaker_name(e.target.value)}  defaultValue={speaker_name} required/>
-    
+
   </div>
   <div className="form-group">
-    <label > Designation</label>
+
+    <label >Designation:</label>
+
     <input type="text" className="form-control" name="speaker_desig" onChange={e => setspeaker_desig(e.target.value)} defaultValue={speaker_desig} required/>
+
   </div>
   <div className="form-group">
-    <label >Company</label>
+    <label >Company:</label>
     <input type="text" className="form-control" name="speaker_company" onChange={e => setspeaker_company(e.target.value)} defaultValue={speaker_company} required/>
   </div>
   <div className="form-group">
-    <label >Photo</label>
+    <label >Photo:</label>
+    <div className="custom-file-upload">
     
-    <input type="file" className="form-control" name="speaker_photo" onChange={(e) =>{
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0])
-      // console.log(reader);
-      reader.onload = (event) => {
-        setspeaker_photo(event.target.result);
-      };
-      
-    }}  required/>
-    <img className="form-control" src={speaker_photo} className="image"/>
+    <img  src={speaker_photo} className="image"/>
+    <label className="im">
+    <input type="file" accept="image/*"  name="speaker_photo" onChange={(e) =>{
+      try {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0])
+        // console.log(reader);
+        reader.onload = (event) => {
+          setspeaker_photo(event.target.result);
+        };
+      }
+      catch(err) {
+        console.log(err)
+      }      
+    }}  />
+    <i className="fa fa-cloud-upload"></i> Upload
+    </label>
+
+    </div>
   </div>
 
 
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
 
+
 </div>
 <style jsx>{`
         .image {
-          height: 100px;
-          width:100px;
+          width:100%;
           margin:10px
         }
 
