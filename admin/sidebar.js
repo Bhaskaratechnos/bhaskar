@@ -27,18 +27,18 @@ export default function SidebarAdmin() {
           </Link>
         </div>
         <h2>Webinars</h2>
-        <div className={router.pathname == "/admin/livewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        {/* <div className={router.pathname == "/admin/livewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-user-secret" aria-hidden="true"></i>
           <Link href="/admin/livewebinars" >
           <a >Live Webinars</a>
           </Link>
-        </div>
-        <div className={router.pathname == "/admin/allwebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        </div> */}
+        {/* <div className={router.pathname == "/admin/allwebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-building-o"></i>
           <Link href="/admin/allwebinars" >
           <a >All Webinars</a>
           </Link>
-        </div>
+        </div> */}
         <div className={router.pathname == "/admin/managewebinars" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-wrench"></i>
           <Link href="/admin/managewebinars" >
@@ -55,6 +55,12 @@ export default function SidebarAdmin() {
           <i className="fa fa-archive"></i>
           <Link href="/admin/logindata">
           <a >Login Data</a>
+          </Link>
+        </div>
+        <div className={router.pathname == "/admin/allquestions" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+          <i className="fa fa-building-o"></i>
+          <Link href="/admin/allquestions" >
+          <a >Users Questions</a>
           </Link>
         </div>
 
