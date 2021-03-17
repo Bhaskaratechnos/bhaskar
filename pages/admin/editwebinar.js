@@ -4,11 +4,15 @@ import MultiSelect from "react-multi-select-component";
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 export default function Editwebinar(props) {
-  const router = useRouter();
-  const d=props.data2.map((d,index)=>(
-    {label:d.speaker_name,value:d.speaker_id}
-  ))
 
+  const parsedata=(data)=>{
+    try {
+  
+     return JSON.parse(data);
+  } catch (e) {
+    return [];
+  }
+  }
   
   const [webinar_title, setwebinar_title] = useState(props.data[0].webinar_title);
   const [webinar_description, setwebinar_description] = useState(props.data[0].webinar_description);
@@ -24,41 +28,13 @@ export default function Editwebinar(props) {
   const [webinar_meetinglink, setwebinar_meetinglink] = useState(props.data[0].webinar_meetinglink);
   const [webinar_stage, setwebinar_stage] = useState(props.data[0].webinar_stage);
   const [webinar_player, setwebinar_player] = useState(props.data[0].webinar_player);
-  const [selected, setSelected] = useState([]);
-
-  const dataurl= async (dataimage)=>{
-    let blob = await fetch(dataimage).then(r => r.blob());
-    // console.log(blob)
-    var reader = new FileReader();
-    return new Promise((resolve,reject)=>{
-      reader.onerror = (error) => {
-        reader.abort();
-        reject (error);
-      };
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-      reader.readAsDataURL(blob)
-    }).catch((err)=>{
-      console.log(err);
-    })
-  }
-
-
-  useEffect(async () => {
-    var data=await dataurl(webinar_mainbanner);
-    setwebinar_mainbanner(data);
-    // var data1=await dataurl(webinar_platinium1);
-    // setwebinar_platinium1(data1);    
-    // var data2=await dataurl(webinar_platinium2);
-    // setwebinar_platinium2(data2);
-    // var data3=await dataurl(webinar_sponser);
-    // setwebinar_sponser(data3);
-    var data4=await dataurl(webinar_stage);
-    setwebinar_stage(data4);
-      // console.log(webinar_mainbanner);
-
-  }, []);
+  const [selected, setSelected] = useState(parsedata(props.data[0].webinar_speaker));
+  const router = useRouter();
+  
+    const da=props.data2.map((d,index)=>(
+      {label:d.speaker_name,value:d.speaker_id}
+    ))
+    console.log(webinar_speaker)
 
 
   const webinarupdate = async event => {
@@ -173,9 +149,10 @@ export default function Editwebinar(props) {
       try {
         var reader = new FileReader();
         reader.readAsDataURL(e.target.files[0])
-        // console.log(reader);
+        
         reader.onload = (event) => {
           setwebinar_platinium2(event.target.result);
+          console.log(reader);
         };
       }
       catch(err) {
@@ -213,7 +190,7 @@ export default function Editwebinar(props) {
             <label >Webinar Speaker:</label>
             <pre>{JSON.stringify(selected)}</pre>
             <MultiSelect
-              options={d}
+              options={da}
               value={selected}
               onChange={setSelected}
               labelledBy={"Select"}

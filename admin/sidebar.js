@@ -51,14 +51,26 @@ export default function SidebarAdmin() {
           <a >Registration Data</a>
           </Link>
         </div>
-
+        <div className={router.pathname == "/admin/logindata" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+          <i className="fa fa-archive"></i>
+          <Link href="/admin/logindata">
+          <a >Login Data</a>
+          </Link>
+        </div>
 
         <h2>Creatives</h2>
+
 
         <div className={router.pathname == "/admin/allspeakers" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-question"></i>
           <Link href="/admin/allspeakers" >
           <a >Manage Speakers</a>
+          </Link>
+        </div>
+        <div className={router.pathname == "/admin/allcreativetype" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+          <i className="fa fa-question"></i>
+          <Link href="/admin/allcreativetype" >
+          <a >Manage Creatives Type</a>
           </Link>
         </div>
         <div className={router.pathname == "/admin/allcreatives" ? "sidebar__link active_menu_link" : "sidebar__link"}>

@@ -3,6 +3,7 @@
 import LayoutAdmin from "../admin/layout"
 import Layoutuser from "../user/layout"
 import { useRouter } from "next/router";
+import style from '../public/style.scss'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

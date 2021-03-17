@@ -1,0 +1,13 @@
+1. webinar stage dynamic-done
+2. speaker details dynamic-done
+
+3. registration data dynamic-done
+4. login data dynamic-done
+5. select stages-pending
+
+platnium banner 1-done
+platnium banner 2-done
+sponser banner 3-done
+
+
+show webinar banner on front page and other -done

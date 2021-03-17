@@ -1,9 +1,9 @@
 import axios from 'axios';
 import FileSaver from 'file-saver';
 import { Parser } from 'json2csv';
-export default function Registration({ data }) {
+export default function Logindata({ data }) {
   const csvdata = async (id) => {
-    var result = await axios.get('http://15.206.99.13:5000/userwebinardetail/' + id);
+    var result = await axios.get('http://15.206.99.13:5000/logindata/' + id);
     var data = await result.data;
     const json2csvParser = new Parser();
     const csv = json2csvParser.parse(data);
@@ -20,7 +20,7 @@ export default function Registration({ data }) {
           <div key={index} className="card">
             <div className="card-header">
               <p>{d.webinar_title}  </p>
-              <p>Total Registration No. {d.register}</p>
+              <p>Total Login No. {d.userlogin}</p>
             </div>
             <div className="card-body">
               <blockquote className="blockquote mb-0">
@@ -35,7 +35,7 @@ export default function Registration({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(process.env.serverUrl + 'allregistration/')
+  const res = await fetch(process.env.serverUrl + 'logindata/')
 
   const data = await res.json()
 

@@ -18,12 +18,14 @@ export default function Login({ data }) {
         method: 'post',
         url: 'http://15.206.99.13:5000/webinarlog',
         data: {
-          user_email: user_emailr
+          user_email: user_emailr,
+          webinar_id: router.query.id,
         }
       });
       var data=await result.data;
       if(data.auth==true){
-        router.push('/user/webinar?id=' + router.query.id)
+        window.location.replace('/user/webinar?id=' + router.query.id);
+        
       }
       else{
         alert("Email Not Registerd")

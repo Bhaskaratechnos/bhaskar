@@ -41,7 +41,7 @@ export default function Explore({ data, islogin }) {
         </div>
       </nav>
       <div className="containerq" >
-        <img src={data[0].webinar_mainbanner} />
+        <img className='con-image' src={data[0].webinar_mainbanner} />
 
 
 

@@ -28,11 +28,11 @@ export default function LoginRegister({ data }) {
       });
       var data=await result.data;
       if(data.auth==true){
-        alert("Registerd Successfully Check Your Email")
-        router.push('/user/webinar?id=' + router.query.id)
+        alert("Registerd Successfully for This Webinar Check Your Email")
+        window.location.replace('/user/webinar?id=' + router.query.id);
       }
       else{
-        alert("Email already Registerd")
+        alert("Email already for This Webinar Registerd")
         router.push('/user/login?id=' + router.query.id)
       }
     }
