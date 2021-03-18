@@ -26,7 +26,7 @@ export default function Dashboard() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Subscribers</p>
+        <p className="text-primary-p">Number of Registrations</p>
         <span className="font-bold text-title">578</span>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default function Dashboard() {
     <div className="card0">
       <i className="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
       <div className="card_inner">
-        <p className="text-primary-p">Times of Watching</p>
+        <p className="text-primary-p">Numbers of Login</p>
         <span className="font-bold text-title">2467</span>
       </div>
     </div>
@@ -45,7 +45,7 @@ export default function Dashboard() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Videos</p>
+        <p className="text-primary-p">Number of Webinars</p>
         <span className="font-bold text-title">340</span>
       </div>
     </div>
@@ -56,7 +56,7 @@ export default function Dashboard() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Likes</p>
+        <p className="text-primary-p">Number of Questions</p>
         <span className="font-bold text-title">645</span>
       </div>
     </div>

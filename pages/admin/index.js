@@ -2,7 +2,8 @@
 
 
 
-export default function Index() {
+export default function Index({data}) {
+  // console.log(data);
     return (
 <main>
 <div className="main__container">
@@ -26,16 +27,16 @@ export default function Index() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Subscribers</p>
-        <span className="font-bold text-title">578</span>
+        <p className="text-primary-p">Number of Registrations</p>
+        <span className="font-bold text-title">{data[0].users}</span>
       </div>
     </div>
 
     <div className="card0">
       <i className="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
       <div className="card_inner">
-        <p className="text-primary-p">Times of Watching</p>
-        <span className="font-bold text-title">2467</span>
+        <p className="text-primary-p">Number of Logins</p>
+        <span className="font-bold text-title">{data[0].logindata}</span>
       </div>
     </div>
 
@@ -45,8 +46,8 @@ export default function Index() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Videos</p>
-        <span className="font-bold text-title">340</span>
+        <p className="text-primary-p">Number of Webinars</p>
+        <span className="font-bold text-title">{data[0].webinar}</span>
       </div>
     </div>
 
@@ -56,8 +57,8 @@ export default function Index() {
         aria-hidden="true"
       ></i>
       <div className="card_inner">
-        <p className="text-primary-p">Number of Likes</p>
-        <span className="font-bold text-title">645</span>
+        <p className="text-primary-p">Number of Questions</p>
+        <span className="font-bold text-title">{data[0].chat}</span>
       </div>
     </div>
   </div>
@@ -67,4 +68,21 @@ export default function Index() {
 </main>
 
 );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch(process.env.serverUrl + 'dashboard/')
+
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  // console.log(data);
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  }
 }
