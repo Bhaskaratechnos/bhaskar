@@ -43,6 +43,7 @@ export default function Addspeaker({data}) {
         }
         else{
             alert("Some Error Occured");
+            Notiflix.Loading.Remove();
         }
       }
     return (

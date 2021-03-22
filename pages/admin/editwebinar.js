@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import MultiSelect from "react-multi-select-component";
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
+import Notiflix from "notiflix";
 export default function Editwebinar(props) {
 
   const parsedata=(data)=>{
@@ -57,14 +58,19 @@ export default function Editwebinar(props) {
     for (var key of formData.entries()) {
       console.log(key[0] + ',' + key[1]);
     }
-    const ress = await axios.put("http://15.206.99.13:5000/webinarform/" + router.query.id, formData);
+    let config = {
+      onUploadProgress: Notiflix.Loading.Circle()
+    }
+    const ress = await axios.put("http://15.206.99.13:5000/webinarform/" + router.query.id, formData,config);
     const result = await ress;
     console.log(result)
     if (result.data.affectedRows) {
+      Notiflix.Loading.Remove();
       router.push('/admin/managewebinars')
     }
     else {
       alert("Some Error Occured");
+      Notiflix.Loading.Remove();
     }
   }
   return (

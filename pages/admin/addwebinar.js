@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React, {useState} from 'react'
 import axios from 'axios';
+import Notiflix from "notiflix";
 import MultiSelect from "react-multi-select-component";
 export default function Addwebinar({data}) {
     const router = useRouter();
@@ -42,14 +43,19 @@ export default function Addwebinar({data}) {
         for (var key of formData.entries()) {
           console.log(key[0] );
       }
-      const ress=await axios.post("http://15.206.99.13:5000/webinarform", formData);
+      let config = {
+        onUploadProgress: Notiflix.Loading.Circle()
+      }
+      const ress=await axios.post("http://15.206.99.13:5000/webinarform", formData,config );
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
+          Notiflix.Loading.Remove();
             router.push('/admin/managewebinars')
         }
         else{
             alert("Some Error Occured");
+            Notiflix.Loading.Remove();
         }
       }
     return (
@@ -74,23 +80,23 @@ export default function Addwebinar({data}) {
   <div className="form-group">
     <label >Webinar End Date</label>
     <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date" required/>
-    <input type="time" className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required/>
+    <input type="time"  className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required/>
   </div>
   <div className="form-group">
     <label >Webinar Main Banner</label>
-    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Platinium Banner1</label>
-    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Platinium Banner2</label>
-    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Sponser Banner</label>
-    <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
   </div>
   <div className="form-group">
     <label >Webinar Speaker</label>
@@ -105,7 +111,7 @@ export default function Addwebinar({data}) {
 </div>
   <div className="form-group">
     <label >Webinar stage </label>
-    <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} placeholder="Enter Webinar stage"required/>
+    <input type="file" accept="image/*" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} placeholder="Enter Webinar stage"required/>
   </div>
   <div className="form-group">
     <label >Webinar Meeting Link</label>
