@@ -73,12 +73,12 @@ export default function SidebarAdmin() {
           <a >Manage Speakers</a>
           </Link>
         </div>
-        <div className={router.pathname == "/admin/allcreativetype" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+        {/* <div className={router.pathname == "/admin/allcreativetype" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-question"></i>
           <Link href="/admin/allcreativetype" >
           <a >Manage Creatives Type</a>
           </Link>
-        </div>
+        </div> */}
         <div className={router.pathname == "/admin/allcreatives" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-question"></i>
           <Link href="/admin/allcreatives" >
