@@ -72,7 +72,7 @@ export default function Explore({ data, islogin }) {
 }
 
 export async function getServerSideProps({ req, query }) {
-  const res = await fetch(process.env.serverUrl+"webinars/" + query.id);
+  const res = await fetch(process.env.serverUrl+"webinarform/" + query.id);
 
   const data = await res.json();
 
