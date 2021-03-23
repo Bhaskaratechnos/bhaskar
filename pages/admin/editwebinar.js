@@ -15,12 +15,15 @@ export default function Editwebinar(props) {
   }
   }
   
+  console.log(props.data[0].webinar_enddate.split(" ")[0]);
+  var sdate=props.data[0].webinar_startdate.split(" ");
+  var edate=props.data[0].webinar_enddate.split(" ");
   const [webinar_title, setwebinar_title] = useState(props.data[0].webinar_title);
   const [webinar_description, setwebinar_description] = useState(props.data[0].webinar_description);
-  const [webinar_startdate, setwebinar_startdate] = useState(props.data[0].webinar_startdate);
-  const [webinar_starttime, setwebinar_starttime] = useState(props.data[0].webinar_startdate);
-  const [webinar_enddate, setwebinar_enddate] = useState(props.data[0].webinar_enddate);
-  const [webinar_endtime, setwebinar_endtime] = useState(props.data[0].webinar_enddate);
+  const [webinar_startdate, setwebinar_startdate] = useState(sdate[0]);
+  const [webinar_starttime, setwebinar_starttime] = useState(sdate[1]);
+  const [webinar_enddate, setwebinar_enddate] = useState(edate[0]);
+  const [webinar_endtime, setwebinar_endtime] = useState(edate[1]);
   const [webinar_mainbanner, setwebinar_mainbanner] = useState(props.data[0].webinar_mainbanner);
   const [webinar_platinium1, setwebinar_platinium1] = useState(props.data[0].webinar_platinium1);
   const [webinar_platinium2, setwebinar_platinium2] = useState(props.data[0].webinar_platinium2);
@@ -89,13 +92,13 @@ export default function Editwebinar(props) {
           </div>
           <div className="form-group">
             <label >Webinar Start Date:</label>
-            <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date" required />
-            <input type="time" className="form-control" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} placeholder="Enter Webinar Start Date" required />
+            <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate} required />
+            <input type="time" className="form-control" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} defaultValue={webinar_starttime} required />
           </div>
           <div className="form-group">
             <label >Webinar End Date:</label>
-            <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date" required />
-            <input type="time" className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required />
+            <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} defaultValue={webinar_enddate} required />
+            <input type="time" className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} defaultValue={webinar_endtime} required />
           </div>
           <div className="form-group">
             <label >Webinar Main Banner:</label>
@@ -252,7 +255,7 @@ export default function Editwebinar(props) {
 
 export async function getServerSideProps({ query }) {
 
-  const res = await fetch(process.env.serverUrl + 'webinars/' + query.id)
+  const res = await fetch(process.env.serverUrl + 'webinarform/' + query.id)
 
   const data = await res.json()
   const res2 = await fetch(process.env.serverUrl+'speakers/')

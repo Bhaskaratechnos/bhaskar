@@ -73,7 +73,7 @@ export default function Managewebinars({data}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(process.env.serverUrl+'webinars/')
+    const res = await fetch(process.env.serverUrl+'webinarform/')
     
     const data = await res.json()
   

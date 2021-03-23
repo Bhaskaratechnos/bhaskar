@@ -3,7 +3,7 @@ import FileSaver from 'file-saver';
 import { Parser } from 'json2csv';
 export default function Logindata({ data }) {
   const csvdata = async (id) => {
-    var result = await axios.get('http://15.206.99.13:5000/logindata/' + id);
+    var result = await axios.get('http://127.0.0.1:5000/logindata/' + id);
     var data = await result.data;
     const json2csvParser = new Parser();
     const csv = json2csvParser.parse(data);

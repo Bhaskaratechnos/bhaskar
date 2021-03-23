@@ -10,6 +10,9 @@ export default function LoginRegister({ data }) {
   const router = useRouter();
   const [user_email, setuser_email] = useState('');
   const [user_name, setuser_name] = useState('');
+  const [user_mob, setuser_mob] = useState('');
+  const [user_desingnation, setuser_desingnation] = useState('');
+  const [user_company, setuser_company] = useState('');
   console.log(data);
 
 
@@ -19,10 +22,13 @@ export default function LoginRegister({ data }) {
     if(user_email){
       var result=await axios({
         method: 'post',
-        url: 'http://15.206.99.13:5000/webinarreg',
+        url: 'http://127.0.0.1:5000/webinarreg',
         data: {
           user_name: user_name,
           user_email: user_email,
+          user_mob:user_mob,
+          user_desingnation:user_desingnation,
+          user_company:user_company,
           webinar_id:router.query.id
         }
       });
@@ -89,15 +95,15 @@ export default function LoginRegister({ data }) {
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Mobile No.</label>
-                <input type="tel" name="number"  id="registerEmail" className="form-control" required/>
+                <input type="tel" name="number" onChange={e => setuser_mob(e.target.value)}  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Company</label>
-                <input type="text" name="company"  id="registerEmail" className="form-control" required/>
+                <input type="text" name="company" onChange={e => setuser_company(e.target.value)}  id="registerEmail" className="form-control" required/>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Designation</label>
-                <input type="text" name="designation"  id="registerEmail" className="form-control" required/>
+                <input type="text" name="designation" onChange={e => setuser_desingnation(e.target.value)}  id="registerEmail" className="form-control" required/>
               </div>
 
               <div className="form-check">
