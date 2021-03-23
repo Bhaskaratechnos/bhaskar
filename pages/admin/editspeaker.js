@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Notiflix from "notiflix";
-export default function Addspeaker({data}) {
+export default function Editspeaker({data}) {
     const router = useRouter();
     const [speaker_name, setspeaker_name] = useState(data[0].speaker_name||"");
     const [speaker_desig, setspeaker_desig] = useState(data[0].speaker_desig||"");

@@ -73,6 +73,12 @@ export default function SidebarAdmin() {
           <a >Manage Speakers</a>
           </Link>
         </div>
+        <div className={router.pathname == "/admin/managesponsor" ? "sidebar__link active_menu_link" : "sidebar__link"}>
+          <i className="fa fa-question"></i>
+          <Link href="/admin/managesponsor" >
+          <a >Manage Sponsors</a>
+          </Link>
+        </div>
         {/* <div className={router.pathname == "/admin/allcreativetype" ? "sidebar__link active_menu_link" : "sidebar__link"}>
           <i className="fa fa-question"></i>
           <Link href="/admin/allcreativetype" >
@@ -85,6 +91,7 @@ export default function SidebarAdmin() {
           <a >Manage Creatives</a>
           </Link>
         </div>
+
 
 
 
