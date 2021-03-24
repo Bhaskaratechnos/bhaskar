@@ -3,194 +3,217 @@ import { useRouter } from 'next/router'
 import axios from 'axios';
 
 export default function Layout() {
-    const router = useRouter();
+  const router = useRouter();
 
 
-    return (
-        <>
+  return (
+    <>
 
-            <nav className="navbar navbar-expand-lg fixed-top " id="scroll" style={{ backgroundColor: "rgb(0 0 0 / 5%)", borderBottom: "0" }}>
-                <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg fixed-top " id="scroll" style={{ backgroundColor: "rgb(0 0 0 / 5%)", borderBottom: "0" }}>
+        <div className="container-fluid">
 
-                    <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
+          <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-                    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-                        <div className="navbar-nav ms-auto lnav">
-                            <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
-                            <a className="nav-link" href="#">STARTUPS</a>
-                            <a className="nav-link" href="#">MARKIETING</a>
-                            <a className="nav-link" href="#">TECHNOLOGY</a>
-                            <a className="nav-link" href="#">HEALTH</a>
-                            <a className="nav-link" href="#">ENTERTAINMENT</a>
-                            <a className="nav-link" href="#">EDUCATION</a>
-                            <a className="nav-link" href="#">YOUTH</a>
-                            <a className="nav-link" href="#">POLICY</a>
-                            <a className="nav-link" href="#">BIOTECH</a>
-                            {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
+          <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div className="navbar-nav ms-auto lnav">
+              <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
+              <a className="nav-link" href="#">STARTUPS</a>
+              <a className="nav-link" href="#">MARKETING</a>
+              <a className="nav-link" href="#">TECHNOLOGY</a>
+              <a className="nav-link" href="#">HEALTH</a>
+              <a className="nav-link" href="#">ENTERTAINMENT</a>
+              <a className="nav-link" href="#">EDUCATION</a>
+              <a className="nav-link" href="#">YOUTH</a>
+              <a className="nav-link" href="#">POLICY</a>
+              <a className="nav-link" href="#">BIOTECH</a>
+              {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
          */}
-                        </div>
-                        <div>
-                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png' /></a>
-                        </div>
-                    </div>
+            </div>
+            <div>
+              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png' /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src="/a.jpg" className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src="/b.jpg" className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src="/c.png" className="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div className="container  ccenter" >
+        <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
+        <h2 className="d-flex justify-content-center">INFORMATION OF EVENTS</h2>
+      </div>
+
+      <div className="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div className="gallery-cell"></div>
+  <div className="gallery-cell"></div>
+  <div className="gallery-cell"></div>
+  <div className="gallery-cell"></div>
+  <div className="gallery-cell"></div>
+</div>
+
+
+      <div className="container  ccenter" >
+        <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
+        <h2 className="d-flex justify-content-center">EVENT SPEAKERS</h2>
+      </div>
+      <div className="container">
+        <div className="row d-flex justify-content-center ccenter">
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+        </div>
+        <div className="row d-flex justify-content-center ccenter">
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+        </div>
+
+      </div>
+      <footer className="ccenter">
+        <h3>Our Sponsors</h3>
+        <ul className="sponsors">
+          <li><a href="#"><img src="/clogo.jpg" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/02.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/03.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/04.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/05.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/06.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/07.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/08.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/09.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/10.png" alt="sponsor" /></a></li>
+          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/11.png" alt="sponsor" /></a></li>
+        </ul>
+      </footer>
+
+
+
+      <div className="container  ccenter" >
+        <p className="d-flex justify-content-center">Info Update</p>
+        <h2 className="d-flex justify-content-center">LATEST NEWS</h2>
+      </div>
+      <div className="container ">
+        <div className="container ">
+          <div className="row ">
+
+
+            <div className="col-4 d-flex justify-content-center">
+
+              <div
+                className="card  "
+                style={{ width: "20rem", marginTop: "20px" }}
+              >
+
+                <a href="#">
+                  <img src="#" className="card-img-top cardimage" alt="..." />
+                </a>
+
+                <div className="card-body">
+                  <h5 className="card-title">Title</h5>
+                  <p className="card-text"><span >Date   </span></p>
+
+                  <p className="card-text ellipsis">Description </p>
                 </div>
-            </nav>
-            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="/a.jpg" className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/b.jpg" className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/c.png" className="d-block w-100" alt="..." />
-                    </div>
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+              </div>
+
             </div>
 
-            <div className="container  ccenter" >
-                <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
-                <h2 className="d-flex justify-content-center">INFORMATION OF ENENTS</h2>
-            </div>
+            <div className="col-4 d-flex justify-content-center">
 
+              <div
+                className="card  "
+                style={{ width: "20rem", marginTop: "20px" }}
+              >
 
+                <a href="#">
+                  <img src="#" className="card-img-top cardimage" alt="..." />
+                </a>
 
+                <div className="card-body">
+                  <h5 className="card-title">Title</h5>
+                  <p className="card-text"><span >Date   </span></p>
 
-            <div className="container  ccenter" >
-                <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
-                <h2 className="d-flex justify-content-center">ENENT SPEAKERS</h2>
-            </div>
-            <div className="container">
-                <div className="row d-flex justify-content-center ccenter">
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+                  <p className="card-text ellipsis">Description </p>
                 </div>
-                <div className="row d-flex justify-content-center ccenter">
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-                </div>
+              </div>
 
             </div>
-            <footer className="ccenter">
-                <h3>Our Sponsors</h3>
-                <ul className="sponsors">
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/01.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/02.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/03.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/04.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/05.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/06.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/07.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/08.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/09.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/10.png" alt="sponsor" /></a></li>
-                    <li><a href="#"><img src="http://josephaengle.com/bslsponsors/11.png" alt="sponsor" /></a></li>
-                </ul>
-            </footer>
-            <div className="container  ccenter" >
-                <p className="d-flex justify-content-center">Info Update</p>
-                <h2 className="d-flex justify-content-center">LATEST NEWS</h2>
+            <div className="col-4 d-flex justify-content-center">
+
+              <div
+                className="card  "
+                style={{ width: "20rem", marginTop: "20px" }}
+              >
+
+                <a href="#">
+                  <img src="#" className="card-img-top cardimage" alt="..." />
+                </a>
+
+                <div className="card-body">
+                  <h5 className="card-title">Title</h5>
+                  <p className="card-text"><span >Date   </span></p>
+
+                  <p className="card-text ellipsis">Description </p>
+                </div>
+              </div>
             </div>
-            <div className="container ">
-                <div className="container ">
-                    <div className="row ">
+          </div>
 
+        </div>
+      </div>
+      <footer className="ccenter">
+        <div className="row d-flex justify-content-center">
+          <img className="social" src="/fb.png" />
+          <img className="social" src="/tw.png" />
+          <img className="social" src="/is.png" />
+          <img className="social" src="/lk.png" />
+          <img className="social" src="/wp.png" />
+          <img className="social" src="/em.png" />
+        </div>
+        <div className="foot">
 
-                        <div className="col-4 d-flex justify-content-center">
+          <a   href="#">BUSINESS</a>
+          <a  href="#">STARTUPS</a>
+          <a href="#">MARKETING</a>
+          <a  href="#">TECHNOLOGY</a>
+          <a  href="#">HEALTH</a>
+          <a  href="#">ENTERTAINMENT</a>
+          <a  href="#">EDUCATION</a>
+          <a  href="#">YOUTH</a>
+          <a  href="#">POLICY</a>
+          <a  href="#">BIOTECH</a>
 
-                            <div
-                                className="card  "
-                                style={{ width: "20rem", marginTop: "20px" }}
-                            >
-
-                                <a href="#">
-                                    <img src="#" className="card-img-top cardimage" alt="..." />
-                                </a>
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Title</h5>
-                                    <p className="card-text"><span >Date   </span></p>
-
-                                    <p className="card-text ellipsis">Description </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div className="col-4 d-flex justify-content-center">
-
-                            <div
-                                className="card  "
-                                style={{ width: "20rem", marginTop: "20px" }}
-                            >
-
-                                <a href="#">
-                                    <img src="#" className="card-img-top cardimage" alt="..." />
-                                </a>
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Title</h5>
-                                    <p className="card-text"><span >Date   </span></p>
-
-                                    <p className="card-text ellipsis">Description </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="col-4 d-flex justify-content-center">
-
-                            <div
-                                className="card  "
-                                style={{ width: "20rem", marginTop: "20px" }}
-                            >
-
-                                <a href="#">
-                                    <img src="#" className="card-img-top cardimage" alt="..." />
-                                </a>
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Title</h5>
-                                    <p className="card-text"><span >Date   </span></p>
-
-                                    <p className="card-text ellipsis">Description </p>
-                                    <i className="fab fa-facebook"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <footer className="ccenter">
-                <div className="row d-flex justify-content-center ">
-                    <i className="fab fa-facebook"></i>
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "40px", height: "40px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "40px", height: "40px" }} />
-                    <img src="/a.jpg" className="rounded-circle" style={{ width: "40px", height: "40px" }} />
-                </div>
-                <div className=" d-flex justify-content-center ccenter row">
-                    <a href="#"><p className=" f">HEALTH</p></a>
-                    <a href="#"><p className=" f">HEALTH</p></a>
-                </div>
-            </footer>
-            <style global jsx>{`
+        </div>
+      </footer>
+      <style global jsx>{`
             .ccenter{
                 margin-top:50px
             }
@@ -205,9 +228,55 @@ export default function Layout() {
     color:white;
     font-size:50px;
 }
+.foot{
+  display: block;
+  clear: both;
+  font-size: 14px;
+  height: auto;
+  padding: 32px 64px;
+  text-align: center;
+  grid-area: footer;
+}
+.foot a{
+  text-decoration:none; 
+  margin: 10px;
+  color:white;
+}
+.social{
+  width:5%; 
+  color:white;
+}
 
 
 
+// * {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
 
   
   h3 {
@@ -527,9 +596,9 @@ export default function Layout() {
   }
   
             `}</style>
-        </>
+    </>
 
-    );
+  );
 }
 
 

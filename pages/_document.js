@@ -11,6 +11,11 @@ class MyDocument extends Document {
       <Html>
         <Head >
           <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css"
+            rel="stylesheet"
+          />
+
+<link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
             rel="stylesheet"
           />
@@ -45,6 +50,8 @@ class MyDocument extends Document {
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossOrigin="anonymous"></script>
           <script src="/script.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+          
         </body>
       </Html>
     )

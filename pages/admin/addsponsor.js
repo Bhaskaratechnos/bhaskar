@@ -13,7 +13,7 @@ export default function AddSponsor() {
         let config = {
             onUploadProgress: Notiflix.Loading.Circle()
           }
-      const ress=await axios.post("http://127.0.0.1:5000/sponsor", {sponsor_type:sponsor_type,sponsor_name:sponsor_name,sponsor_logo:sponsor_logo},config);
+      const ress=await axios.post("http://15.206.99.13:5000/sponsor", {sponsor_type:sponsor_type,sponsor_name:sponsor_name,sponsor_logo:sponsor_logo},config);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
