@@ -87,11 +87,25 @@ export default function Layout2() {
                         <hr />
                     </div>
                 </div>
-                <div className="row margin  " >
-                    <img className="banner"  src="/logos.jpg" />
-                    
 
-                    
+                <div className="card row margin logos " >
+
+                    <img src="/logo1.png" />
+                    <img src="/logo2.png" />
+                    <img src="/logo3.png" />
+                    <img src="/logo4.png" />
+                    <img src="/logo5.png" />
+                    <img src="/logo6.png" />
+                    <img src="/logo7.png" />
+                    <img src="/logo8.png" />
+                    <img src="/logo9.png" />
+                    <img src="/logo10.png" />
+                    <img src="/logo11.png" />
+                    <img src="/logo12.png" />
+                    <img src="/logo13.png" />
+
+
+
                 </div>
 
                 <div className="margin">
@@ -118,31 +132,92 @@ export default function Layout2() {
                 </div>
                 <div>
                     <h4>SPEAKERS</h4>
-                    <div className="row">
-                        {/* <div className="col-md-3">
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <img className="banner" src="/sp.png"/>
-                                </div>
-                                <div className="col-md-8">
-                                    <h6>Mr. Sanjay Aggarwal</h6>
-                                    <p>President, PHDCCI</p>
+                    <div className="card speakers">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg " src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Sanjay Aggarwal</h6>
+                                        <p>President, PHDCCI</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Pradeep Multani</h6>
+                                        <p>Sr. Vice President, PHDCCI</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Saket Dalmia</h6>
+                                        <p>Vice President, PHDCCI</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Vivek Agarwal</h6>
+                                        <p>Chair-Africa</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Amitava Ray</h6>
+                                        <p>Chair-Ameeicas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Ajay Psddar</h6>
+                                        <p>chair-East Asia South East Asia & Oceania</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-sm-3">
+                                        <img className="speakerimg" src="/sp.png" />
+                                    </div>
+                                    <div className="col-sm-9 speakerdetail">
+                                        <h6>Mr. Sanjay Aggarwal</h6>
+                                        <p>President, PHDCCI</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div className="col-md-3">
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <img className="banner" src="/sp.png"/>
-                                </div>
-                                <div className="col-md-8">
-                                    <h6>Mr. Sanjay Aggarwal</h6>
-                                    <p>President, PHDCCI</p>
-                                </div>
-                            </div>
-                        </div> */}
-                        <img className="banner"   src="/speakers.jpg" />
                     </div>
+                    {/* <div className="row">
+
+                        <img className="banner" src="/speakers.jpg" />
+                    </div> */}
                 </div>
             </div>
 
@@ -160,6 +235,35 @@ export default function Layout2() {
 }
 .social{
     width:15%; 
+}
+.logos{
+    display:block;
+    text-align: center;
+}
+.speakers{
+    padding:20px;
+}
+.speakerimg{
+    width:100%;
+    border-radius: 50%;
+}
+.speakerdetail {
+    padding:7px;
+}
+.speakerdetail h6{
+    
+    margin:0;
+    font-size:11px;
+    font-weight: bold;
+}
+.speakerdetail p{
+
+    margin:0;
+    font-size:9px;
+}
+.logos img{
+    width:10%;
+    margin:10px;
 }
 .button{
     width:100%;
