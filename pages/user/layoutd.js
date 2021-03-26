@@ -219,12 +219,12 @@ export default function Layout2({data}) {
             </div>
             <footer className="ccenter back">
         <div className="row d-flex justify-content-center">
-          <img className="social" src="/fb.png" />
-          <img className="social" src="/tw.png" />
-          <img className="social" src="/is.png" />
-          <img className="social" src="/lk.png" />
-          <img className="social" src="/wp.png" />
-          <img className="social" src="/em.png" />
+          <img className="socialf" src="/fb.png" />
+          <img className="socialf" src="/tw.png" />
+          <img className="socialf" src="/is.png" />
+          <img className="socialf" src="/lk.png" />
+          <img className="socialf" src="/wp.png" />
+          <img className="socialf" src="/em.png" />
         </div>
         <div className="foot">
 
@@ -352,7 +352,7 @@ text-decoration:none;
 margin: 10px;
 color:white;
 }
-.social{
+.socialf{
 width:5%; 
 color:white;
 }
