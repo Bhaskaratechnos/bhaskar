@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios';
+import Link from 'next/link'
 
-export default function Layout() {
+export default function Layout({ data}) {
   const router = useRouter();
 
 
@@ -68,14 +69,35 @@ export default function Layout() {
         <h2 className="d-flex justify-content-center">INFORMATION OF EVENTS</h2>
       </div>
 
-      <div className="gallery js-flickity"
-  data-flickity-options='{ "wrapAround": true }'>
-  <div className="gallery-cell"></div>
-  <div className="gallery-cell"></div>
-  <div className="gallery-cell"></div>
-  <div className="gallery-cell"></div>
-  <div className="gallery-cell"></div>
-</div>
+
+      <div className="container ">
+        <div className="row ">
+
+          {data.map((d, index) => (
+            <div key={d.webinar_id} className="col-4 d-flex justify-content-center">
+
+              <div
+                className="card cardimage1 "
+                style={{ width: "20rem", marginTop: "20px" }}
+              >
+                <Link href={"/user/layoutd?id=" + d.webinar_id}>
+                  <a>
+                    <img src={d.webinar_mainbanner} className="card-img-top cardimage" alt="..." />
+                  </a>
+                </Link>
+                <div className="card-body">
+                  <h5 className="card-title">{d.webinar_title}</h5>
+                  <p className="card-text"><span >Date {d.webinar_startdate.split(" ")[0]}  </span></p>
+
+                  <p className="card-text ellipsis">Description {d.webinar_description}</p>
+                </div>
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
 
 
       <div className="container  ccenter" >
@@ -601,5 +623,20 @@ export default function Layout() {
   );
 }
 
+export async function getServerSideProps({ req }) {
+  const res = await fetch(process.env.serverUrl + "webinarform/");
 
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+  // console.log(data);
+
+  return {
+    props: { data, islogin: req.cookies.token || '' }, // will be passed to the page component as props
+  };
+}
 

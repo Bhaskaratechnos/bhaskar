@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios';
 
-export default function Layout2() {
+export default function Layout2({data}) {
     const router = useRouter();
 
 
@@ -43,12 +43,12 @@ export default function Layout2() {
             <div className="container">
 
                 <h5 className="mx-auto title"><strong>Event 1</strong> <i className="fas fa-angle-double-left"></i> PHDCCI IPFC <i className="fas fa-angle-double-right"></i></h5>
-                <p className="margin"><i className="fa fa-calendar" aria-hidden="true"></i> MAR 22, 5:30PM TO MAR 24, 10:30PM IST</p>
-
+                {/* <p className="margin"><i className="fa fa-calendar" aria-hidden="true"></i> MAR 22, 5:30PM TO MAR 24, 10:30PM IST</p> */}
+                <p className="margin"><i className="fa fa-calendar" aria-hidden="true"></i> <strong>{new Date(Date.parse(data[0].webinar_startdate)).toString()}</strong> To <strong>{new Date(Date.parse(data[0].webinar_enddate)).toString()}</strong></p>
 
                 <div className="row margin">
                     <div className="col-md-8">
-                        <img className="banner" src="/banner.jpg"></img>
+                        <img className="banner" src={data[0].webinar_mainbanner}></img>
                     </div>
                     <div className="col-md-4">
                         <div className="card" >
@@ -58,7 +58,7 @@ export default function Layout2() {
 
                                 <input className="btn btn-primary button" type="button" value="LOGIN" />
 
-                                <input className="btn btn-primary button" type="button" value="REGISTER" />
+                                <button onClick={()=> $('#exampleModal').modal('show')} className="btn btn-primary button" type="button"  >REGISTER</button>
 
                             </div>
                         </div>
@@ -109,11 +109,8 @@ export default function Layout2() {
                 </div>
 
                 <div className="margin">
-                    <h5>About PHDCCI International Week</h5>
-                    <p>The International Affairs and Trade Fairs Commitee of PHDCCI is organiasing the Hybrid Edition of "PHDCCI International Week" from 15-19 March 2021
-                    where in each of the weekday will focus on India's Economic and Trade relations with one region and delibrate upon the Business Opportunities
-                    and Challenges faced by the Industry & Stakeholders while doing business in the region. The virtual platform will be created
-                    by PHDCCI
+                    <h5>{data[0].webinar_title}</h5>
+                    <p>{data[0].webinar_description}
                     </p>
                     <h5>STRUCTURE OF PHDCCI INTERNATIONAL WEEK</h5>
                     <p>The International Affairs and Trade Fairs Commitee of PHDCCI is organiasing the Hybrid Edition of "PHDCCI International Week" from 15-19 March 2021
@@ -220,7 +217,50 @@ export default function Layout2() {
                     </div> */}
                 </div>
             </div>
+            <footer className="ccenter back">
+        <div className="row d-flex justify-content-center">
+          <img className="social" src="/fb.png" />
+          <img className="social" src="/tw.png" />
+          <img className="social" src="/is.png" />
+          <img className="social" src="/lk.png" />
+          <img className="social" src="/wp.png" />
+          <img className="social" src="/em.png" />
+        </div>
+        <div className="foot">
 
+          <a   href="#">BUSINESS</a>
+          <a  href="#">STARTUPS</a>
+          <a href="#">MARKETING</a>
+          <a  href="#">TECHNOLOGY</a>
+          <a  href="#">HEALTH</a>
+          <a  href="#">ENTERTAINMENT</a>
+          <a  href="#">EDUCATION</a>
+          <a  href="#">YOUTH</a>
+          <a  href="#">POLICY</a>
+
+        </div>
+      </footer>
+
+
+      <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        ...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
             <style global jsx>{`
 .title{
@@ -276,7 +316,65 @@ export default function Layout2() {
     margin: auto;
     width: 30%;
 }
+
+
+
+.back{
+    background-color:black;
+    padding:10px;
+}
+.ccenter{
+    margin-top:50px
+}
+.ccenter p{
+font-size:9px;
+}
+.ccenter h2{
+font-size:25px;
+color:#002db3;
+}
+.f{
+color:white;
+font-size:50px;
+}
+.foot{
+display: block;
+clear: both;
+font-size: 14px;
+height: auto;
+
+padding: 32px 64px;
+text-align: center;
+grid-area: footer;
+}
+.foot a{
+text-decoration:none; 
+margin: 10px;
+color:white;
+}
+.social{
+width:5%; 
+color:white;
+}
             `}</style>
         </>
     )
 }
+
+
+export async function getServerSideProps({ req, query }) {
+    const res = await fetch(process.env.serverUrl+"webinarform/" + query.id);
+  
+    const data = await res.json();
+  
+    if (!data) {
+      return {
+        notFound: true,
+      };
+    }
+    // console.log(data);
+  
+    return {
+      props: { data, islogin: req.cookies.token || '' }, // will be passed to the page component as props
+    };
+  }
