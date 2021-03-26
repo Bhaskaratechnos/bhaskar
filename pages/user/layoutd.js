@@ -9,7 +9,7 @@ export default function Layout2({data}) {
     return (
         <>
 
-            <nav className="navbar navbar-expand-lg  margin" id="scroll" >
+            <nav className="navbar navbar-expand-lg  margin"  >
                 <div className="container-fluid">
 
                     <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
@@ -133,7 +133,7 @@ export default function Layout2({data}) {
                         <div className="row">
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg " src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -144,7 +144,7 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -155,7 +155,7 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -166,7 +166,7 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -177,7 +177,7 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto" >
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -188,7 +188,7 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
                                     <div className="col-sm-9 speakerdetail">
@@ -199,12 +199,12 @@ export default function Layout2({data}) {
                             </div>
                             <div className="col-md-3">
                                 <div className="row">
-                                    <div className="col-sm-3">
+                                    <div className="col-sm-3 marginauto">
                                         <img className="speakerimg" src="/sp.png" />
                                     </div>
-                                    <div className="col-sm-9 speakerdetail">
-                                        <h6>Mr. Sanjay Aggarwal</h6>
-                                        <p>President, PHDCCI</p>
+                                    <div className="col-sm-9 speakerdetail ">
+                                        <h6 >Mr. Sanjay Aggarwal</h6>
+                                        <p >President, PHDCCI</p>
                                     </div>
                                 </div>
                             </div>
@@ -226,17 +226,17 @@ export default function Layout2({data}) {
           <img className="socialf" src="/wp.png" />
           <img className="socialf" src="/em.png" />
         </div>
-        <div className="foot">
+        <div className="row foot">
 
-          <a   href="#">BUSINESS</a>
-          <a  href="#">STARTUPS</a>
-          <a href="#">MARKETING</a>
-          <a  href="#">TECHNOLOGY</a>
-          <a  href="#">HEALTH</a>
-          <a  href="#">ENTERTAINMENT</a>
-          <a  href="#">EDUCATION</a>
-          <a  href="#">YOUTH</a>
-          <a  href="#">POLICY</a>
+          <a className="col" href="#">BUSINESS</a>
+          <a className="col" href="#">STARTUPS</a>
+          <a className="col" href="#">MARKETING</a>
+          <a className="col" href="#">TECHNOLOGY</a>
+          <a className="col" href="#">HEALTH</a>
+          <a className="col" href="#">ENTERTAINMENT</a>
+          <a className="col" href="#">EDUCATION</a>
+          <a className="col" href="#">YOUTH</a>
+          <a className="col" href="#">POLICY</a>
 
         </div>
       </footer>
@@ -289,16 +289,20 @@ export default function Layout2({data}) {
 }
 .speakerdetail {
     padding:7px;
+    width:100%;
+    margin:auto;
 }
 .speakerdetail h6{
     
-    margin:0;
+    width:100%;
+    margin:auto;
     font-size:11px;
     font-weight: bold;
 }
 .speakerdetail p{
 
-    margin:0;
+    width:100%;
+    margin:auto;
     font-size:9px;
 }
 .logos img{
@@ -338,8 +342,6 @@ color:white;
 font-size:50px;
 }
 .foot{
-display: block;
-clear: both;
 font-size: 14px;
 height: auto;
 
@@ -353,9 +355,20 @@ margin: 10px;
 color:white;
 }
 .socialf{
-width:5%; 
+width:70px; 
 color:white;
 }
+@media screen and (max-width: 575px) {
+    .speakerimg{
+        
+        
+        border-radius: 50%;
+    }
+    .marginauto{
+        width:50px;
+        margin:auto;
+    }
+  }
             `}</style>
         </>
     )
