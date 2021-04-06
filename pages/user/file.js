@@ -24,20 +24,41 @@ export default function Editwebinar() {
         }
     return (
 <main>
-<div className="main__container">
+<div className="maincointainer">
 
 <form onSubmit={fileupload}>
-<div className="form-group">
+<div className="fcontainer">
     <label >Webinar File</label>
-    <input type="file" className="form-control" name="file" onChange={e => setfile(e.target.files[0])}  />
+    <input type="file" className="" name="file" onChange={e => setfile(e.target.files[0])}  />
     
   </div>
 
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="">Submit</button>
 </form>
 
 </div>
+
+
+<style global jsx>{`
+.maincointainer{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width: 500px;
+    height: 200px;
+    margin: -100px 0 0 -250px;
+    border: 1px solid grey;
+    border-radius:5px;
+    padding:20px;
+    background:white;
+}
+.fcontainer{
+    position:relative;
+    
+}
+
+`}</style>
 </main>
 
 );

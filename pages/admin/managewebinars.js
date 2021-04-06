@@ -56,7 +56,7 @@ export default function Managewebinars({data}) {
         <td>{d.webinar_title }</td>
         <td>{d.webinar_startdate }{console.log(d.webinar_startdate)}</td>
         <td>{d.webinar_enddate }</td>
-        <td>{d.webinar_description }</td>
+        <td ><p className="ellipsis">{d.webinar_description }</p></td>
   
         <td><Link href={"/admin/editwebinar?id="+d.webinar_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{webinardelete(d.webinar_id)}} className="btn btn-danger">Delete</button></td>
       </tr>   

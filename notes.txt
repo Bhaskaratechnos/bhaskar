@@ -3,7 +3,7 @@
 
 3. registration data dynamic-done
 4. login data dynamic-done
-5. select stages-pending
+5. select stages-done
 
 platnium banner 1-done
 platnium banner 2-done

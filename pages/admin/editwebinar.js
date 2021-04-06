@@ -35,12 +35,10 @@ export default function Editwebinar(props) {
   const [selected, setSelected] = useState(parsedata(props.data[0].webinar_speaker));
   const router = useRouter();
   
-    const da=props.data2.map((d,index)=>(
-      {label:d.speaker_name,value:d.speaker_id}
-    ))
-    console.log(webinar_speaker)
-
-
+  const da=props.data2.map((d,index)=>(
+    {label:d.speaker_name,value:d.speaker_id}
+  ))
+  console.log(webinar_speaker)
   const webinarupdate = async event => {
     
     event.preventDefault()
@@ -88,8 +86,9 @@ export default function Editwebinar(props) {
           </div>
           <div className="form-group">
             <label >Webinar Description:</label>
-            <input type="text" className="form-control" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} defaultValue={webinar_description} required />
+            <textarea rows="4" type="text" className="form-control" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} defaultValue={webinar_description} required ></textarea>
           </div>
+
           <div className="form-group">
             <label >Webinar Start Date:</label>
             <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} defaultValue={webinar_startdate} required />
@@ -193,7 +192,7 @@ export default function Editwebinar(props) {
     }}  />
     <i className="fa fa-cloud-upload"></i> Upload
     </label>
-    </div >
+    </div>
           </div>
           <div className="form-group">
             <label >Webinar Speaker:</label>
