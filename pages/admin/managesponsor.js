@@ -40,7 +40,7 @@ export default function Managesponsor({data}) {
   </div>
 <table className="table table-striped">
   <thead>
-    <tr>
+    <tr className="fonthead">
       <th scope="col">S no.</th>
       <th scope="col">Type</th>
       <th scope="col">Name</th>
@@ -53,8 +53,8 @@ export default function Managesponsor({data}) {
   {data.map((d, index)=>(  
         <tr key={index }>
         <th scope="row">{index}</th>
-        <td>{d.sponsor_type }</td>
-        <td>{d.sponsor_name }</td> 
+        <td className="fontcontrol">{d.sponsor_type }</td>
+        <td className="fontcontrol">{d.sponsor_name }</td> 
         <td><img src={d.sponsor_logo} className="image"/></td>
   
         <td><Link href={"/admin/editsponsor?id="+d.id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.id)}} className="btn btn-danger">Delete</button></td>

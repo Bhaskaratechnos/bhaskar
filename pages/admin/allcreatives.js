@@ -38,7 +38,7 @@ export default function Allcreativs({data}) {
   </div>
 <table className="table table-striped">
   <thead>
-    <tr>
+    <tr className="fonthead">
       <th scope="col">S no.</th>
       <th scope="col">Name</th>
       <th scope="col">Photo</th>
@@ -50,7 +50,7 @@ export default function Allcreativs({data}) {
   {data.map((d, index)=>(  
         <tr key={index}>
         <th scope="row">{index}</th>
-        <td>{d.creative_title}</td>
+        <td className="fontcontrol">{d.creative_title}</td>
         <td><img src={d.creative_url} className="image"/></td>
   
         <td><Link href={"/admin/editcreative?id="+d.creative_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.creative_id)}} className="btn btn-danger">Delete</button></td>

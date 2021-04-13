@@ -669,7 +669,14 @@ display: -webkit-box;
   display: none;
 }
 
-
+.fontcontrol {
+  font-size:16px;
+  font-weight: normal;
+}
+.fonthead th{
+  font-size:16px;
+  font-weight: bold;
+}
 
 
 

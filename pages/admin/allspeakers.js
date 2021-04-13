@@ -38,7 +38,7 @@ export default function Allspeakers({data}) {
   </div>
 <table className="table table-striped">
   <thead>
-    <tr>
+    <tr className="fonthead">
       <th scope="col">S no.</th>
       <th scope="col">Name</th>
       <th scope="col">Designation</th>
@@ -52,10 +52,10 @@ export default function Allspeakers({data}) {
   {data.map((d, index)=>(  
         <tr key={d.speaker_id }>
         <th scope="row">{index}</th>
-        <td>{d.speaker_name }</td>
-        <td>{d.speaker_desig }</td>
-        <td>{d.speaker_company}</td>
-        <td><img src={d.speaker_photo} className="image"/></td>
+        <td className="fontcontrol">{d.speaker_name }</td>
+        <td className="fontcontrol">{d.speaker_desig }</td>
+        <td className="fontcontrol">{d.speaker_company}</td>
+        <td className="fontcontrol"><img src={d.speaker_photo} className="image"/></td>
   
         <td><Link href={"/admin/editspeaker?id="+d.speaker_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.speaker_id)}} className="btn btn-danger">Delete</button></td>
       </tr>   
