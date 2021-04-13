@@ -53,10 +53,10 @@ export default function Managewebinars({data}) {
       {data.map((d, index)=>(  
         <tr key={d.webinar_id }>
         <th scope="row">{index}</th>
-        <td className="fontcontrol">{d.webinar_title }</td>
+        <td className="fontcontrol maxwidth "><p className="ellipsis">{d.webinar_title }</p></td>
         <td className="fontcontrol">{d.webinar_startdate }{console.log(d.webinar_startdate)}</td>
         <td className="fontcontrol">{d.webinar_enddate }</td>
-        <td className="fontcontrol"><p className="ellipsis">{d.webinar_description }</p></td>
+        <td className="fontcontrol maxwidth"><p className="ellipsis">{d.webinar_description }</p></td>
   
         <td><Link href={"/admin/editwebinar?id="+d.webinar_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{webinardelete(d.webinar_id)}} className="btn btn-danger">Delete</button></td>
       </tr>   
