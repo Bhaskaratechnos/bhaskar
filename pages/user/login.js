@@ -34,7 +34,7 @@ export default function Login({ data }) {
   return (
     <>
     
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
         <div className="container-fluid">
           <Link href="/user">
             <a className="navbar-brand">
@@ -82,9 +82,9 @@ export default function Login({ data }) {
               <a className="nav-link" href="#">
                 POLICY
               </a>
-              <a className="nav-link" href="#">
+              {/* <a className="nav-link" href="#">
                 BIOTECH
-              </a>
+              </a> */}
               {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
                */}
             </div>

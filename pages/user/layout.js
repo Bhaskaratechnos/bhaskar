@@ -10,7 +10,7 @@ export default function Layout({ data}) {
   return (
     <>
 
-      <nav className="navbar navbar-expand-lg fixed-top " id="scroll" style={{ backgroundColor: "rgb(0 0 0 / 5%)", borderBottom: "0" }}>
+      <nav className="navbar navbar-expand-lg fixed-top  navbar-custom" id="scroll" style={{ backgroundColor: "rgb(0 0 0 / 5%)", borderBottom: "0" }}>
         <div className="container-fluid">
 
           <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
@@ -30,7 +30,7 @@ export default function Layout({ data}) {
               <a className="nav-link" href="#">EDUCATION</a>
               <a className="nav-link" href="#">YOUTH</a>
               <a className="nav-link" href="#">POLICY</a>
-              <a className="nav-link" href="#">BIOTECH</a>
+              {/* <a className="nav-link" href="#">BIOTECH</a> */}
               {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
          */}
             </div>
@@ -104,41 +104,50 @@ export default function Layout({ data}) {
         <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
         <h2 className="d-flex justify-content-center">EVENT SPEAKERS</h2>
       </div>
-      <div className="container">
-        <div className="row d-flex justify-content-center ccenter">
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+      <div className="container ">
+        <div className="row d-flex justify-content-center ">
+          <img src="/a1.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a2.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a3.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a4.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a5.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a6.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a7.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a8.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
         </div>
-        <div className="row d-flex justify-content-center ccenter">
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
-          <img src="/a.jpg" className="rounded-circle" style={{ width: "200px", height: "200px" }} />
+        <div className="row d-flex justify-content-center ">
+        <img src="/a8.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a7.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a6.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a5.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a4.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a3.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a2.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
+          <img src="/a1.jpg" className="rounded-circle space" style={{ width: "100px", height: "100px" }} />
         </div>
 
       </div>
-      <footer className="ccenter">
-        <h3>Our Sponsors</h3>
-        <ul className="sponsors">
-          <li><a href="#"><img src="/clogo.jpg" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/02.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/03.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/04.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/05.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/06.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/07.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/08.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/09.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/10.png" alt="sponsor" /></a></li>
-          <li><a href="#"><img src="http://josephaengle.com/bslsponsors/11.png" alt="sponsor" /></a></li>
-        </ul>
-      </footer>
+      <div className="container ">
+      <div className="card row margin logos ccenter ">
+      <h5 class="card-title ">OUR SPONSORS</h5>
+          <img src="/logo1.png" />
+          <img src="/logo2.png" />
+          <img src="/logo3.png" />
+          <img src="/logo4.png" />
+          <img src="/logo5.png" />
+          <img src="/logo6.png" />
+          <img src="/logo7.png" />
+          <img src="/logo8.png" />
+          <img src="/logo9.png" />
+          <img src="/logo10.png" />
+          <img src="/logo11.png" />
+          <img src="/logo12.png" />
+          <img src="/logo13.png" />
+        </div>
+        </div>
 
 
-
-      <div className="container  ccenter" >
+      {/* <div className="container  ccenter" >
         <p className="d-flex justify-content-center">Info Update</p>
         <h2 className="d-flex justify-content-center">LATEST NEWS</h2>
       </div>
@@ -210,15 +219,15 @@ export default function Layout({ data}) {
           </div>
 
         </div>
-      </div>
+      </div> */}
       <footer className="ccenter">
-        <div className="row d-flex justify-content-center">
-          <img className="social" src="/fb.png" />
-          <img className="social" src="/tw.png" />
-          <img className="social" src="/is.png" />
-          <img className="social" src="/lk.png" />
-          <img className="social" src="/wp.png" />
-          <img className="social" src="/em.png" />
+        <div className="foot">
+          <a href="https://www.facebook.com/phdcci1905/"><img className="social" src="/fb.png" /></a>
+          <a href="https://twitter.com/phdchamber"><img className="social" src="/tw.png" /></a>
+          <a href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv"><img className="social" src="/is.png" /></a>
+          <a href="https://www.linkedin.com/company/phdcci?trk=company_name"><img className="social" src="/lk.png" /></a>
+          <a href="https://www.facebook.com/phdcci1905/"><img className="social" src="/wp.png" /></a>
+          <a href="https://www.facebook.com/phdcci1905/"><img className="social" src="/em.png" /></a>
         </div>
         <div className="foot">
 
@@ -238,6 +247,25 @@ export default function Layout({ data}) {
       <style global jsx>{`
             .ccenter{
                 margin-top:50px
+            }
+            .carousel-control-next-icon{
+              background-image:none !important;
+            }
+            .carousel-control-prev-icon{
+              background-image:none !important;
+            }
+
+            .logos {
+              display: block;
+              text-align: center;
+              padding:10px;
+            }
+            .logos img {
+              width: 10%;
+              margin: 10px;
+            }
+            .space{
+              margin:20px;
             }
 .ccenter p{
     font-size:9px;

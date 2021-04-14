@@ -33,7 +33,7 @@ export default function Layout2({ data }) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg  margin">
+      <nav className="navbar navbar-expand-lg  margin navbar-custom">
         <div className="container-fluid">
           <a className="navbar-brand">
             <img className="logoimage" src="/logo.png" />
@@ -80,9 +80,9 @@ export default function Layout2({ data }) {
               <a className="nav-link" href="#">
                 POLICY
               </a>
-              <a className="nav-link" href="#">
+              {/* <a className="nav-link" href="#">
                 BIOTECH
-              </a>
+              </a> */}
               {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
                */}
             </div>
@@ -222,7 +222,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg " src="/sp.png" />
+                    <img className="speakerimg " src="/a1.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail">
                     <h6>Mr. Sanjay Aggarwal</h6>
@@ -233,7 +233,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a2.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail">
                     <h6>Mr. Pradeep Multani</h6>
@@ -244,7 +244,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a3.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail">
                     <h6>Mr. Saket Dalmia</h6>
@@ -255,7 +255,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a4.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail">
                     <h6>Mr. Vivek Agarwal</h6>
@@ -266,7 +266,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a5.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail">
                     <h6>Mr. Amitava Ray</h6>
@@ -277,7 +277,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-md-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a6.jpg" />
                   </div>
                   <div className="col-md-9 speakerdetail">
                     <h6>Mr. Ajay Psddar</h6>
@@ -288,7 +288,7 @@ export default function Layout2({ data }) {
               <div className="col-md-3">
                 <div className="row">
                   <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/sp.png" />
+                    <img className="speakerimg" src="/a7.jpg" />
                   </div>
                   <div className="col-sm-9 speakerdetail ">
                     <h6>Mr. Sanjay Aggarwal</h6>

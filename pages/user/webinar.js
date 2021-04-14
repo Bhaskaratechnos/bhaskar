@@ -39,7 +39,7 @@ export default function Webinar({ data, islogin }) {
   return (
     <>
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
   <div className="container-fluid">
      
     <a href="/user" className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
@@ -59,7 +59,7 @@ export default function Webinar({ data, islogin }) {
         <a className="nav-link" href="#">EDUCATION</a>
         <a className="nav-link" href="#">YOUTH</a>
         <a className="nav-link" href="#">POLICY</a>
-        <a className="nav-link" href="#">BIOTECH</a>
+        {/* <a className="nav-link" href="#">BIOTECH</a> */}
         {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
          */}
       </div>

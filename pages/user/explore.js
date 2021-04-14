@@ -13,7 +13,7 @@ export default function Explore({ data, islogin }) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
         <div className="container-fluid">
           <Link href="/user">
             <a className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
