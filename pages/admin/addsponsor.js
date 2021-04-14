@@ -50,8 +50,8 @@ export default function AddSponsor() {
   </div>
 
   <div className="form-group">
-    <label >Logo:</label>
-    <div className="custom-file-upload">
+    <label >Logo (100x200 png):</label>
+    <div className="custom-file-upload mt-3">
     
     <img  src={sponsor_logo} className="image"/>
     <label className="im">
@@ -74,10 +74,17 @@ export default function AddSponsor() {
     </div>  </div>
 
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary mt-5">Submit</button>
 </form>
 
 </div>
+<style jsx>{`
+        .image {
+          width:100%;
+          margin:10px
+        }
+
+      `}</style>
 </main>
 
 );

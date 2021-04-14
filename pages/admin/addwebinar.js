@@ -63,42 +63,42 @@ export default function Addwebinar({data}) {
 
 <div className="main__container">
 <form onSubmit={webinaradd}>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar Title</label>
-    <input type="text" className="form-control" name="webinar_title" onChange={e => setwebinar_title(e.target.value)}  placeholder="Enter Webinar Title" required/>
+    <input type="text" className="form-control mt-2" name="webinar_title" onChange={e => setwebinar_title(e.target.value)}  placeholder="Enter Webinar Title" required/>
     
   </div>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar Description</label>
-    <input type="text" className="form-control" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} placeholder="Enter Webinar Description" required/>
+    <input type="text" className="form-control mt-2" name="webinar_description" onChange={e => setwebinar_description(e.target.value)} placeholder="Enter Webinar Description" required/>
   </div>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar Start Date</label>
-    <input type="date" className="form-control" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date" required/>
-    <input type="time" className="form-control" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} placeholder="Enter Webinar Start Date" required/>
+    <input type="date" className="form-control mt-2" name="webinar_startdate" onChange={e => setwebinar_startdate(e.target.value)} placeholder="Enter Webinar Start Date" required/>
+    <input type="time" className="form-control mt-2" name="webinar_starttime" onChange={e => setwebinar_starttime(e.target.value)} placeholder="Enter Webinar Start Date" required/>
   </div>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar End Date</label>
-    <input type="date" className="form-control" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date" required/>
-    <input type="time"  className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required/>
+    <input type="date" className="form-control mt-2" name="webinar_enddate" onChange={e => setwebinar_enddate(e.target.value)} placeholder="Enter Webinar End Date" required/>
+    <input type="time"  className="form-control mt-2" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} placeholder="Enter Webinar End Date" required/>
   </div>
-  <div className="form-group">
-    <label >Webinar Main Banner</label>
-    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
+  <div className="form-group mt-2">
+    <label >Webinar Main Banner (720x1920 jpg):</label>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
   </div>
-  <div className="form-group">
-    <label >Webinar Platinium Banner1</label>
-    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
+  <div className="form-group mt-2">
+    <label >Webinar Platinium Banner1 (1150x650 jpg)</label>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
   </div>
-  <div className="form-group">
-    <label >Webinar Platinium Banner2</label>
-    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
+  <div className="form-group mt-2">
+    <label >Webinar Platinium Banner2 (1150x650 jpg)</label>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
   </div>
-  <div className="form-group">
-    <label >Webinar Sponser Banner</label>
-    <input type="file" accept="image/*" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
+  <div className="form-group mt-2">
+    <label >Webinar Sponser Banner (1150x650 jpg)</label>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
   </div>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar Speaker</label>
     <pre>{JSON.stringify(selected)}</pre>
       <MultiSelect
@@ -109,20 +109,20 @@ export default function Addwebinar({data}) {
       />
 
 </div>
-  <div className="form-group">
-    <label >Webinar stage </label>
-    <input type="file" accept="image/*" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} placeholder="Enter Webinar stage"required/>
+  <div className="form-group mt-2">
+    <label >Webinar stage (1110x960 jpg)</label>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])} placeholder="Enter Webinar stage"required/>
   </div>
-  <div className="form-group">
+  <div className="form-group mt-2">
     <label >Webinar Meeting Link</label>
-    <input type="text" className="form-control" name="webinar_meetinglink"  onChange={e => setwebinar_meetinglink(e.target.value)} placeholder="Enter Meeting Link" required/>
-  </div>
-  <div className="form-group">
+    <input type="text" className="form-control mt-2" name="webinar_meetinglink"  onChange={e => setwebinar_meetinglink(e.target.value)} placeholder="Enter Meeting Link" required/>
+  </div> 
+  <div className="form-group mt-2">
     <label >Player Link</label>
-    <input type="text" className="form-control" name="webinar_player"  onChange={e => setwebinar_player(e.target.value)} placeholder="Player Link" required/>
+    <input type="text" className="form-control mt-2" name="webinar_player"  onChange={e => setwebinar_player(e.target.value)} placeholder="Player Link" required/>
   </div>
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary mt-3">Submit</button>
 </form>
 
 </div>

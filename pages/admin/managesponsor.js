@@ -52,9 +52,9 @@ export default function Managesponsor({data}) {
        
   {data.map((d, index)=>(  
         <tr key={index }>
-        <th scope="row">{index}</th>
-        <td className="fontcontrol">{d.sponsor_type }</td>
-        <td className="fontcontrol">{d.sponsor_name }</td> 
+        <th className="middle" scope="row">{index}</th>
+        <td className="middle fontcontrol">{d.sponsor_type }</td>
+        <td className="middle fontcontrol">{d.sponsor_name }</td> 
         <td><img src={d.sponsor_logo} className="image"/></td>
   
         <td><Link href={"/admin/editsponsor?id="+d.id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.id)}} className="btn btn-danger">Delete</button></td>

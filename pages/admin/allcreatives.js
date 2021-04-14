@@ -49,8 +49,8 @@ export default function Allcreativs({data}) {
        
   {data.map((d, index)=>(  
         <tr key={index}>
-        <th scope="row">{index}</th>
-        <td className="fontcontrol">{d.creative_title}</td>
+        <th className="middle" scope="row">{index}</th>
+        <td className="middle fontcontrol">{d.creative_title}</td>
         <td><img src={d.creative_url} className="image"/></td>
   
         <td><Link href={"/admin/editcreative?id="+d.creative_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.creative_id)}} className="btn btn-danger">Delete</button></td>

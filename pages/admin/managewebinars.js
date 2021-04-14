@@ -52,11 +52,11 @@ export default function Managewebinars({data}) {
   <tbody>
       {data.map((d, index)=>(  
         <tr key={d.webinar_id }>
-        <th scope="row">{index}</th>
-        <td className="fontcontrol maxwidth "><p className="ellipsis">{d.webinar_title }</p></td>
-        <td className="fontcontrol">{d.webinar_startdate }{console.log(d.webinar_startdate)}</td>
-        <td className="fontcontrol">{d.webinar_enddate }</td>
-        <td className="fontcontrol maxwidth"><p className="ellipsis">{d.webinar_description }</p></td>
+        <th className="middle" scope="row">{index}</th>
+        <td className="fontcontrol maxwidth middle"><p className="ellipsis" style={{marginBottom:0}}>{d.webinar_title }</p></td>
+        <td className="fontcontrol middle">{d.webinar_startdate }{console.log(d.webinar_startdate)}</td>
+        <td className="fontcontrol middle">{d.webinar_enddate }</td>
+        <td className="fontcontrol maxwidth middle"><p className="ellipsis" style={{marginBottom:0}}>{d.webinar_description }</p></td>
   
         <td><Link href={"/admin/editwebinar?id="+d.webinar_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{webinardelete(d.webinar_id)}} className="btn btn-danger">Delete</button></td>
       </tr>   

@@ -69,7 +69,7 @@ export default function Editspeaker({data}) {
     <input type="text" className="form-control" name="speaker_company" onChange={e => setspeaker_company(e.target.value)} defaultValue={speaker_company} required/>
   </div>
   <div className="form-group">
-    <label >Photo:</label>
+    <label >Photo (200x200 jpg):</label>
     <div className="custom-file-upload">
     
     <img  src={speaker_photo} className="image"/>

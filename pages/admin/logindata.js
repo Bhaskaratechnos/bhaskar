@@ -17,7 +17,7 @@ export default function Logindata({ data }) {
     <main>
       <div className="main__container">
         {data.map((d, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card mt-2">
             <div className="card-header">
               <p>{d.webinar_title}  </p>
               <p>Total Login No. {d.userlogin}</p>

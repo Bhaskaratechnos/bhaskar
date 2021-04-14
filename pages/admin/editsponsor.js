@@ -57,7 +57,7 @@ export default function Editsponsor({ data }) {
                     </div>
 
                     <div className="form-group">
-                        <label >Logo:</label>
+                        <label >Logo (100x200 png):</label>
                         <div className="custom-file-upload">
 
                             <img src={sponsor_logo} className="image" />
@@ -84,6 +84,13 @@ export default function Editsponsor({ data }) {
                 </form>
 
             </div>
+            <style jsx>{`
+        .image {
+          width:100%;
+          margin:10px
+        }
+
+      `}</style>
         </main>
 
     );

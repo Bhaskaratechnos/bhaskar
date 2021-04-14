@@ -169,7 +169,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 70px;
+  /* height: 70px; */
   padding: 25px;
   border-radius: 5px;
   background: #ffffff;
@@ -334,13 +334,16 @@ main {
 }
 
 .sidebar__title > div > img {
-  width: 75px;
+  width: 50px;
   object-fit: contain;
+  border-radius: 25px;
+  
 }
 
 .sidebar__title > div > h1 {
   font-size: 18px;
   display: inline;
+  margin-left: 2px;
 }
 
 .sidebar__title > i {
@@ -680,7 +683,9 @@ display: -webkit-box;
 .maxwidth{
   max-width: 100px;
 }
-
+.middle{
+  vertical-align: middle;
+}
 
 
 

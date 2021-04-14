@@ -48,15 +48,22 @@ export default function Addspeaker() {
     <input type="text" className="form-control" name="speaker_company" onChange={e => setspeaker_company(e.target.value)} placeholder="" required/>
   </div>
   <div className="form-group">
-    <label >Photo</label>
+    <label >Photo (200x200 jpg):</label>
     <input type="file" className="form-control" name="speaker_photo" onChange={e => setspeaker_photo(e.target.files[0])} placeholder="" required/>
   </div>
 
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary mt-3">Submit</button>
 </form>
 
 </div>
+<style jsx>{`
+        .image {
+          width:100%;
+          margin:10px
+        }
+
+      `}</style>
 </main>
 
 );

@@ -37,8 +37,8 @@ export default function Addcreative() {
     
   </div>
   <div className="form-group">
-    <label >Image</label>
-    <div className="custom-file-upload">
+    <label >Image :</label>
+    <div className="custom-file-upload mt-3">
     
     <img  src={creative_url} className="image"/>
     <label className="im">
@@ -60,13 +60,13 @@ export default function Addcreative() {
 
     </div>
   </div>
-  <div className="form-group">
+  <div className="form-group mt-3">
     <label >Description</label>
     <input type="text" className="form-control" name="creative_description" onChange={e => setcreative_description(e.target.value)}  placeholder="" required/>
     
   </div>
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary mt-3">Submit</button>
 </form>
 
 </div>

@@ -8,8 +8,8 @@ export default function SidebarAdmin() {
     <div id="sidebar">
       <div className="sidebar__title">
         <div className="sidebar__img">
-          <img src="/assets/logo.png" alt="logo" />
-          <h1>ATechnos</h1>
+          <img src="/logo.jpeg" alt="logo" />
+          <h1>PHDCCI</h1>
         </div>
         <i
           onClick={()=>{closeSidebar()}}

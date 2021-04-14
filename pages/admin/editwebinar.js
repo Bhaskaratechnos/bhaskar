@@ -100,7 +100,7 @@ export default function Editwebinar(props) {
             <input type="time" className="form-control" name="webinar_endtime" onChange={e => setwebinar_endtime(e.target.value)} defaultValue={webinar_endtime} required />
           </div>
           <div className="form-group">
-            <label >Webinar Main Banner:</label>
+            <label >Webinar Main Banner (720x1920 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required /> */}
             <div className="custom-file-upload">    
     <img  src={webinar_mainbanner} className="image"/>
@@ -123,7 +123,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner1:</label>
+            <label >Webinar Platinium Banner1 (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_platinium1" onChange={e => setwebinar_platinium1(e.target.files[0])} required /> */}
     <div className="custom-file-upload">
     
@@ -147,7 +147,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner2:</label>
+            <label >Webinar Platinium Banner2 (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_platinium2" onChange={e => setwebinar_platinium2(e.target.files[0])} required /> */}
     <div className="custom-file-upload">
     
@@ -172,7 +172,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Sponser Banner:</label>
+            <label >Webinar Sponser Banner (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_sponser" onChange={e => setwebinar_sponser(e.target.files[0])} required /> */}
     <div className="custom-file-upload">    
     <img  src={webinar_sponser} className="image"/>
@@ -206,7 +206,7 @@ export default function Editwebinar(props) {
 
           </div>
           <div className="form-group">
-            <label >Webinar stage: </label>
+            <label >Webinar stage (1110x960 jpg): </label>
             {/* <input type="file" className="form-control" name="webinar_stage" onChange={e => setwebinar_stage(e.target.files[0])}  required /> */}
             <div className="custom-file-upload">    
     <img  src={webinar_stage} className="image"/>

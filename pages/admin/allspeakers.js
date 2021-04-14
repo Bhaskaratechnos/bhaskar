@@ -51,11 +51,11 @@ export default function Allspeakers({data}) {
        
   {data.map((d, index)=>(  
         <tr key={d.speaker_id }>
-        <th scope="row">{index}</th>
-        <td className="fontcontrol">{d.speaker_name }</td>
-        <td className="fontcontrol">{d.speaker_desig }</td>
-        <td className="fontcontrol">{d.speaker_company}</td>
-        <td className="fontcontrol"><img src={d.speaker_photo} className="image"/></td>
+        <th className="middle" scope="row">{index}</th>
+        <td className="fontcontrol middle">{d.speaker_name }</td>
+        <td className="fontcontrol middle">{d.speaker_desig }</td>
+        <td className="fontcontrol middle">{d.speaker_company}</td>
+        <td className="fontcontrol middle"><img src={d.speaker_photo} className="image"/></td>
   
         <td><Link href={"/admin/editspeaker?id="+d.speaker_id}><a><button type="button" className="btn btn-primary">Edit</button></a></Link>  <button type="button" onClick={()=>{speakerdelete(d.speaker_id)}} className="btn btn-danger">Delete</button></td>
       </tr>   
