@@ -129,7 +129,7 @@ export default function Layout({ data}) {
       </div>
       <div className="container ">
       <div className="card row margin logos ccenter ">
-      <h5 class="card-title ">OUR SPONSORS</h5>
+      <h5 className="card-title ">OUR SPONSORS</h5>
           <img src="/logo1.png" />
           <img src="/logo2.png" />
           <img src="/logo3.png" />
