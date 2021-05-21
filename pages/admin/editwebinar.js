@@ -123,7 +123,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner1 (1150x650 jpg):</label>
+            <label >Webinar Platinum Banner1 (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_platinium1" onChange={e => setwebinar_platinium1(e.target.files[0])} required /> */}
     <div className="custom-file-upload">
     
@@ -147,7 +147,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Platinium Banner2 (1150x650 jpg):</label>
+            <label >Webinar Platinum Banner2 (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_platinium2" onChange={e => setwebinar_platinium2(e.target.files[0])} required /> */}
     <div className="custom-file-upload">
     
@@ -172,7 +172,7 @@ export default function Editwebinar(props) {
     </div >
           </div>
           <div className="form-group">
-            <label >Webinar Sponser Banner (1150x650 jpg):</label>
+            <label >Webinar Sponsor Banner (1150x650 jpg):</label>
             {/* <input type="file" className="form-control" name="webinar_sponser" onChange={e => setwebinar_sponser(e.target.files[0])} required /> */}
     <div className="custom-file-upload">    
     <img  src={webinar_sponser} className="image"/>
