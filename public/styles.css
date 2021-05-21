@@ -694,5 +694,19 @@ display: -webkit-box;
 }
 
 
+.bimg1{
+  margin: auto;
+  width: 100%;
+}
 
+.headeritem{
+  background-color: white;
+  color: rgb(10, 9, 9);
+  width: 100%;
+  margin: auto;
+border:1px solid rgb(243, 119, 4);
+display: flex;
+justify-content: center;
+text-align: center;
+}
 

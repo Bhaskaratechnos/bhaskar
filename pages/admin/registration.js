@@ -16,8 +16,10 @@ export default function Registration({ data }) {
   return (
     <main>
       <div className="main__container">
+      <div className="row ">
         {data.map((d, index) => (
-          <div key={index} className="card mt-2">
+          <div key={index} className="col-4 d-flex justify-content-center">
+          <div  className="card mt-2">
             <div className="card-header">
               <p>{d.webinar_title}  </p>
               <p>Total Registration No. {d.register}</p>
@@ -28,7 +30,9 @@ export default function Registration({ data }) {
               </blockquote>
             </div>
           </div>
+          </div>
         ))}
+      </div>
       </div>
     </main>
   );

@@ -33,9 +33,9 @@ export default function Layout2({ data }) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg  margin navbar-custom">
+      <nav className="navbar navbar-expand-lg  margin navbar-light bg-light navbar-custom">
         <div className="container-fluid">
-          <a className="navbar-brand">
+          <a href="/user/layout" className="navbar-brand">
             <img className="logoimage" src="/logo.png" />
           </a>
 
@@ -45,7 +45,7 @@ export default function Layout2({ data }) {
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
+            aria-expanded="true"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -53,38 +53,54 @@ export default function Layout2({ data }) {
 
           <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto lnav">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
               <a className="nav-link active" aria-current="page" href="#">
                 BUSINESS
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 STARTUPS
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 MARKIETING
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 TECHNOLOGY
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 HEALTH
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 ENTERTAINMENT
               </a>
+              </li>
+              <li className="nav-item active">
               <a className="nav-link" href="#">
                 EDUCATION
               </a>
+              </li>
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 YOUTH
               </a>
+              </li>
+              
+      <li className="nav-item active">
               <a className="nav-link" href="#">
                 POLICY
               </a>
-              {/* <a className="nav-link" href="#">
-                BIOTECH
-              </a> */}
-              {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
-               */}
+              </li>
+              </ul>
             </div>
             <div>
               <a
@@ -219,83 +235,42 @@ export default function Layout2({ data }) {
           <h4>SPEAKERS</h4>
           <div className="card speakers">
             <div className="row">
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg " src="/a1.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail">
-                    <h6>Mr. Sanjay Aggarwal</h6>
-                    <p>President, PHDCCI</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/a2.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail">
-                    <h6>Mr. Pradeep Multani</h6>
-                    <p>Sr. Vice President, PHDCCI</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/a3.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail">
-                    <h6>Mr. Saket Dalmia</h6>
-                    <p>Vice President, PHDCCI</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/a4.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail">
-                    <h6>Mr. Vivek Agarwal</h6>
-                    <p>Chair-Africa</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/a5.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail">
-                    <h6>Mr. Amitava Ray</h6>
-                    <p>Chair-Ameeicas</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-md-3 marginauto">
-                    <img className="speakerimg" src="/a6.jpg" />
-                  </div>
-                  <div className="col-md-9 speakerdetail">
-                    <h6>Mr. Ajay Psddar</h6>
-                    <p>chair-East Asia South East Asia & Oceania</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row">
-                  <div className="col-sm-3 marginauto">
-                    <img className="speakerimg" src="/a7.jpg" />
-                  </div>
-                  <div className="col-sm-9 speakerdetail ">
-                    <h6>Mr. Sanjay Aggarwal</h6>
-                    <p>President, PHDCCI</p>
-                  </div>
-                </div>
-              </div>
+            <section>
+   <div className="container bg">
+      <div className="row bg-background">
+        <div className="col-12 col-md-3 col-lg-3">
+          <div className="img-spon">
+            <img src="/a1.jpg" className="img-fluid" alt=""/>
+              <p className="img-name">Mr. Sanjay Aggarwal <br/>
+                President, PHDCCI</p>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 col-lg-3">
+          <div className="img-spon">
+            <img src="/a2.jpg" className="img-fluid" alt=""/>
+              <p className="img-name">Mr. Sanjay Aggarwal <br/>
+                President, PHDCCI</p>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 col-lg-3">
+          <div className="img-spon">
+            <img src="/a3.jpg" className="img-fluid" alt=""/>
+              <p className="img-name">Mr. Sanjay Aggarwal <br/>
+                President, PHDCCI</p>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 col-lg-3">
+          <div className="img-spon">
+            <img src="/a4.jpg" className="img-fluid" alt=""/>
+              <p className="img-name">Mr. Sanjay Aggarwal <br/>
+                President, PHDCCI</p>
+          </div>
+        </div>
+
+      </div>
+
+   </div>
+ </section>
             </div>
           </div>
           {/* <div className="row">
@@ -306,12 +281,26 @@ export default function Layout2({ data }) {
       </div>
       <footer className="ccenter back">
         <div className="row d-flex justify-content-center">
-          <img className="socialf" src="/fb.png" />
-          <img className="socialf" src="/tw.png" />
-          <img className="socialf" src="/is.png" />
-          <img className="socialf" src="/lk.png" />
-          <img className="socialf" src="/wp.png" />
-          <img className="socialf" src="/em.png" />
+        <div className="foot">
+          <a href="https://www.facebook.com/phdcci1905/">
+            <img className="socialf" src="/fb.png" />
+          </a>
+          <a href="https://twitter.com/phdchamber">
+            <img className="socialf" src="/tw.png" />
+          </a>
+          <a href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
+            <img className="socialf" src="/is.png" />
+          </a>
+          <a href="https://www.linkedin.com/company/phdcci?trk=company_name">
+            <img className="socialf" src="/lk.png" />
+          </a>
+          <a href="https://www.facebook.com/phdcci1905/">
+            <img className="socialf" src="/wp.png" />
+          </a>
+          <a href="https://www.facebook.com/phdcci1905/">
+            <img className="socialf" src="/em.png" />
+          </a>
+        </div>
         </div>
         <div className="row foot">
           <a className="col" href="#">
@@ -477,7 +466,7 @@ export default function Layout2({ data }) {
           color: white;
         }
         .socialf {
-          width: 70px;
+          width: 5%;
           color: white;
         }
         .marginauto {

@@ -100,7 +100,7 @@ export default function Addwebinar({data}) {
   </div>
   <div className="form-group mt-2">
     <label >Webinar Speaker</label>
-    <pre>{JSON.stringify(selected)}</pre>
+    {/* <pre>{JSON.stringify(selected)}</pre> */}
       <MultiSelect
         options={d}
         value={selected}

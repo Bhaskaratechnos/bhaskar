@@ -110,14 +110,14 @@ chatbox(() => {
 
 
 
-$(document).ready(function(){       
-  var scroll_pos = 0;
-  $(document).scroll(function() { 
-      scroll_pos = $(this).scrollTop();
-      if(scroll_pos > 50) {
-          $("#scroll").css('background-color', 'white');
-      } else {
-          $("#scroll").css('background-color', 'rgb(0 0 0 / 5%)');
-      }
-  });
-});
+// $(document).ready(function(){       
+//   var scroll_pos = 0;
+//   $(document).scroll(function() { 
+//       scroll_pos = $(this).scrollTop();
+//       if(scroll_pos > 50) {
+//           $("#scroll").css('background-color', 'white');
+//       } else {
+//           $("#scroll").css('background-color', 'rgb(0 0 0 / 5%)');
+//       }
+//   });
+// });

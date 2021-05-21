@@ -196,7 +196,7 @@ export default function Editwebinar(props) {
           </div>
           <div className="form-group">
             <label >Webinar Speaker:</label>
-            <pre>{JSON.stringify(selected)}</pre>
+            {/* <pre>{JSON.stringify(selected)}</pre> */}
             <MultiSelect
               options={da}
               value={selected}
