@@ -233,8 +233,7 @@ export default function Layout2({ data }) {
         </div>
         <div>
           <h4>SPEAKERS</h4>
-          <div className="card speakers">
-            <div className="row">
+
             <section>
    <div className="container bg">
       <div className="row bg-background">
@@ -271,8 +270,7 @@ export default function Layout2({ data }) {
 
    </div>
  </section>
-            </div>
-          </div>
+
           {/* <div className="row">
 
                         <img className="banner" src="/speakers.jpg" />

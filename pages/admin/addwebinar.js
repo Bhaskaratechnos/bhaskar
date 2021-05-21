@@ -87,15 +87,15 @@ export default function Addwebinar({data}) {
     <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_mainbanner(e.target.files[0])}  required/>
   </div>
   <div className="form-group mt-2">
-    <label >Webinar Platinium Banner1 (1150x650 jpg)</label>
+    <label >Webinar Platinum Banner1 (1150x650 jpg)</label>
     <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
   </div>
   <div className="form-group mt-2">
-    <label >Webinar Platinium Banner2 (1150x650 jpg)</label>
+    <label >Webinar Platinum Banner2 (1150x650 jpg)</label>
     <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
   </div>
   <div className="form-group mt-2">
-    <label >Webinar Sponser Banner (1150x650 jpg)</label>
+    <label >Webinar Sponsor Banner (1150x650 jpg)</label>
     <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
   </div>
   <div className="form-group mt-2">
