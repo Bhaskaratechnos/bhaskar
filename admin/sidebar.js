@@ -1,9 +1,21 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-
+import axios from "axios";
+import { useRouter } from "next/router";
+import Cookies from "cookies";
+import Notiflix from "notiflix";
 export default function SidebarAdmin() {
   const router = useRouter();
-  // console.log(router.pathname);
+
+  const logout = async (event) => {
+
+    Notiflix.Loading.init({svgColor:"rgba(241,230,230,0.985)",});
+    let config = {
+      onUploadProgress: Notiflix.Loading.circle()
+    }
+    const ress = await axios.get("/api/logout",config);
+    Notiflix.Loading.remove();
+    router.replace("/admin");
+  };
   return (
     <div id="sidebar">
       <div className="sidebar__title">
@@ -97,7 +109,7 @@ export default function SidebarAdmin() {
 
         <div className="sidebar__logout">
           <i className="fa fa-power-off"></i>
-          <a href="#">Log out</a>
+          <button onClick={() => logout()}>Log out</button>
         </div>
       </div>
     </div>

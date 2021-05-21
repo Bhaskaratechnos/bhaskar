@@ -1,7 +1,40 @@
-import React, { useEffect } from "react";
-import {useRouter} from 'next/router'
+import React, {useState} from 'react';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import axios from "axios";
+import Cookies from 'cookies'
+import Notiflix from "notiflix";
 export default function Home() {
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
+  const login = async (event) => {
+      event.preventDefault(); // don't redirect the page
+      Notiflix.Loading.init({svgColor:"rgba(241,230,230,0.985)",});
+      const Data = {
+          username:username,
+          password:password,
+
+      };
+      let config = {
+        onUploadProgress: Notiflix.Loading.circle()
+      }
+      const ress = await axios.post(
+        "/api/login",
+        Data,
+        config
+      );
+      const result = await ress;
+      console.log(result);
+      if (result.data.status=="success") {
+        Notiflix.Loading.remove();
+        router.push("/admin") 
+      } else {
+        Notiflix.Loading.remove();
+        alert("Some Error Occured");
+      }
+    };
   return (
 <>
 <section className="hover-color">
@@ -9,15 +42,15 @@ export default function Home() {
     <div className="row ">
       <div className="col-12 col-md-12 col-lg-12">
         <div className="form-body-login">
-          <form className="form-aligement-login">
+          <form onSubmit={login} className="form-aligement-login">
             <h4 className="text-center-login">Login Form</h4>
             <div className="form-group font-style-login">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+              <input type="email" onChange={(e) => setUsername(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
             </div>
             <div className="form-group font-style-login">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1"/>
+              <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
             </div>
             <div className="Signin-btn-login">
               <button type="submit" className="Signin-style-login">Login</button>
@@ -91,13 +124,34 @@ export default function Home() {
   );
 }
 
-// export async function getServerSideProps(context) {
+export async function getServerSideProps({ req, res }) {
+  try {
+      
+      const cookies = new Cookies(req, res)
+      const user = cookies.get('user')
+      console.log(user)
+      if (user=="admin"){
+          return {
+              redirect: {
+                permanent: false,
+                destination: '/admin',
+              },
+          }
+      }
 
-//     return {
-//       redirect: {
-//         permanent: false,
-//         destination: "/user/layout"
-//       }
-//     }
+  
+      return {
+        props: {
+          
+        },
+      };
+    } catch (err) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: '/user/layout',
+        },
+      };
+    }
 
-// }
+}

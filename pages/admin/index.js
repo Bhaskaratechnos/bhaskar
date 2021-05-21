@@ -1,5 +1,8 @@
-
-
+import React, {useState} from 'react';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import axios from "axios";
+import Cookies from 'cookies'
 
 
 export default function Index({data}) {
@@ -70,10 +73,18 @@ export default function Index({data}) {
 );
 }
 
-export async function getServerSideProps(context) {
-  const res = await fetch(process.env.serverUrl + 'dashboard/')
+export async function getServerSideProps({ req,res }) {
+  console.log("try")
+  try {
+    console.log("2")
+    const cookies = new Cookies(req, res)
+    console.log("3")
+    const user = cookies.get('user')
+    console.log(user)
+    if (!user ) throw new Error('unauthorized');
+  const ress = await fetch(process.env.serverUrl + 'dashboard/')
 
-  const data = await res.json()
+  const data = await ress.json()
 
   if (!data) {
     return {
@@ -85,4 +96,13 @@ export async function getServerSideProps(context) {
   return {
     props: { data }, // will be passed to the page component as props
   }
+}
+catch (err) {
+  return {
+    redirect: {
+      permanent: false,
+      destination: '/login',
+    },
+  };
+}
 }
