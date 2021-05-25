@@ -15,7 +15,7 @@ export default function Webinar({ data, islogin }) {
     if(msg){
       var result=await axios({
         method: 'post',
-        url: 'http://15.206.99.13:5000/sendmsg',
+        url: 'https://api.phdcciwebinar.live/sendmsg',
         data: {
           message: msg,
           webinar_id: router.query.id,

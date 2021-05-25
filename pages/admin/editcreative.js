@@ -19,7 +19,7 @@ export default function Addspeaker({data}) {
             creative_description:creative_description,
 
         }
-      const ress=await axios.put("http://15.206.99.13:5000/creative/"+router.query.id, Data);
+      const ress=await axios.put("https://api.phdcciwebinar.live/creative/"+router.query.id, Data);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){

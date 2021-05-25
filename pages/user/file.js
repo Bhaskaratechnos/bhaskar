@@ -18,7 +18,7 @@ export default function Editwebinar() {
             console.log(key[0] + ', ' + key[1]);
         }
     
-        const ress=await axios.post("http://15.206.99.13:5000/file", Data);
+        const ress=await axios.post("https://api.phdcciwebinar.live/file", Data);
         const result = await ress;
         console.log(result)
         }

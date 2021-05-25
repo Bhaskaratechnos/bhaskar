@@ -8,7 +8,7 @@ export default function Managewebinars({data}) {
         
     
         const res = await fetch(
-          'http://15.206.99.13:5000/webinarform/'+id,
+          'https://api.phdcciwebinar.live/webinarform/'+id,
           {
             
             headers: {

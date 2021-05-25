@@ -21,7 +21,7 @@ export default function Editsponsor({ data }) {
         let config = {
             onUploadProgress: Notiflix.Loading.Circle()
         }
-        const ress = await axios.put("http://15.206.99.13:5000/sponsor/" + router.query.id, data, config);
+        const ress = await axios.put("https://api.phdcciwebinar.live/sponsor/" + router.query.id, data, config);
         const result = await ress;
         // console.log(result)
         if (result.data.affectedRows) {

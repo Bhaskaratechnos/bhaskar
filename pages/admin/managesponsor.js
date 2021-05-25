@@ -7,7 +7,7 @@ export default function Managesponsor({data}) {
     const speakerdelete = async id => {
       Notiflix.Loading.Circle()
         const res = await fetch(
-          'http://15.206.99.13:5000/sponsor/'+id,
+          'https://api.phdcciwebinar.live/sponsor/'+id,
           {
             
             headers: {

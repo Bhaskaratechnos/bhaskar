@@ -16,7 +16,7 @@ export default function Addcreative() {
             creative_description:creative_description,
 
         }
-      const ress=await axios.post("http://15.206.99.13:5000/creative", Data);
+      const ress=await axios.post("https://api.phdcciwebinar.live/creative", Data);
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){

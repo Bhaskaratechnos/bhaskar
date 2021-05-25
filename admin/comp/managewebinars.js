@@ -8,7 +8,7 @@ export default function Managewebinars({data}) {
         
     
         const res = await fetch(
-          'http://15.206.99.13:5000/webinars/'+id,
+          'https://api.phdcciwebinar.live/webinars/'+id,
           {
             
             headers: {
@@ -73,7 +73,7 @@ export default function Managewebinars({data}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch('http://15.206.99.13:5000/webinars/')
+    const res = await fetch('https://api.phdcciwebinar.live/webinars/')
     
     const data = await res.json()
   

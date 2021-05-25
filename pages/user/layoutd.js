@@ -13,7 +13,7 @@ export default function Layout2({ data }) {
     if (user_emailr) {
       var result = await axios({
         method: "post",
-        url: "http://15.206.99.13:5000/webinarlog",
+        url: "https://api.phdcciwebinar.live/webinarlog",
         data: {
           user_email: user_emailr,
           webinar_id: router.query.id,

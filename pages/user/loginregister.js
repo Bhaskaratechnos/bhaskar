@@ -22,7 +22,7 @@ export default function LoginRegister({ data }) {
     if(user_email){
       var result=await axios({
         method: 'post',
-        url: 'http://15.206.99.13:5000/webinarreg',
+        url: 'https://api.phdcciwebinar.live/webinarreg',
         data: {
           user_name: user_name,
           user_email: user_email,

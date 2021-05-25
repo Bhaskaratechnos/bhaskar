@@ -34,7 +34,7 @@ export default function Editspeaker({data}) {
       let config = {
         onUploadProgress: Notiflix.Loading.Circle()
       }
-      const ress=await axios.put("http://15.206.99.13:5000/speakers/"+router.query.id, formData,config );
+      const ress=await axios.put("https://api.phdcciwebinar.live/speakers/"+router.query.id, formData,config );
       const result = await ress;
       // console.log(result)
         if(result.data.affectedRows){

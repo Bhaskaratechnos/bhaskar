@@ -6,7 +6,7 @@ export default function Allcreativetype({data}) {
     const router = useRouter();
     const speakerdelete = async id => {
         const res = await fetch(
-          'http://15.206.99.13:5000/speakers/'+id,
+          'https://api.phdcciwebinar.live/speakers/'+id,
           {
             
             headers: {
