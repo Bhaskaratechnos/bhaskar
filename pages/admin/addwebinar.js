@@ -44,18 +44,18 @@ export default function Addwebinar({data}) {
           console.log(key[0] );
       }
       let config = {
-        onUploadProgress: Notiflix.Loading.Circle()
+        onUploadProgress: Notiflix.Loading.circle()
       }
       const ress=await axios.post("http://15.206.99.13:5000/webinarform", formData,config );
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){
-          Notiflix.Loading.Remove();
+          Notiflix.Loading.remove();
             router.push('/admin/managewebinars')
         }
         else{
             alert("Some Error Occured");
-            Notiflix.Loading.Remove();
+            Notiflix.Loading.remove();
         }
       }
     return (
@@ -88,15 +88,15 @@ export default function Addwebinar({data}) {
   </div>
   <div className="form-group mt-2">
     <label >Webinar Platinum Banner1 (1150x650 jpg)</label>
-    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium1(e.target.files[0])}  />
   </div>
   <div className="form-group mt-2">
     <label >Webinar Platinum Banner2 (1150x650 jpg)</label>
-    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_platinium2(e.target.files[0])}  />
   </div>
   <div className="form-group mt-2">
     <label >Webinar Sponsor Banner (1150x650 jpg)</label>
-    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  required/>
+    <input type="file" accept="image/*" className="form-control mt-2" name="webinar_mainbanner" onChange={e => setwebinar_sponser(e.target.files[0])}  />
   </div>
   <div className="form-group mt-2">
     <label >Webinar Speaker</label>
