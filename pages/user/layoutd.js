@@ -26,9 +26,10 @@ export default function Layout2({ data }) {
         alert("Email Not Registerd");
         router.push("/user/loginregister?id=" + router.query.id);
       }
-    } else {
-      router.push("/user/explore?id=" + router.query.id);
-    }
+    } 
+    // else {
+    //   router.push("/user/explore?id=" + router.query.id);
+    // }
   };
 
   return (
@@ -118,8 +119,7 @@ export default function Layout2({ data }) {
 
       <div className="container">
         <h5 className="mx-auto title">
-          <strong>Event 1</strong> <i className="fas fa-angle-double-left"></i>
-          PHDCCI IPFC <i className="fas fa-angle-double-right"></i>
+          <strong>{data[0].webinar_title}</strong> 
         </h5>
         {/* <p className="margin"><i className="fa fa-calendar" aria-hidden="true"></i> MAR 22, 5:30PM TO MAR 24, 10:30PM IST</p> */}
         <p className="margin">
@@ -212,24 +212,7 @@ export default function Layout2({ data }) {
         <div className="margin">
           <h5>{data[0].webinar_title}</h5>
           <p>{data[0].webinar_description}</p>
-          <h5>STRUCTURE OF PHDCCI INTERNATIONAL WEEK</h5>
-          <p>
-            The International Affairs and Trade Fairs Commitee of PHDCCI is
-            organiasing the Hybrid Edition of "PHDCCI International Week" from
-            15-19 March 2021 where in each of the weekday will focus on India's
-            Economic and Trade relations with one region and delibrate upon the
-            Business Opportunities and Challenges faced by the Industry &
-            Stakeholders
-          </p>
-          <p>1. Inaugural Session</p>
-          <p>2. Plenary Session (Pre & Post Lunch</p>
-          <p>3. Hybrid Exhibition</p>
-          <p>4. B2B Meetings</p>
-          <h5>KEY TAKEWAYS</h5>
-          <p>1. Inaugural Session</p>
-          <p>2. Plenary Session (Pre & Post Lunch</p>
-          <p>3. Hybrid Exhibition</p>
-          <p>4. B2B Meetings</p>
+
         </div>
         <div>
           <h4>SPEAKERS</h4>
