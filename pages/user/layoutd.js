@@ -125,11 +125,11 @@ export default function Layout2({ data }) {
         <p className="margin">
           <i className="fa fa-calendar" aria-hidden="true"></i>
           <strong>
-            {new Date(Date.parse(data[0].webinar_startdate)).toString()}
+            {new Date(Date.parse(data[0].webinar_startdate)).toString().split("GM")[0]}
           </strong>
           To
           <strong>
-            {new Date(Date.parse(data[0].webinar_enddate)).toString()}
+             {new Date(Date.parse(data[0].webinar_enddate)).toString().split("GM")[0]}
           </strong>
         </p>
 
@@ -220,35 +220,22 @@ export default function Layout2({ data }) {
             <section>
    <div className="container bg">
       <div className="row bg-background">
-        <div className="col-12 col-md-3 col-lg-3">
-          <div className="img-spon">
-            <img src="/a1.jpg" className="img-fluid" alt=""/>
-              <p className="img-name">Mr. Sanjay Aggarwal <br/>
-                President, PHDCCI</p>
-          </div>
-        </div>
-        <div className="col-12 col-md-3 col-lg-3">
-          <div className="img-spon">
-            <img src="/a2.jpg" className="img-fluid" alt=""/>
-              <p className="img-name">Mr. Sanjay Aggarwal <br/>
-                President, PHDCCI</p>
-          </div>
-        </div>
-        <div className="col-12 col-md-3 col-lg-3">
-          <div className="img-spon">
-            <img src="/a3.jpg" className="img-fluid" alt=""/>
-              <p className="img-name">Mr. Sanjay Aggarwal <br/>
-                President, PHDCCI</p>
-          </div>
-        </div>
-        <div className="col-12 col-md-3 col-lg-3">
-          <div className="img-spon">
-            <img src="/a4.jpg" className="img-fluid" alt=""/>
-              <p className="img-name">Mr. Sanjay Aggarwal <br/>
-                President, PHDCCI</p>
-          </div>
-        </div>
 
+
+        {data[0].webinar_speaker.map((speaker, index)=>(
+        <div className="col-12 col-md-3 col-lg-3">
+        <div className="img-spon">
+          <div className="speakerimg2">
+          <img src={speaker.speaker_photo} className="img-fluid" alt=""/>
+          </div>
+            <p className="img-name">{speaker.speaker_name}<br/>
+            {speaker.speaker_desig}, {speaker.speaker_company}</p>
+            
+        </div>
+      </div>
+))
+
+}
       </div>
 
    </div>

@@ -710,3 +710,18 @@ justify-content: center;
 text-align: center;
 }
 
+.bg-background {
+  background-color: white;
+}
+.img-spon {
+margin: auto;
+color: black;
+display: flex;
+text-align: center;   
+}
+.img-name {
+margin: auto;
+}
+.speakerimg2{
+  width:13%;
+}

@@ -46,7 +46,7 @@ export default function Addwebinar({data}) {
       let config = {
         onUploadProgress: Notiflix.Loading.circle()
       }
-      const ress=await axios.post("https://api.phdcciwebinar.live/webinarform", formData,config );
+      const ress=await axios.post("http://15.206.99.13:5000/webinarform", formData,config );
       const result = await ress;
       console.log(result)
         if(result.data.affectedRows){

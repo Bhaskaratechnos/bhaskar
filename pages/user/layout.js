@@ -370,38 +370,57 @@ export default function Layout({ data }) {
 
         </div>
       </div> */}
-      <footer className="ccenter">
+      <footer className="ccenter back">
+        <div className="row d-flex justify-content-center">
         <div className="foot">
           <a href="https://www.facebook.com/phdcci1905/">
-            <img className="social" src="/fb.png" />
+            <img className="socialf" src="/fb.png" />
           </a>
           <a href="https://twitter.com/phdchamber">
-            <img className="social" src="/tw.png" />
+            <img className="socialf" src="/tw.png" />
           </a>
           <a href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
-            <img className="social" src="/is.png" />
+            <img className="socialf" src="/is.png" />
           </a>
           <a href="https://www.linkedin.com/company/phdcci?trk=company_name">
-            <img className="social" src="/lk.png" />
+            <img className="socialf" src="/lk.png" />
           </a>
           <a href="https://www.facebook.com/phdcci1905/">
-            <img className="social" src="/wp.png" />
+            <img className="socialf" src="/wp.png" />
           </a>
           <a href="https://www.facebook.com/phdcci1905/">
-            <img className="social" src="/em.png" />
+            <img className="socialf" src="/em.png" />
           </a>
         </div>
-        <div className="foot">
-          <a href="#">BUSINESS</a>
-          <a href="#">STARTUPS</a>
-          <a href="#">MARKETING</a>
-          <a href="#">TECHNOLOGY</a>
-          <a href="#">HEALTH</a>
-          <a href="#">ENTERTAINMENT</a>
-          <a href="#">EDUCATION</a>
-          <a href="#">YOUTH</a>
-          <a href="#">POLICY</a>
-          <a href="#">BIOTECH</a>
+        </div>
+        <div className="row foot">
+          <a className="col" href="#">
+            BUSINESS
+          </a>
+          <a className="col" href="#">
+            STARTUPS
+          </a>
+          <a className="col" href="#">
+            MARKETING
+          </a>
+          <a className="col" href="#">
+            TECHNOLOGY
+          </a>
+          <a className="col" href="#">
+            HEALTH
+          </a>
+          <a className="col" href="#">
+            ENTERTAINMENT
+          </a>
+          <a className="col" href="#">
+            EDUCATION
+          </a>
+          <a className="col" href="#">
+            YOUTH
+          </a>
+          <a className="col" href="#">
+            POLICY
+          </a>
         </div>
       </footer>
       <style global jsx>{`
@@ -413,6 +432,10 @@ export default function Layout({ data }) {
         }
         .carousel-control-prev-icon {
           background-image: none !important;
+        }
+        .back {
+          background-color: black;
+          padding: 10px;
         }
 
         .logos {
@@ -439,10 +462,9 @@ export default function Layout({ data }) {
           font-size: 50px;
         }
         .foot {
-          display: block;
-          clear: both;
           font-size: 14px;
           height: auto;
+
           padding: 32px 64px;
           text-align: center;
           grid-area: footer;
@@ -796,6 +818,12 @@ export default function Layout({ data }) {
           color: #000;
           font-size: 12px;
           line-height: 1.618;
+        }
+        @media screen and (max-width: 770px) {
+          .marginauto {
+            width: 50px;
+            margin: auto;
+          }
         }
       `}</style>
     </>

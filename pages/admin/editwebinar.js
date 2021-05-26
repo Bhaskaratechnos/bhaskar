@@ -60,18 +60,18 @@ export default function Editwebinar(props) {
       console.log(key[0] + ',' + key[1]);
     }
     let config = {
-      onUploadProgress: Notiflix.Loading.Circle()
+      onUploadProgress: Notiflix.Loading.circle()
     }
     const ress = await axios.put("https://api.phdcciwebinar.live/webinarform/" + router.query.id, formData,config);
     const result = await ress;
     console.log(result)
     if (result.data.affectedRows) {
-      Notiflix.Loading.Remove();
+      Notiflix.Loading.remove();
       router.push('/admin/managewebinars')
     }
     else {
       alert("Some Error Occured");
-      Notiflix.Loading.Remove();
+      Notiflix.Loading.remove();
     }
   }
   return (
