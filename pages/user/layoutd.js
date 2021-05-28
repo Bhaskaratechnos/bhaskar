@@ -125,11 +125,7 @@ export default function Layout2({ data }) {
         <p className="margin">
           <i className="fa fa-calendar" aria-hidden="true"></i>
           <strong>
-            {new Date(Date.parse(data[0].webinar_startdate)).toString().split("GM")[0]}
-          </strong>
-          To
-          <strong>
-             {new Date(Date.parse(data[0].webinar_enddate)).toString().split("GM")[0]}
+          &ensp;{new Date(Date.parse(data[0].webinar_startdate)).toString().split("GM")[0]} To {new Date(Date.parse(data[0].webinar_enddate)).toString().split("GM")[0]}
           </strong>
         </p>
 
