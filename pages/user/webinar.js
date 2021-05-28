@@ -74,7 +74,7 @@ export default function Webinar({ data, islogin }) {
 
 
         <iframe className="webplayer" src={frame} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-       
+{/*        
 <img src={data[0].webinar_platinium1} className="platinium1"/>
 
 
@@ -82,7 +82,7 @@ export default function Webinar({ data, islogin }) {
 <img src={data[0].webinar_platinium2} className="platinium2"/>
 
 
-<img src={data[0].webinar_sponser} className="sponser"/>
+<img src={data[0].webinar_sponser} className="sponser"/> */}
 
 
     </div>

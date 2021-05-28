@@ -62,7 +62,7 @@ export default function Editwebinar(props) {
     let config = {
       onUploadProgress: Notiflix.Loading.circle()
     }
-    const ress = await axios.put("https://api.phdcciwebinar.live/webinarform/" + router.query.id, formData,config);
+    const ress = await axios.put("http://15.206.99.13:5000/webinarform/" + router.query.id, formData,config);
     const result = await ress;
     console.log(result)
     if (result.data.affectedRows) {
