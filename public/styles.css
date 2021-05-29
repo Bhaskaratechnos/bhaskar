@@ -599,8 +599,8 @@ main {
 
 }
 .logoimage {
-  margin-left: 1px;
-  height: 80px;
+  /* margin-left: 1px; */
+  height: 107px;
   /* width:60px; */
 }
 .logorimage{
@@ -690,7 +690,7 @@ display: -webkit-box;
 }
 
 .navbar-custom {
-  height: 100px;
+  height: 120px;
 }
 
 

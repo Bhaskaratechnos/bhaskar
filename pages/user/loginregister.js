@@ -13,7 +13,7 @@ export default function LoginRegister({ data1,islogin }) {
   const [user_mob, setuser_mob] = useState('');
   const [user_desingnation, setuser_desingnation] = useState('');
   const [user_company, setuser_company] = useState('');
-  console.log(data1);
+  // console.log(data1);
 
 
   const register = async event => {
