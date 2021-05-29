@@ -202,21 +202,10 @@ export default function Layout2({ data }) {
           </div>
         </div>
 
-        <div className="card row margin logos ">
-          <img src="/logo1.png" />
-          <img src="/logo2.png" />
-          <img src="/logo3.png" />
-          <img src="/logo4.png" />
-          <img src="/logo5.png" />
-          <img src="/logo6.png" />
-          <img src="/logo7.png" />
-          <img src="/logo8.png" />
-          <img src="/logo9.png" />
-          <img src="/logo10.png" />
-          <img src="/logo11.png" />
-          <img src="/logo12.png" />
-          <img src="/logo13.png" />
-        </div>
+        
+          <img className="sponsors" src="/sponsor.jpg" />
+
+        
 
         <div className="margin">
           <h5>{data[0].webinar_title}</h5>

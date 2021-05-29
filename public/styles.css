@@ -725,3 +725,8 @@ margin: auto;
 .speakerimg2{
   width:13%;
 }
+.sponsors{
+  width: 100%;
+  height: 90%;
+  margin: 5px;
+}
