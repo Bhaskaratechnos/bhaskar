@@ -5,7 +5,7 @@ import Link from 'next/link'
 import axios from 'axios';
 
 
-export default function LoginRegister({ data }) {
+export default function LoginRegister({ data1,islogin }) {
 
   const router = useRouter();
   const [user_email, setuser_email] = useState('');
@@ -13,7 +13,7 @@ export default function LoginRegister({ data }) {
   const [user_mob, setuser_mob] = useState('');
   const [user_desingnation, setuser_desingnation] = useState('');
   const [user_company, setuser_company] = useState('');
-  console.log(data);
+  console.log(data1);
 
 
   const register = async event => {
@@ -83,7 +83,7 @@ export default function LoginRegister({ data }) {
          <div className="row " style={{marginLeft:"50px",marginRight:"50px"}}>
           
 
-          <div className="display-5">Register</div>
+          <h3>{data1[0].webinar_title}</h3>
             <form >
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Full Name</label>
@@ -124,11 +124,20 @@ export default function LoginRegister({ data }) {
 
 }
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({ req, query }) {
+  const res = await fetch(process.env.serverUrl + "webinarform/" + query.id);
 
+  const data1 = await res.json();
+
+  if (!data1) {
+    return {
+      notFound: true,
+    };
+  }
+  // console.log(data);
 
   return {
-    props: { data: req.cookies.token || '' }, // will be passed to the page component as props
+    props: { data1, islogin: req.cookies.token || "" }, // will be passed to the page component as props
   };
 }
 

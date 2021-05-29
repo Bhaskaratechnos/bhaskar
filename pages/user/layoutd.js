@@ -167,12 +167,25 @@ export default function Layout2({ data }) {
               <div className="card-body">
                 <p className="card-title">Share on</p>
                 <div className="row">
+                <a className='col' href="https://www.facebook.com/">
                   <img className="social" src="/fb.png" />
+                  </a>
+                  <a className='col' href="https://www.facebook.com/">
                   <img className="social" src="/tw.png" />
+                  </a>
+                  <a className='col' href="https://www.facebook.com/">
+                  
                   <img className="social" src="/is.png" />
+                  </a>
+                  <a className='col' href="https://www.facebook.com/">
                   <img className="social" src="/lk.png" />
+                  </a>
+                  <a className='col' href="https://www.facebook.com/">
                   <img className="social" src="/wp.png" />
+                  </a>
+                  <a className='col' href="https://www.facebook.com/">
                   <img className="social" src="/em.png" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -225,7 +238,7 @@ export default function Layout2({ data }) {
           <img src={speaker.speaker_photo} className="img-fluid" alt=""/>
           </div>
             <p className="img-name">{speaker.speaker_name}<br/>
-            {speaker.speaker_desig}, {speaker.speaker_company}</p>
+            {speaker.speaker_desig}</p>
             
         </div>
       </div>
@@ -246,22 +259,22 @@ export default function Layout2({ data }) {
       <footer className="ccenter back">
         <div className="row d-flex justify-content-center">
         <div className="foot">
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/fb.png" />
           </a>
-          <a href="https://twitter.com/phdchamber">
+          <a target="_blank" href="https://twitter.com/phdchamber">
             <img className="socialf" src="/tw.png" />
           </a>
-          <a href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
+          <a target="_blank" href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
             <img className="socialf" src="/is.png" />
           </a>
-          <a href="https://www.linkedin.com/company/phdcci?trk=company_name">
+          <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/em.png" />
           </a>
         </div>
@@ -349,7 +362,7 @@ export default function Layout2({ data }) {
           width: 30%;
         }
         .social {
-          width: 15%;
+          width: 100%;
         }
         .logos {
           display: block;

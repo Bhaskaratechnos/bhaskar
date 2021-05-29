@@ -373,22 +373,22 @@ export default function Layout({ data }) {
       <footer className="ccenter back">
         <div className="row d-flex justify-content-center">
         <div className="foot">
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/fb.png" />
           </a>
-          <a href="https://twitter.com/phdchamber">
+          <a target="_blank" href="https://twitter.com/phdchamber">
             <img className="socialf" src="/tw.png" />
           </a>
-          <a href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
+          <a target="_blank" href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
             <img className="socialf" src="/is.png" />
           </a>
-          <a href="https://www.linkedin.com/company/phdcci?trk=company_name">
+          <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/em.png" />
           </a>
         </div>
