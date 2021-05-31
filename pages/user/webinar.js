@@ -84,7 +84,19 @@ export default function Webinar({ data, islogin }) {
 
 
 <img src={data[0].webinar_sponser} className="sponser"/> */}
+      <section class="valume">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="live">
+            <div class="live-text">
+              LIVE WATCHING
+            </div>
+            <div class="score">
+              27
+            </div>
 
+          </div>
+        </div>
+      </section>
 
     </div>
 

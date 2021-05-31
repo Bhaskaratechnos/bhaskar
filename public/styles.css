@@ -455,6 +455,40 @@ main {
 }
 
 
+.valume {
+  width: 35%;
+  margin: auto;
+
+  position: absolute;
+  left: 32%;
+    bottom: 32%;
+}
+
+.live {
+  background: linear-gradient(to left, #000 26%, #ff0000 26%);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 52px;
+  width: 100%;
+  height: 8vh;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.score {
+  position: absolute;
+  right: 47px;
+  top: 11px;
+}
+@media only screen and (max-width: 720px)  {
+  .valume {
+  /* width: 100%; */
+  margin: auto;
+}
+}
+
+
 
 
 .hovereffect {
