@@ -70,7 +70,7 @@ export default function Webinar({ data, islogin }) {
     </div>
   </div>
 </nav>
-    <div className="containerq" >
+    <div className="containerq"  >
       <img className="con-image" src={data[0].webinar_stage} />
 
 

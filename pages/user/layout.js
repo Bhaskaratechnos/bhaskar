@@ -116,7 +116,7 @@ export default function Layout({ data }) {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/a.jpg" className="d-block w-100" alt="..." />
+            <img src="/a.png" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
             <img src="/b.jpg" className="d-block w-100" alt="..." />
@@ -152,7 +152,6 @@ export default function Layout({ data }) {
       </div>
 
       <div className="container  ccenter">
-        <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
         <h2 className="d-flex justify-content-center">INFORMATION OF EVENTS</h2>
       </div>
 
@@ -193,7 +192,6 @@ export default function Layout({ data }) {
       </div>
 
       <div className="container  ccenter">
-        <p className="d-flex justify-content-center">LISTEN TO THE EVENT</p>
         <h2 className="d-flex justify-content-center">EVENT SPEAKERS</h2>
       </div>
       <div className="container ">
@@ -282,24 +280,7 @@ export default function Layout({ data }) {
           />
         </div>
       </div>
-      <div className="container ">
-        <div className="card row margin logos ccenter ">
-          <h5 className="card-title ">OUR SPONSORS</h5>
-          <img src="/logo1.png" />
-          <img src="/logo2.png" />
-          <img src="/logo3.png" />
-          <img src="/logo4.png" />
-          <img src="/logo5.png" />
-          <img src="/logo6.png" />
-          <img src="/logo7.png" />
-          <img src="/logo8.png" />
-          <img src="/logo9.png" />
-          <img src="/logo10.png" />
-          <img src="/logo11.png" />
-          <img src="/logo12.png" />
-          <img src="/logo13.png" />
-        </div>
-      </div>
+      <img className="sponsors" src="/sponsor.jpg" />
 
       {/* <div className="container  ccenter" >
         <p className="d-flex justify-content-center">Info Update</p>
@@ -389,10 +370,10 @@ export default function Layout({ data }) {
           <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://web.whatsapp.com/">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="mailto:contact@test.com">
             <img className="socialf" src="/em.png" />
           </a>
         </div>
