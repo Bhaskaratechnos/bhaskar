@@ -171,10 +171,10 @@ export default function Layout2({ data }) {
               <div className="card-body">
                 <p className="card-title">Share on</p>
                 <div className="row">
-                <a target="_blank" className='col' href="https://www.facebook.com/sharer/sharer.php?u=https://phdcciwebinar.live/user/layoutd?id=86, 'facebook-share-dialog'">
+                <a target="_blank" className='col' href="https://www.facebook.com/sharer/sharer.php?u=https://phdcciwebinar.live/user/layoutd?id=99, 'facebook-share-dialog'">
                   <img className="social" src="/fb.png" />
                   </a>
-                  <a target="_blank" className='col' href="https://twitter.com/phdchamber">
+                  <a target="_blank" className='col' href="https://twitter.com/intent/tweet?url=https://phdcciwebinar.live/user/layoutd?id=99">
                   <img className="social" src="/tw.png" />
                   </a>
                   <a target="_blank" className='col' href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
