@@ -225,7 +225,7 @@ export default function Layout2({ data }) {
 
 
         {data[0].webinar_speaker.map((speaker, index)=>(
-        <div key={index} className="col-12 col-md-3 col-lg-3">
+        <div key={index} className="col-12 col-md-4 col-lg-4">
         <div className="img-spon">
           <div className="speakerimg2">
           <img src={speaker.speaker_photo} className="img-fluid" alt=""/>
