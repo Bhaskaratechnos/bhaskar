@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Link from "next/link";
+import Head from 'next/head';
 
 export default function Layout({ data }) {
   const router = useRouter();
 
   return (
     <>
+          <Head>
+        <title>PHDCCI</title>
+      </Head>
       <nav
         className="navbar navbar-expand-lg navbar-light bg-light navbar-custom"
         id="scroll"

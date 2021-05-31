@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Link from "next/link";
+import Head from 'next/head';
 export default function Layout2({ data }) {
   const router = useRouter();
   const [user_emailr, setuser_emailr] = useState("");
@@ -34,6 +35,9 @@ export default function Layout2({ data }) {
 
   return (
     <>
+              <Head>
+        <title>PHDCCI</title>
+      </Head>
       <nav className="navbar navbar-expand-lg  margin navbar-light bg-light navbar-custom">
         <div className="container-fluid">
           <a href="/user/layout" className="navbar-brand">
@@ -167,23 +171,23 @@ export default function Layout2({ data }) {
               <div className="card-body">
                 <p className="card-title">Share on</p>
                 <div className="row">
-                <a className='col' href="https://www.facebook.com/">
+                <a target="_blank" className='col' href="https://www.facebook.com/sharer/sharer.php?u=https://phdcciwebinar.live/user/layoutd?id=86, 'facebook-share-dialog'">
                   <img className="social" src="/fb.png" />
                   </a>
-                  <a className='col' href="https://www.facebook.com/">
+                  <a target="_blank" className='col' href="https://twitter.com/phdchamber">
                   <img className="social" src="/tw.png" />
                   </a>
-                  <a className='col' href="https://www.facebook.com/">
+                  <a target="_blank" className='col' href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
                   
                   <img className="social" src="/is.png" />
                   </a>
-                  <a className='col' href="https://www.facebook.com/">
+                  <a target="_blank" className='col' href="https://www.linkedin.com/company/phdcci?trk=company_name">
                   <img className="social" src="/lk.png" />
                   </a>
-                  <a className='col' href="https://www.facebook.com/">
+                  <a target="_blank" className='col' href="https://web.whatsapp.com/">
                   <img className="social" src="/wp.png" />
                   </a>
-                  <a className='col' href="https://www.facebook.com/">
+                  <a target="_blank" className='col' href="mailto:contact@test.com">
                   <img className="social" src="/em.png" />
                   </a>
                 </div>
@@ -260,10 +264,10 @@ export default function Layout2({ data }) {
           <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="https://web.whatsapp.com/">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a target="_blank" href="https://www.facebook.com/phdcci1905/">
+          <a target="_blank" href="mailto:contact@test.com">
             <img className="socialf" src="/em.png" />
           </a>
         </div>

@@ -1,5 +1,5 @@
 import cookie from 'js-cookie'
-
+import Head from 'next/head';
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
@@ -38,7 +38,9 @@ export default function Webinar({ data, islogin }) {
 
   return (
     <>
-
+          <Head>
+        <title>PHDCCI</title>
+      </Head>
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
   <div className="container-fluid">
      
