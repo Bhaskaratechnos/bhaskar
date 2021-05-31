@@ -483,13 +483,31 @@ main {
 }
 @media only screen and (max-width: 720px)  {
   .valume {
-    width: 90%;
+    width: 85%;
     margin: auto;
     position: absolute;
     left: 0px;
     right: 0px;
+    bottom: 15px;
+}
+.live {
+    background: linear-gradient(to left, #000 26%, #ff0000 26%);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 52px;
+    width: 100%;
+    height: 7vh;
+    border-radius: 5px;
+    margin: auto;
+}
+.score {
+    position: absolute;
+    right: 28px;
+    bottom: 11px;
 }
 }
+
 
 
 
