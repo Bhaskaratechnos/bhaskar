@@ -101,7 +101,7 @@ export default function Webinar({ data, islogin }) {
       <i className="fa fa-user-circle fa-4x chatbox-popup__avatar" aria-hidden="true"></i>
     </aside>
     <aside style={{flex:"8"}}>
-      <h1>PHDCCI</h1> Services
+      <h1>PHDCCI</h1> Ask the Questions here
     </aside>
     <aside style={{flex:"1"}}>
       {/* <button className="chatbox-maximize"><i className="fa fa-window-maximize" aria-hidden="true"></i></button> */}
