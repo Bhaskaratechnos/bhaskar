@@ -171,17 +171,17 @@ export default function Layout2({ data }) {
               <div className="card-body">
                 <p className="card-title">Share on</p>
                 <div className="row">
-                <a target="_blank" className='col' href="https://www.facebook.com/sharer/sharer.php?u=https://phdcciwebinar.live/user/layoutd?id=99, 'facebook-share-dialog'">
+                <a target="_blank" className='col' href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fphdcciwebinar.live%2Fuser%2Flayoutd%3Fid%3D99, 'facebook-share-dialog'">
                   <img className="social" src="/fb.png" />
                   </a>
-                  <a target="_blank" className='col' href="https://twitter.com/intent/tweet?url=https://phdcciwebinar.live/user/layoutd?id=99">
+                  <a target="_blank" className='col' href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fphdcciwebinar.live%2Fuser%2Flayoutd%3Fid%3D99">
                   <img className="social" src="/tw.png" />
                   </a>
-                  <a target="_blank" className='col' href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
+                  {/* <a target="_blank" className='col' href="https://instagram.com/phdcci?igshid=1ckst5srfo4yv">
                   
                   <img className="social" src="/is.png" />
-                  </a>
-                  <a target="_blank" className='col' href="https://www.linkedin.com/shareArticle?mini=true&url=https://phdcciwebinar.live/user/layoutd?id=99">
+                  </a> */}
+                  <a target="_blank" className='col' href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fphdcciwebinar.live%2Fuser%2Flayoutd%3Fid%3D99">
                   <img className="social" src="/lk.png" />
                   </a>
                   <a target="_blank" className='col' href="https://web.whatsapp.com/">
