@@ -181,7 +181,7 @@ export default function Layout2({ data }) {
                   
                   <img className="social" src="/is.png" />
                   </a>
-                  <a target="_blank" className='col' href="https://www.linkedin.com/company/phdcci?trk=company_name">
+                  <a target="_blank" className='col' href="https://www.linkedin.com/shareArticle?mini=true&url=https://phdcciwebinar.live/user/layoutd?id=99">
                   <img className="social" src="/lk.png" />
                   </a>
                   <a target="_blank" className='col' href="https://web.whatsapp.com/">
