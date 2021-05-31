@@ -461,7 +461,7 @@ main {
 
   position: absolute;
   left: 32%;
-    bottom: 32%;
+    bottom: 38%;
 }
 
 .live {
@@ -483,8 +483,11 @@ main {
 }
 @media only screen and (max-width: 720px)  {
   .valume {
-  /* width: 100%; */
-  margin: auto;
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
 }
 }
 
