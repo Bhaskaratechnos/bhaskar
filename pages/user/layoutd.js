@@ -129,7 +129,7 @@ export default function Layout2({ data }) {
         <p className="margin">
           <i className="fa fa-calendar" aria-hidden="true"></i>
           <strong>
-          &ensp;{new Date(Date.parse(data[0].webinar_startdate)).toString().split("GM")[0]} To {new Date(Date.parse(data[0].webinar_enddate)).toString().split("GM")[0]}
+          &ensp;{new Date(Date.parse(data[0].webinar_startdate)).toString().split("GM")[0].slice(0,-4)} To {new Date(Date.parse(data[0].webinar_enddate)).toString().split("GM")[0].slice(0,-4)}
           </strong>
         </p>
 
@@ -184,10 +184,10 @@ export default function Layout2({ data }) {
                   <a target="_blank" className='col' href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fphdcciwebinar.live%2Fuser%2Flayoutd%3Fid%3D99">
                   <img className="social" src="/lk.png" />
                   </a>
-                  <a target="_blank" className='col' href="https://web.whatsapp.com/">
+                  <a target="_blank" className='col' href="https://api.whatsapp.com/send?phone=919582268262">
                   <img className="social" src="/wp.png" />
                   </a>
-                  <a target="_blank" className='col' href="mailto:contact@test.com">
+                  <a target="_blank" className='col' href="mailto:shreya@atechnos.org">
                   <img className="social" src="/em.png" />
                   </a>
                 </div>
@@ -196,20 +196,25 @@ export default function Layout2({ data }) {
           </div>
         </div>
         <div className="row ">
-          <div className="col-md-6  ">
-            <p className="automargin">SPONSORS</p>
+          <div className="col  ">
+          <h4>SPONSORS</h4>
+            {/* <p className="automargin">SPONSORS</p> */}
             <hr />
           </div>
-          <div className="col-md-6 ">
-            <p className="automargin">DESCRIPTION</p>
-            <hr />
-          </div>
+
         </div>
 
         
           <img className="sponsors" src="/sponsor.jpg" />
 
-        
+          <div className="row ">
+
+          <div className="col ">
+          <h4>DESCRIPTION</h4>
+            {/* <p className="automargin">DESCRIPTION</p> */}
+            <hr />
+          </div>
+        </div>
 
         <div className="margin">
           <h5>{data[0].webinar_title}</h5>
@@ -264,10 +269,10 @@ export default function Layout2({ data }) {
           <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a target="_blank" href="https://web.whatsapp.com/">
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=919582268262">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a target="_blank" href="mailto:contact@test.com">
+          <a target="_blank" href="mailto:shreya@atechnos.org">
             <img className="socialf" src="/em.png" />
           </a>
         </div>

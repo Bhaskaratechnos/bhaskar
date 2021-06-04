@@ -84,7 +84,7 @@ export default function Layout({ data }) {
       <div className="container-fluid " style={{padding:"0"}}>
         <div className="row headeritem">
           <div className="col-12 col-md-12">
-            <div className="headerheading text-center">PLATINUM SPONSORS</div>
+            <div className="headerheading text-center">ANNUAL SPONSORS</div>
           </div>
           <div className="col-12 col-md-3">
             <div className="bimg1 ">
@@ -370,10 +370,10 @@ export default function Layout({ data }) {
           <a target="_blank" href="https://www.linkedin.com/company/phdcci?trk=company_name">
             <img className="socialf" src="/lk.png" />
           </a>
-          <a target="_blank" href="https://web.whatsapp.com/">
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=919582268262">
             <img className="socialf" src="/wp.png" />
           </a>
-          <a target="_blank" href="mailto:contact@test.com">
+          <a target="_blank" href="mailto:shreya@atechnos.org">
             <img className="socialf" src="/em.png" />
           </a>
         </div>
