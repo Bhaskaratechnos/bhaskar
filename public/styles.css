@@ -455,14 +455,7 @@ main {
 }
 
 
-.valume {
-  width: 35%;
-  margin: auto;
 
-  position: absolute;
-  left: 32%;
-    bottom: 38%;
-}
 
 .live {
   background: linear-gradient(to left, #000 26%, #ff0000 26%);
@@ -768,20 +761,62 @@ text-align: center;
 .bg-background {
   background-color: white;
 }
+
 .img-spon {
-margin: auto;
-color: black;
-display: flex;
-text-align: center;   
+  margin: 5px -10px 5px;
+  color: black;
+  display: flex;
+  text-align: left;
+  border: 1px solid gray;
 }
+
 .img-name {
-margin: auto;
+  color: #002db3;
+  font-size: 18px;
+  padding: 5px;
+  font-weight: 500;
+  margin: 0;
 }
-.speakerimg2{
-  width:13%;
+
+.img-name span {
+  color: black;
+  font-size: 14px;
+  font-weight: 100;
 }
-.sponsors{
+
+.des {
+  color: black;
+  font-size: 14px;
+  font-weight: 500 !important;
+
+}
+
+.img-size {
+  width: 25%;
+  height: 91px;
+}
+
+.valume {
+  width: 35%;
+  margin: auto;
+  position: absolute;
+  bottom: 33%;
+  left: 35%;
+}
+
+
+
+.score {
+  position: absolute;
+  right: 47px;
+  top: 11px;
+}
+@media only screen and (max-width: 720px)  {
+  .valume {
   width: 100%;
-  height: 90%;
-  margin: 5px;
+  margin: auto;
+}
+}
+.sponsorsimg{
+  width: 100%;
 }

@@ -195,17 +195,17 @@ export default function Layout2({ data }) {
             </div>
           </div>
         </div>
-        <div className="row ">
+        <div className="row margin">
           <div className="col  ">
           <h4>SPONSORS</h4>
             {/* <p className="automargin">SPONSORS</p> */}
             <hr />
           </div>
-
+          <img className="sponsorsimg" src="/sponsor.jpg" />
         </div>
 
         
-          <img className="sponsors" src="/sponsor.jpg" />
+          
 
           <div className="row ">
 
@@ -223,7 +223,7 @@ export default function Layout2({ data }) {
         </div>
         <div>
           <h4>SPEAKERS</h4>
-
+          <hr />
             <section>
    <div className="container bg">
       <div className="row bg-background">
@@ -232,12 +232,12 @@ export default function Layout2({ data }) {
         {data[0].webinar_speaker.map((speaker, index)=>(
         <div key={index} className="col-12 col-md-4 col-lg-4">
         <div className="img-spon">
-          <div className="speakerimg2">
-          <img src={speaker.speaker_photo} className="img-fluid" alt=""/>
-          </div>
+          <img src={speaker.speaker_photo} className="img-fluid img-size" alt=""/>
+          
             <p className="img-name">{speaker.speaker_name}<br/>
-            {speaker.speaker_desig}</p>
             
+            <span> <i className="fas fa-user" style={{color: "#002db3"}}></i>{speaker.speaker_desig} </span> <br/>
+            </p>
         </div>
       </div>
 ))

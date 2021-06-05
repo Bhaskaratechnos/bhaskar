@@ -40,36 +40,7 @@ export default function Webinar({ data, islogin }) {
           <Head>
         <title>PHDCCI</title>
       </Head>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
-  <div className="container-fluid">
-     
-    <a href="/user/layout" className="navbar-brand" ><img className='logoimage' src="/logo.png" /></a>
-    
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    
-    <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-      <div className="navbar-nav ms-auto lnav">
-        <a className="nav-link active" aria-current="page" href="#">BUSINESS</a>
-        <a className="nav-link" href="#">STARTUPS</a>
-        <a className="nav-link" href="#">MARKIETING</a>
-        <a className="nav-link" href="#">TECHNOLOGY</a>
-        <a className="nav-link" href="#">HEALTH</a>
-        <a className="nav-link" href="#">ENTERTAINMENT</a>
-        <a className="nav-link" href="#">EDUCATION</a>
-        <a className="nav-link" href="#">YOUTH</a>
-        <a className="nav-link" href="#">POLICY</a>
-        {/* <a className="nav-link" href="#">BIOTECH</a> */}
-        {/* <a className="nav-link" href="#" onClick={islogin ? Logout : Login} >{islogin ? 'LOGOUT' : 'LOGIN'}</a>
-         */}
-      </div>
-      <div>
-      <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"><img className='logorimage' src='/logor.png'/></a>
-      </div>
-    </div>
-  </div>
-</nav>
+
     <div className="containerq"  >
       <img className="con-image" src={data[0].webinar_stage} />
 
@@ -91,7 +62,7 @@ export default function Webinar({ data, islogin }) {
               LIVE WATCHING
             </div>
             <div className="score">
-              81
+              0
             </div>
 
           </div>
@@ -137,7 +108,10 @@ export default function Webinar({ data, islogin }) {
   </footer>
 </section>
 
-
+<style global jsx>{`
+body{overflow-y:hidden}
+html{overflow-y:hidden}
+`}</style>
 
 
     </>

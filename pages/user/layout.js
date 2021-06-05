@@ -197,90 +197,86 @@ export default function Layout({ data }) {
       <div className="container ">
         <div className="row d-flex justify-content-center ">
           <img
-            src="/a1.jpg"
+            src="/1.png"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a2.jpg"
+            src="/2.png"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a3.jpg"
+            src="/3.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a4.jpg"
+            src="/4.png"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a5.jpg"
+            src="/5.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a6.jpg"
+            src="/6.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a7.jpg"
+            src="/7.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a8.jpg"
+            src="/8.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
         </div>
         <div className="row d-flex justify-content-center ">
           <img
-            src="/a8.jpg"
+            src="/9.png"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a7.jpg"
+            src="/10.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a6.jpg"
+            src="/11.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a5.jpg"
+            src="/12.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a4.jpg"
+            src="/13.png"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a3.jpg"
+            src="/14.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
           <img
-            src="/a2.jpg"
+            src="/15.jpg"
             className="rounded-circle space"
             style={{ width: "100px", height: "100px" }}
           />
-          <img
-            src="/a1.jpg"
-            className="rounded-circle space"
-            style={{ width: "100px", height: "100px" }}
-          />
+
         </div>
       </div>
-      <img className="sponsors" src="/sponsor.jpg" />
+      <img className="sponsorsimg " src="/sponsor.jpg" />
 
       {/* <div className="container  ccenter" >
         <p className="d-flex justify-content-center">Info Update</p>
@@ -819,7 +815,9 @@ export async function getServerSideProps({ req }) {
   const res = await fetch(process.env.serverUrl + "webinarform/");
 
   const data = await res.json();
+  // const res = await fetch(process.env.serverUrl + "webinarform/" + query.id);
 
+  // const data = await res.json();
   if (!data) {
     return {
       notFound: true,
