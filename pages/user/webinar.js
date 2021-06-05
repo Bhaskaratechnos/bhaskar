@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import axios from 'axios';
+import Livecount from '../../components/livecount'
 export default function Webinar({ data, islogin }) {
   const router = useRouter();
 
@@ -55,20 +56,8 @@ export default function Webinar({ data, islogin }) {
 
 
 <img src={data[0].webinar_sponser} className="sponser"/> */}
-      <section className="valume">
-        <div className="col-12 col-md-12 col-lg-12">
-          <div className="live">
-            <div className="live-text">
-              LIVE WATCHING
-            </div>
-            <div className="score">
-              0
-            </div>
 
-          </div>
-        </div>
-      </section>
-
+<Livecount/>
     </div>
 
 
