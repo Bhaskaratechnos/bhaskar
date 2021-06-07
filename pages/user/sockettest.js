@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import axios from 'axios';
 import {io} from "socket.io-client";
 
-const ENDPOINT = "http://15.206.99.13:4001";
-const socket = io(ENDPOINT,{transports:['websocket']});
+const ENDPOINT = "https://socket.phdcciwebinar.live";
+const socket = io(ENDPOINT);
 export default function Liv() {
     const router = useRouter();
     const [livecount, setLivecount] = useState('');
