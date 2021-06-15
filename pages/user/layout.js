@@ -160,7 +160,7 @@ export default function Layout({ data }) {
           {data.map((d, index) => (
             <div
               key={d.webinar_id}
-              className="col-4 d-flex justify-content-center"
+              className="col-12  d-flex justify-content-center"
             >
               <div
                 className="card cardimage1 "
@@ -353,7 +353,7 @@ export default function Layout({ data }) {
       </div> */}
       <footer className="ccenter back">
         <div className="row d-flex justify-content-center">
-        <div className="foot">
+        <div className="col-12 col-md-12 foot">
           <a target="_blank" href="https://www.facebook.com/phdcci1905/">
             <img className="socialf" src="/fb.png" />
           </a>
@@ -445,8 +445,7 @@ export default function Layout({ data }) {
         .foot {
           font-size: 14px;
           height: auto;
-
-          padding: 32px 64px;
+          padding: 20px 0px;
           text-align: center;
           grid-area: footer;
         }

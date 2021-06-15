@@ -469,11 +469,7 @@ main {
   margin: auto;
 }
 
-.score {
-  position: absolute;
-  right: 47px;
-  top: 11px;
-}
+
 @media only screen and (max-width: 720px)  {
   .valume {
     width: 85%;
@@ -482,6 +478,9 @@ main {
     left: 0px;
     right: 0px;
     bottom: 15px;
+} 
+.foot a img {
+  width: 10% !important;
 }
 .live {
     background: linear-gradient(to left, #000 26%, #ff0000 26%);
@@ -494,11 +493,7 @@ main {
     border-radius: 5px;
     margin: auto;
 }
-.score {
-    position: absolute;
-    right: 28px;
-    bottom: 11px;
-}
+
 }
 
 
@@ -800,17 +795,13 @@ text-align: center;
   width: 35%;
   margin: auto;
   position: absolute;
-  bottom: 33%;
-  left: 35%;
+  top: 0%;
+  left: 0%;
 }
 
 
 
-.score {
-  position: absolute;
-  right: 47px;
-  top: 11px;
-}
+
 @media only screen and (max-width: 720px)  {
   .valume {
   width: 100%;
@@ -819,4 +810,5 @@ text-align: center;
 }
 .sponsorsimg{
   width: 100%;
+  height: 15vh;
 }
