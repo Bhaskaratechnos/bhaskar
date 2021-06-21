@@ -44,7 +44,7 @@ export default function Livecount() {
             <div className="score">
               {livecount}11
             </div>
-            
+
 </div>
 
 
@@ -74,7 +74,7 @@ export default function Livecount() {
   border-radius: 5px;
   margin: auto;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 767px) {
   .vallll {
     width: 100%;
     position: absolute;
@@ -98,7 +98,34 @@ export default function Livecount() {
   }
   .mini-box11 img {
     width: 11%;
-    
+  } 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .vallll {
+    width: 49%;
+    position: absolute;
+    top: 48%;
+    left: 51%;
+  }
+  .mini-box11 img {
+    width: 15%;
+  }
+  .score {
+    position: absolute;
+    bottom: 12px;
+    right: 80%;
+    background: #00000063;
+    text-align: center;
+    /* height: 7vh; */
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0px 0px;
+    width: 7%;
+    border-radius: 5px;
+    margin: auto;
+ }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) and (orientation : landscape) {
   .vallll {
@@ -118,10 +145,12 @@ export default function Livecount() {
     font-size: 14px;
     font-weight: 500;
     padding: 0px 0px;
-    width: 7%;
     border-radius: 5px;
     margin: auto;
  }
+ .mini-box11 img {
+  width: 9%;
+}
 }
 
 `}</style>
